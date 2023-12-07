@@ -1,25 +1,25 @@
 import { ChatBubbleLeftEllipsisIcon } from "@heroicons/react/20/solid";
 
-async function getData() {
-  const res = await fetch("http://0.0.0.0:8000/news", {
-    next: { revalidate: 10 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  // 只调用一次res.json()并将结果存储在变量中
-  const data = await res.json();
-  console.log(data);
-  return data;
-}
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default async function Example() {
+  async function getData() {
+    const res = await fetch("http://0.0.0.0:8000/news", {
+      next: { revalidate: 10 },
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    // 只调用一次res.json()并将结果存储在变量中
+    const data = await res.json();
+    console.log(data);
+    return data;
+  }
+
   const data = await getData();
   const activity = data.content;
   return (
