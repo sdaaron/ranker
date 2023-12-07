@@ -6,7 +6,6 @@ export default async function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-zinc-50">
       <Nav />
-      <div>{data.content.date}</div>
       <div className="body-section px-20 py-10">
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
