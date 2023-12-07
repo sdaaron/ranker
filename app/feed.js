@@ -6,7 +6,7 @@ function classNames(...classes) {
 
 export default async function Example() {
   async function getData() {
-    const res = await fetch("http://0.0.0.0:8000/news", {
+    const res = await fetch("https://news-api-ecru.vercel.app/news", {
       next: { revalidate: 10 },
     });
 
