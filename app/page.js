@@ -1,10 +1,29 @@
 import Feed from "./feed";
 import Footer from "./footer";
 import Nav from "./nav";
+
+async function getData() {
+  const res = await fetch("http://0.0.0.0:8000/news");
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  // 只调用一次res.json()并将结果存储在变量中
+  const data = await res.json();
+  console.log(data);
+  return data;
+}
+
 export default async function Home() {
+  const data = await getData();
+  // console.log(data);
   return (
     <main className="flex flex-col min-h-screen bg-zinc-50">
       <Nav />
+      {/* {data} */}
+      {/* <Profile /> */}
+      <div>{data.content.date}</div>
       <div className="body-section px-20 py-10">
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">

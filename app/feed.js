@@ -1,106 +1,27 @@
 import { ChatBubbleLeftEllipsisIcon } from "@heroicons/react/20/solid";
 
-const placeholder =
-  "谷歌发布Gemini，一种原生多模态大模型，在32项基准测试中的30项上击败ChatGPT，部分测试上超过人类专家水平。";
+async function getData() {
+  const res = await fetch("http://0.0.0.0:8000/news", {
+    next: { revalidate: 10 },
+  });
 
-const activity = [
-  {
-    id: 1,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 2,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 1,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 1,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 4,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 1,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 2,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 1,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 1,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-  {
-    id: 4,
-    type: "article",
-    person: { name: "《谷歌发布Gemini原生多模态大模型》", href: "#" },
-    imageUrl:
-      "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    article: placeholder,
-    date: "2023-12-07",
-  },
-];
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  // 只调用一次res.json()并将结果存储在变量中
+  const data = await res.json();
+  console.log(data);
+  return data;
+}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default async function Example() {
+  const data = await getData();
+  const activity = data.content;
   return (
     <div className="flow-root bg-white shadow-sm rounded-3xl z-40">
       <div className="border-b border-gray-200 bg-white py-4 sm:px-6 rounded-t-3xl">
