@@ -6,7 +6,7 @@ function classNames(...classes) {
 
 export default async function Example() {
   async function getData() {
-    const res = await fetch("https://news-api-ecru.vercel.app/news", {
+    const res = await fetch("https://feeds.shusida.com/news", {
       next: { revalidate: 10 },
     });
 
@@ -16,7 +16,7 @@ export default async function Example() {
 
     // 只调用一次res.json()并将结果存储在变量中
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     return data;
   }
 
