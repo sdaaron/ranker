@@ -6,7 +6,7 @@ function classNames(...classes) {
 
 export default async function Example() {
   async function getData() {
-    const res = await fetch("https://feeds.shusida.com/news", {
+    const res = await fetch("https://feeds-api.shusida.com/news", {
       next: { revalidate: 10 },
     });
 
