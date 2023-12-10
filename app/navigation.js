@@ -49,12 +49,12 @@ export default function Example() {
                   >
                     推荐
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     历史
-                  </a>
+                  </a> */}
                 </div>
               </div>
               <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
