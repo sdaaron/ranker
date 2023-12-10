@@ -10,7 +10,7 @@ export default async function Home() {
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-              今日新闻热榜
+              今日总榜
             </h1>
           </div>
         </header>
@@ -24,7 +24,7 @@ export default async function Home() {
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-              更多时间线
+              更多热榜
             </h1>
           </div>
         </header>
