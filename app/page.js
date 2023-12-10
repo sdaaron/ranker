@@ -2,7 +2,7 @@ import Feed from "./feed";
 import Footer from "./footer";
 import Nav from "./navigation";
 import Banner from "./banner";
-import Newsletter from "./newsletter";
+// import Newsletter from "./newsletter";
 export default async function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-zinc-50">
@@ -42,7 +42,7 @@ export default async function Home() {
           <Feed />
         </main>
       </div>
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </main>
   );
