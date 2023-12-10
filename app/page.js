@@ -1,6 +1,6 @@
 import Feed from "./feed";
 import Footer from "./footer";
-import Nav from "./nav";
+import Nav from "./navigation";
 
 export default async function Home() {
   return (
