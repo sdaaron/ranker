@@ -1,7 +1,7 @@
+import Banner from "./banner";
 import Feed from "./feed";
 import Footer from "./footer";
 import Nav from "./navigation";
-import Banner from "./banner";
 // import Newsletter from "./newsletter";
 export default async function Home() {
   return (
