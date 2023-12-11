@@ -4,8 +4,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "LLM新闻过滤器",
-  description: "大语言模型信息流筛选助理，为你对抗低质量信息。",
+  title: "GEMS",
+  description: "大语言模型信息流筛选，为你阅遍全网优质内容。",
 };
 
 export default function RootLayout({ children }) {
