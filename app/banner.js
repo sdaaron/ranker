@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
 
 export default function Example() {
   // 使用 useState 钩子创建一个状态变量和一个设置该变量的函数
@@ -54,7 +54,7 @@ export default function Example() {
           帮你阅读全网优质文章，编排信息流，助你对抗焦虑，冲出茧房。
         </p>
         <a
-          href="#"
+          href="notfound"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           了解更多 <span aria-hidden="true">&rarr;</span>
