@@ -1,35 +1,29 @@
 export default async function Example() {
   async function getData() {
     // const res = await fetch("https://feeds-api.shusida.com/news",
-    const res = await fetch(
-      "http://0.0.0.0:8000/static_news",
-
-      {
-        next: { revalidate: 10 },
-      }
-    );
+    const res = await fetch("http://0.0.0.0:8000/static_news", {
+      next: { revalidate: 10 },
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
 
-    // 只调用一次res.json()并将结果存储在变量中
     const data = await res.json();
     // console.log(data);
     return data;
   }
 
-  const data = await getData();
-  const activity = data.content;
+  const activity = await getData();
   return (
     <div className="flow-root bg-white shadow-sm rounded-3xl z-40">
-      <div className="border-b border-gray-200 bg-white py-4 sm:px-6 rounded-t-3xl">
-        <h3 className="font-semibold leading-6 text-gray-900 text-lg text-center">
+      <div className="  py-4 sm:px-6 rounded-t-3xl bg-zinc-100 shadow-sm">
+        <h3 className="font-semibold leading-6 text-gray-900  text-center ">
           人工智能
         </h3>
       </div>
 
-      <div className="feed-container p-12">
+      <div className="feed-container p-10">
         <ul role="list" className="-mb-8 ">
           {activity.map((activityItem, activityItemIdx) => (
             <li key={activityItemIdx}>

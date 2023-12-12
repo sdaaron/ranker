@@ -1,4 +1,5 @@
 import Banner from "./banner";
+// import Card from "./card";
 import Feed from "./feed";
 import Footer from "./footer";
 import Nav from "./navigation";
@@ -12,11 +13,10 @@ export default async function Home() {
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-              今日热榜
+              今日新闻热榜
             </h1>
           </div>
         </header>
-        {/* <Filter /> */}
         <main className="main-section  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-10 pb-20">
           <Feed />
           <Feed />
@@ -26,7 +26,7 @@ export default async function Home() {
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-              更多频道
+              今日文章精选
             </h1>
           </div>
         </header>
@@ -34,9 +34,29 @@ export default async function Home() {
           <Feed />
           <Feed />
           <Feed />
+        </main>
+
+        <header className="">
+          <div className="mx-auto my-auto max-w-full pb-10">
+            <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
+              今日社区精选
+            </h1>
+          </div>
+        </header>
+        <main className="main-section  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-10 pb-20">
           <Feed />
           <Feed />
           <Feed />
+        </main>
+
+        <header className="">
+          <div className="mx-auto my-auto max-w-full pb-10">
+            <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
+              今日个人提升
+            </h1>
+          </div>
+        </header>
+        <main className="main-section  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-10 pb-20">
           <Feed />
           <Feed />
           <Feed />
