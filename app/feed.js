@@ -2,7 +2,7 @@ export default async function Example() {
   async function getData() {
     // const res = await fetch("https://feeds-api.shusida.com/news",
     const res = await fetch(
-      "http://0.0.0.0:8000/news",
+      "http://0.0.0.0:8000/static_news",
 
       {
         next: { revalidate: 10 },
