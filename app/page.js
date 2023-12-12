@@ -18,12 +18,12 @@ export default async function Home() {
           </div>
         </header>
         <main className="main-section  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-10 pb-20">
-          <Feed />
-          <Feed />
-          <Feed />
+          <Feed category="财经" />
+          <Feed category="科技" />
+          <Feed category="文化" />
         </main>
 
-        <header className="">
+        {/* <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
               今日文章精选
@@ -34,32 +34,22 @@ export default async function Home() {
           <Feed />
           <Feed />
           <Feed />
-        </main>
+        </main> */}
 
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-              今日社区精选
+              今日话题精选
             </h1>
           </div>
         </header>
         <main className="main-section  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-10 pb-20">
-          <Feed />
-          <Feed />
-          <Feed />
-        </main>
-
-        <header className="">
-          <div className="mx-auto my-auto max-w-full pb-10">
-            <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-              今日个人提升
-            </h1>
-          </div>
-        </header>
-        <main className="main-section  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-10 pb-20">
-          <Feed />
-          <Feed />
-          <Feed />
+          <Feed category="人工智能" />
+          <Feed category="自我提升" />
+          <Feed category="编程开发" />
+          <Feed category="半导体" />
+          <Feed category="娱乐" />
+          <Feed category="健康" />
         </main>
       </div>
       {/* <Newsletter /> */}

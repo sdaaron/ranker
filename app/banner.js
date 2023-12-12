@@ -51,7 +51,8 @@ export default function Example() {
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          每天帮你阅读10万篇文章，为你编排信息流，助你消除焦虑，冲脱茧房，抹平信息差。
+          1000 个 AI 智能体，每天帮你阅读 10万+
+          信息源，助你抹平信息差，逃出茧房，不再焦虑！
         </p>
         <a
           href="notfound"
