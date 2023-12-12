@@ -3,7 +3,7 @@ export default async function Example(props) {
     const requestBody = {
       category: props.category ? props.category : "人工智能",
     };
-    const res = await fetch("https://feeds.shusida.com/news", {
+    const res = await fetch("https://feeds-api.shusida.com/news", {
       // const res = await fetch("http://0.0.0.0:8000/news", {
       method: "POST", // 设置请求方法为 POST
       headers: {
