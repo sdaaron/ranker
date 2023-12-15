@@ -27,31 +27,50 @@ export default function Example() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="notfound"
-                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-xl font-medium text-gray-900"
+                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-base font-medium text-gray-900"
                   >
-                    首页
+                    资讯热榜
                   </a>
                   <a
                     href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
-                    频道
+                    文章热榜
                   </a>
                   <a
                     href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
-                    关注
+                    视频热榜
                   </a>
                   <a
                     href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
-                    推荐
+                    课程热榜
                   </a>
+                  <a
+                    href="notfound"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  >
+                    研报热榜
+                  </a>
+                  <a
+                    href="notfound"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  >
+                    产品热榜
+                  </a>
+                  <a
+                    href="notfound"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  >
+                    论文热榜
+                  </a>
+
                   {/* <a
                     href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     历史
                   </a> */}
