@@ -47,7 +47,7 @@ export default async function Example(props) {
                   <>
                     <div className="relative">
                       <img
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
+                        className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-400 ring-8 ring-white"
                         src={articleItem.image_url}
                         alt=""
                       />
@@ -57,7 +57,7 @@ export default async function Example(props) {
                         <div className="text-sm hover:underline ">
                           <a
                             href={articleItem.source_url}
-                            className="font-medium text-base hover:text-blue-800 text-blue-600"
+                            className="font-medium text-base hover:text-blue-800 text-blue-600  line-clamp-1"
                           >
                             {articleItem.title}
                           </a>
@@ -66,7 +66,7 @@ export default async function Example(props) {
                           {articleItem.source_name} 发布于 {articleItem.date}
                         </p>
                       </div>
-                      <div className="mt-2 text-sm text-gray-700 hover:underline">
+                      <div className="mt-2 text-sm text-gray-700 hover:underline line-clamp-2">
                         <a href={articleItem.source_url}>
                           <p>{articleItem.summary}</p>
                         </a>
