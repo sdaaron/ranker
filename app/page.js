@@ -9,7 +9,7 @@ export default async function Home() {
     <main className="flex flex-col min-h-screen bg-zinc-50">
       <Nav />
       <Banner />
-      <div className="body-section px-20 py-10">
+      <div className="body-section lg:px-20 lg:py-10 md:px-10 md:py-5 sm:px-6 sm:py-3">
         <header className="">
           <div className="mx-auto my-auto max-w-full pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
