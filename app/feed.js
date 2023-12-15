@@ -25,7 +25,7 @@ export default async function Example(props) {
   const articles = await getData();
   return (
     <div className="flow-root bg-white shadow-sm rounded-3xl z-40">
-      <div className="  py-4 sm:px-6 rounded-t-3xl bg-purple-50 shadow-sm">
+      <div className="  py-4 sm:px-6 rounded-t-3xl bg-white border-b border-gray-100">
         <h3 className="font-semibold leading-6 text-gray-900  text-center">
           {props.category ? props.category : "人工智能"}
         </h3>
