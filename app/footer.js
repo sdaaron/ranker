@@ -177,7 +177,7 @@ const navigation = [
 
 export default function Example() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-zinc-950 mt-20">
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-6 md:order-2">
           {navigation.map((item) => (
@@ -192,7 +192,7 @@ export default function Example() {
           ))}
         </div>
         <div className="mt-8 md:order-1 md:mt-0">
-          <p className="text-center text-xs leading-5 text-gray-500">
+          <p className="text-center text-xs leading-5 text-white">
             &copy; 2023 Star & Moon Studio. All rights reserved.
           </p>
         </div>

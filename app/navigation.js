@@ -23,54 +23,23 @@ export default function Example() {
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
-                    href="notfound"
+                    href="/"
                     className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-base font-medium text-gray-900"
                   >
-                    资讯热榜
+                    今日热榜
                   </a>
                   <a
                     href="notfound"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
-                    文章热榜
+                    万物导航
                   </a>
                   <a
                     href="notfound"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
-                    视频热榜
+                    实用工具
                   </a>
-                  <a
-                    href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    课程热榜
-                  </a>
-                  <a
-                    href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    研报热榜
-                  </a>
-                  <a
-                    href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    产品热榜
-                  </a>
-                  <a
-                    href="notfound"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    论文热榜
-                  </a>
-
-                  {/* <a
-                    href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    历史
-                  </a> */}
                 </div>
               </div>
               {/* <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">

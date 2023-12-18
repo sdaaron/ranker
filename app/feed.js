@@ -3,13 +3,13 @@ export default async function Example(props) {
     const requestBody = {
       category: props.category ? props.category : "人工智能",
     };
-    const res = await fetch("https://feeds-api.shusida.com/news", {
-      // const res = await fetch("http://0.0.0.0:8000/news", {
-      method: "POST", // 设置请求方法为 POST
+    // const res = await fetch("https://feeds-api.shusida.com/news", {
+    const res = await fetch("http://0.0.0.0:8000/news", {
+      method: "POST",
       headers: {
-        "Content-Type": "application/json", // 设置请求头，告诉服务器发送的是 JSON 数据
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(requestBody), // 将 JavaScript 对象转换为 JSON 字符串
+      body: JSON.stringify(requestBody),
       next: { revalidate: 10 },
     });
 
@@ -24,18 +24,18 @@ export default async function Example(props) {
 
   const articles = await getData();
   return (
-    <div className="flow-root bg-white shadow-sm rounded-3xl z-40">
-      <div className="  py-4 sm:px-6 rounded-t-3xl bg-white border-b border-gray-100">
+    <div className="flow-root bg-white shadow-sm rounded-3xl z-40 mb-4">
+      <div className="py-3 sm:px-6 rounded-t-3xl bg-white border-b border-gray-100">
         <h3 className="font-semibold leading-6 text-gray-900  text-center">
-          {props.category ? props.category : "人工智能"}
+          {props.category ? props.category : "NULL"}
         </h3>
       </div>
 
-      <div className="feed-container p-10">
-        <ul role="list" className="-mb-8 ">
+      <div className="feed-container p-5">
+        <ul role="list" className="">
           {articles.map((articleItem, articleItemIdx) => (
             <li key={articleItemIdx}>
-              <div className="relative pb-8">
+              <div className="relative py-2">
                 {articleItemIdx !== articles.length - 1 ? (
                   <span
                     className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200"
@@ -47,7 +47,7 @@ export default async function Example(props) {
                   <>
                     <div className="relative">
                       <img
-                        className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-400 ring-8 ring-white"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
                         src={articleItem.image_url}
                         alt=""
                       />
@@ -57,7 +57,7 @@ export default async function Example(props) {
                         <div className="text-sm hover:underline ">
                           <a
                             href={articleItem.source_url}
-                            className="font-medium text-base hover:text-blue-800 text-blue-600  line-clamp-1"
+                            className="font-medium text-sm hover:text-blue-800 text-blue-600  line-clamp-1"
                           >
                             {articleItem.title}
                           </a>
@@ -66,7 +66,7 @@ export default async function Example(props) {
                           {articleItem.source_name} 发布于 {articleItem.date}
                         </p>
                       </div>
-                      <div className="mt-2 text-sm text-gray-700 hover:underline line-clamp-2">
+                      <div className="mt-2 text-xs text-gray-700 hover:underline line-clamp-2">
                         <a href={articleItem.source_url}>
                           <p>{articleItem.summary}</p>
                         </a>
