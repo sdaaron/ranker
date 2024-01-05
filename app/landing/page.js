@@ -25,9 +25,9 @@ const features = [
     icon: ArrowPathIcon,
   },
   {
-    name: "数十万信息源轻松阅尽",
+    name: "1万+信息源轻松阅尽",
     description:
-      "我们的网页爬虫每天爬取数十万信息源，从各大网站、论坛、社交媒体等，优中选优择出当日最重要的内容，让你一站阅尽全网信息。",
+      "我们的网页爬虫每天爬取1万+信息源，从各大网站、论坛、社交媒体等，优中选优择出当日最重要的内容，让你一站阅尽全网信息。",
     icon: FingerPrintIcon,
   },
 ];
@@ -57,7 +57,7 @@ export default function Example() {
                   Ranker 信息流规划助手
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                  1000 个 AI 智能体，每天帮你阅读 10万+
+                  100 个 AI 智能体，每天帮你阅读 1万+
                   信息源，助你抹平信息差，逃出茧房，不再焦虑！
                 </p>
               </div>
@@ -98,7 +98,7 @@ export default function Example() {
               你需要的唯一一个信息流产品
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              1000 个 AI 智能体，每天帮你阅读 10万+
+              100 个 AI 智能体，每天帮你阅读 1万+
               信息源，助你抹平信息差，逃出茧房，不再焦虑！
             </p>
           </div>
