@@ -1,19 +1,22 @@
+// "use client";
+// import Draggable from "react-draggable";
 export default async function Example(props) {
   async function getData() {
     const requestBody = {
-      category: props.category ? props.category : "人工智能",
+      category: props.category ? props.category : "NULL",
     };
-    // const res = await fetch("https://feeds-api.shusida.com/news", {
-    const res = await fetch("http://0.0.0.0:8000/news", {
+    const res = await fetch("https://api.ranker.cc/news", {
+      // const res = await fetch("http://0.0.0.0:8000/news", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(requestBody),
-      next: { revalidate: 10 },
+      next: { revalidate: 5 },
     });
 
     if (!res.ok) {
+      console.log(requestBody);
       throw new Error("Failed to fetch data");
     }
 
@@ -24,14 +27,15 @@ export default async function Example(props) {
 
   const articles = await getData();
   return (
-    <div className="flow-root bg-white shadow-sm rounded-3xl z-40 mb-4">
-      <div className="py-3 sm:px-6 rounded-t-3xl bg-white border-b border-gray-100">
+    <div className="flow-root bg-white  rounded-xl z-40 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
+      <div className="py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center gap-4">
+        <img src="/logo.png" className="h-4"></img>
         <h3 className="font-semibold leading-6 text-gray-900  text-center">
           {props.category ? props.category : "NULL"}
         </h3>
       </div>
 
-      <div className="feed-container p-5">
+      <div className="feed-container p-5 ">
         <ul role="list" className="">
           {articles.map((articleItem, articleItemIdx) => (
             <li key={articleItemIdx}>
@@ -47,7 +51,7 @@ export default async function Example(props) {
                   <>
                     <div className="relative">
                       <img
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
+                        className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-400 ring-8 ring-white"
                         src={articleItem.image_url}
                         alt=""
                       />
@@ -57,7 +61,7 @@ export default async function Example(props) {
                         <div className="text-sm hover:underline ">
                           <a
                             href={articleItem.source_url}
-                            className="font-medium text-sm hover:text-blue-800 text-blue-600  line-clamp-1"
+                            className="font-medium text-sm hover:text-blue-800 text-blue-600  line-clamp-1 hover:line-clamp-none"
                           >
                             {articleItem.title}
                           </a>
@@ -66,11 +70,19 @@ export default async function Example(props) {
                           {articleItem.source_name} 发布于 {articleItem.date}
                         </p>
                       </div>
-                      <div className="mt-2 text-xs text-gray-700 hover:underline line-clamp-2">
+                      <div className="mt-2 text-xs text-gray-700 overflow-hidden transition-all hover:max-h-96 duration-300">
+                        <a href={articleItem.source_url}>
+                          <p className="line-clamp-2 hover:line-clamp-none hover:underline">
+                            {articleItem.summary}
+                          </p>
+                        </a>
+                      </div>
+
+                      {/* <div className="mt-2 text-xs text-gray-700 hover:underline line-clamp-2">
                         <a href={articleItem.source_url}>
                           <p>{articleItem.summary}</p>
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </>
                   {/* : null} */}

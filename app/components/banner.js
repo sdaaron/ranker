@@ -55,10 +55,11 @@ export default function Example() {
           信息源，助你抹平信息差，逃出茧房，不再焦虑！
         </p>
         <a
-          href="notfound"
+          href="landing"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          了解更多 <span aria-hidden="true">&rarr;</span>
+          了解更多
+          {/* <span aria-hidden="true">&rarr;</span> */}
         </a>
       </div>
       <div className="flex flex-1 justify-end">
