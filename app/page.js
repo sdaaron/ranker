@@ -13,7 +13,7 @@ export default async function Home() {
           <header>
             <div className="max-w-full py-8">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-                今日 · 新闻总榜
+                今日 · 新闻热榜
               </h1>
             </div>
           </header>
@@ -29,7 +29,7 @@ export default async function Home() {
           <header>
             <div className="max-w-full py-7">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-                本周 · 新闻精选
+                本周 · 新闻热榜
               </h1>
             </div>
           </header>
