@@ -1,5 +1,4 @@
 import Banner from "./components/banner";
-// import Card from "./card";
 import Feed from "./components/feed";
 import Footer from "./components/footer";
 import Nav from "./components/navigation";
