@@ -6,8 +6,8 @@ export default async function Example(props) {
     const requestBody = {
       category: props.category ? props.category : "NULL",
     };
-    const res = await fetch("https://api.ranker.cc/news", {
-      // const res = await fetch("http://0.0.0.0:8000/news", {
+    // const res = await fetch("https://api.ranker.cc/news", {
+    const res = await fetch("http://0.0.0.0:8000/news", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,6 +28,9 @@ export default async function Example(props) {
     // for (let i = 0; i < data.length; i++) {
     //   console.log(data[i]["title"]);
     // }
+    // data.forEach((i) => {
+    //   console.log(i["title"]);
+    // });
     return data;
   }
 
