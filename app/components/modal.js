@@ -56,7 +56,7 @@ export default function Example() {
                       >
                         Agent Prompt
                       </Dialog.Title>
-                      <div className="mt-2 p-10 px-20">
+                      <div className="mt-2 p-10 px-20 sm:p-2 sm:px-4">
                         <p className="text-base font-semibold text-left text-gray-500">
                           你是一个AI新闻编辑员，你的职责是为中国读者（主要是中青年人）编辑今日的重要新闻。
                           <br />

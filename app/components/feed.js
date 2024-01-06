@@ -1,4 +1,4 @@
-import Modal from "./modal";
+import ModalButton from "./modal";
 export default async function Example(props) {
   async function getData() {
     const requestBody = {
@@ -46,7 +46,7 @@ export default async function Example(props) {
           <h3 className="font-semibold leading-6 text-gray-900 text-center">
             {props.category ? props.category : "NULL"}
           </h3>
-          <Modal />
+          <ModalButton />
         </div>
 
         <div className="feed-container p-5 ">
