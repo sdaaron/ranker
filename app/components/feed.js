@@ -39,7 +39,7 @@ export default async function Example(props) {
     <>
       <div className="sm:m-1 md:m-0 lg:m-0 flow-root bg-white rounded-xl z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
-          <img src="/logo.png" className="h-4"></img>
+          <img src="/logo.png" className="h-4 mr-1"></img>
           <h3 className="font-semibold leading-6 text-gray-900 text-center">
             {props.category ? props.category : "NULL"}
           </h3>
