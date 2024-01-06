@@ -58,7 +58,7 @@ export default function Example() {
                       </Dialog.Title>
                       <div className="mt-2 lg:p-10 lg:px-20 md:p-10 md:px-20 sm:py-1 sm:px-2">
                         <p className="text-base font-semibold text-left text-gray-500">
-                          你是一个AI新闻编辑员，你的职责是为中国读者（主要是中青年人）编辑今日的重要新闻。
+                          你是一个AI新闻编辑员，你的职责是为中国读者编辑今日的重要新闻。
                           <br />
                           你需要从以上3条今日新闻中，按照优先级筛选选出5条今日优先级最高的新闻。
                           <br />
