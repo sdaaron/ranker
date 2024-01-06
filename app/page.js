@@ -19,7 +19,7 @@ export default async function Home() {
               </h1>
             </div>
           </header>
-          <main className="main-section grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5">
+          <main className="main-section grid ug:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
             <Feed category="政治" />
             <Feed category="经济" />
             <Feed category="科技" />
