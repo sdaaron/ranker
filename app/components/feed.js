@@ -1,3 +1,5 @@
+// import { useState } from "react";
+import ImageWithFallback from "./imageFallback";
 import ModalButton from "./modal";
 export default async function Example(props) {
   async function getData() {
@@ -31,19 +33,6 @@ export default async function Example(props) {
 
   const articles = await getData();
   return (
-    // <div className="flow-root bg-white  rounded-xl z-40 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
-    //   <div className="py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center gap-4">
-    //     <img src="/logo.png" className="h-4"></img>
-    //     <h3 className="font-semibold leading-6 text-gray-900  text-center">
-    //       {props.category ? props.category : "NULL"}
-    //     </h3>
-    //     <button
-    //       type="button"
-    //       className="rounded bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
-    //     >
-    //       查看 Prompt
-    //     </button>
-    //   </div>
     <>
       <div className="sm:m-1 md:m-0 lg:m-0 flow-root bg-white rounded-xl z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
@@ -68,11 +57,22 @@ export default async function Example(props) {
                   <div className="relative flex items-start space-x-3">
                     {/* {articleItem.type === "article" ?  */}
                     <>
-                      <div className="relative">
-                        <img
-                          className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-400 ring-8 ring-white"
-                          src={articleItem.image_url}
-                          alt=""
+                      <div className="relative h-10 w-10">
+                        <ImageWithFallback
+                          className="flex  items-center justify-center rounded-lg ring-8 ring-white bg-white"
+                          src={
+                            articleItem.image_url.startsWith("http")
+                              ? articleItem.image_url
+                              : "/p8.png"
+                          }
+                          layout="fill"
+                          objectFit="cover" // 从中心裁剪以保持图像比例
+                          placeholder="blur" // 使用模糊效果作为加载占位符
+                          blurDataURL={"/p8.png"} // 模糊效果的图像源
+                          alt="news-thumbnail"
+                          // fallbackSrc="/placeholder.jpeg"
+                          fallbackSrc="/p8.png"
+                          objectPosition="left"
                         />
                       </div>
                       <div className="min-w-0 flex-1">
