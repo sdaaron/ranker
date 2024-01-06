@@ -57,15 +57,17 @@ export default function Example() {
                         Agent Prompt
                       </Dialog.Title>
                       <div className="mt-2 lg:p-10 lg:px-20 md:p-10 md:px-20 sm:py-1 sm:px-2">
-                        <p className="text-base font-semibold text-left text-gray-500">
+                        <p className="text-xs font-semibold text-left text-gray-500">
                           你是一个AI新闻编辑员，你的职责是为中国读者编辑今日的重要新闻。
                           <br />
                           你需要从以上3条今日新闻中，按照优先级筛选选出5条今日优先级最高的新闻。
                           <br />
                           优先级由5个维度的打分加总得到，这5个维度分别是：{" "}
                           <br />
-                          1.
-                          【重要性】影响力的评价标准是：对于技术进步的影响、对于全人类生活的影响。（1-10分）
+                          <br />
+                          1.【重要性】
+                          <br />
+                          影响力的评价标准是：对于技术进步的影响、对于全人类生活的影响。（1-10分）
                           <br />
                           打分标准：
                           <br />
@@ -99,8 +101,10 @@ export default function Example() {
                           10.
                           至关重要（10分）：对全人类或整个地球有重大长远影响，是历史性事件。
                           <br />
-                          2.
-                          【实际性】事件实际性的评价标准是事件是否近期真实发生。
+                          <br />
+                          2.【实际性】
+                          <br />
+                          事件实际性的评价标准是事件是否近期真实发生。
                           <br />
                           (1-5分) 打分标准：
                           <br />
@@ -109,8 +113,10 @@ export default function Example() {
                           <br />
                           2. 5分：近期实际发生的事件
                           <br />
-                          3.
-                          相关性：请记住，你面向的是中国读者，请优选选择那些能让中国读者理解并产生共鸣的新闻事件，一些仅仅与美国或其他国家社会相关的新闻可以直接忽略。
+                          <br />
+                          3.【相关性】
+                          <br />
+                          请记住，你面向的是中国读者，请优选选择那些能让中国读者理解并产生共鸣的新闻事件，一些仅仅与美国或其他国家社会相关的新闻可以直接忽略。
                           <br />
                           打分标准：
                           <br />
@@ -126,6 +132,7 @@ export default function Example() {
                           <br />
                           2. 5分：可以在中国互联网和媒体上公开发表的文章。
                           <br />
+                          <br />
                           你的任务： <br />
                           1.
                           根据新闻标题和摘要，对重要性、实际性、相关性、合规性分别进行打分。
@@ -135,12 +142,20 @@ export default function Example() {
                           以JSON形式返回给我这项新闻的各项打分，形式例子如下：
                           <br />
                           {"{"}
+                          <br />
                           {'"importance": "6",'}
+                          <br />
                           {'"actuality": "5",'}
+                          <br />
                           {'"relevance": "5",'}
+                          <br />
                           {'"legality": "5",'}
+                          <br />
                           {'"final_score": "21"'}
+                          <br />
                           {"}"}
+                          <br />
+                          <br />
                           <p>你需要评估的新闻如下：</p>
                           <p>Title: {"{news.title}"}</p>
                           <p>Summary: {"{news.summary}"}</p>

@@ -20,7 +20,12 @@ export default async function Example(props) {
     }
 
     const data = await res.json();
-    console.log(data);
+    console.log(
+      `读取 ${requestBody.category} 数据,获取到${data.length}条数据.`
+    );
+    // for (let i = 0; i < data.length; i++) {
+    //   console.log(data[i]["title"]);
+    // }
     return data;
   }
 
