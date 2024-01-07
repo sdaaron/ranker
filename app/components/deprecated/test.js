@@ -1,4 +1,4 @@
-import ImageWithFallback from "./imageFallback";
+import ImageWithFallback from "../imageFallback";
 export default async function Example(props) {
   return (
     <>

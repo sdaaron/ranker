@@ -1,7 +1,7 @@
 "use client";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Disclosure } from "@headlessui/react";
-import MySignInButton from "./mySignInButton";
+import MySignInButton from "../mySignInButton";
 export default function Example() {
   const { isSignedIn } = useUser();
 
