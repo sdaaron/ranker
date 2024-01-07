@@ -1,6 +1,7 @@
 "use client";
-import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 import { Disclosure } from "@headlessui/react";
+import MySignInButton from "./mySignInButton";
 export default function Example() {
   const { isSignedIn } = useUser();
 
@@ -46,7 +47,7 @@ export default function Example() {
                     {isSignedIn ? (
                       <UserButton afterSignOutUrl="/" />
                     ) : (
-                      <SignInButton className="rounded-full bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" />
+                      <MySignInButton />
                     )}
                   </div>
                 </div>
