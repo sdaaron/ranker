@@ -1,14 +1,14 @@
 import Banner from "./components/banner";
 import Feed from "./components/feed";
 import Footer from "./components/footer";
-// import Modal from "./components/modal";
-import Nav from "./components/navigation";
+import Navbar from "./components/navbar";
+
 export default async function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-zinc-50">
       {/* <Modal /> */}
-
-      <Nav />
+      <Navbar />
+      {/* <Nav /> */}
       <Banner />
       <div className="body-section lg:px-10 lg:py-6 md:px-4 md:py-5 sm:px-3 sm:py-3">
         <div className="content-block">

@@ -42,7 +42,6 @@ export default function Example() {
                 </div>
                 <div className="flex items-center absolute right-1 top-1/2 transform translate-y-[-50%]">
                   <div className="header">
-                    {/* 其他内容 */}
                     {isSignedIn ? (
                       <UserButton afterSignOutUrl="/" />
                     ) : (
