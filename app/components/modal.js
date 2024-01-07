@@ -52,11 +52,11 @@ export default function Example() {
                     <div className="mt-3 text-center sm:mt-5">
                       <Dialog.Title
                         as="h3"
-                        className="text-2xl font-semibold leading-6 text-gray-900"
+                        className="text-2xl font-semibold leading-6 text-gray-900 mb-5"
                       >
                         Agent Prompt
                       </Dialog.Title>
-                      <div className="mt-2 lg:p-10 ug:px-20 lg:px-16 md:p-10 md:px-20 sm:py-1 sm:px-2">
+                      <div className="mt-2 lg:p-10 ug:px-20 lg:px-16 md:p-10 md:px-20  sm:px-4 sm:py-8">
                         <p className="text-xs font-semibold text-left text-gray-500">
                           你是一个AI新闻编辑员，你的职责是为中国读者编辑今日的重要新闻。
                           <br />

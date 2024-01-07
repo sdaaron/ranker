@@ -1,0 +1,50 @@
+/* 定义滚动动画 */
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* 应用动画到每个列表项 */
+.scroll-list-item {
+  animation: scrollAnimation 20s linear infinite;
+}
+
+/* 为每个列表项设置不同的动画延迟 */
+.scroll-list-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.scroll-list-item:nth-child(2) {
+  animation-delay: 2s;
+}
+.scroll-list-item:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.scroll-list-item:nth-child(4) {
+  animation-delay: 6s;
+}
+.scroll-list-item:nth-child(5) {
+  animation-delay: 8s;
+}
+.scroll-list-item:nth-child(6) {
+  animation-delay: 10s;
+}
+
+.scroll-list-item:nth-child(7) {
+  animation-delay: 12s;
+}
+.scroll-list-item:nth-child(8) {
+  animation-delay: 14s;
+}
+.scroll-list-item:nth-child(9) {
+  animation-delay: 16s;
+}
+
+.scroll-list-item:nth-child(10) {
+  animation-delay: 18s;
+}
+/* 以此类推... */

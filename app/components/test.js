@@ -1,53 +1,14 @@
-// import { useState } from "react";
 import ImageWithFallback from "./imageFallback";
-import ModalButton from "./modal";
-// import "./scrollAnimation.css";
 export default async function Example(props) {
-  async function getData() {
-    const requestBody = {
-      category: props.category ? props.category : "NULL",
-    };
-    const res = await fetch("https://api.ranker.cc/news", {
-      // const res = await fetch("http://0.0.0.0:8000/news", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestBody),
-      next: { revalidate: 1 },
-    });
-
-    if (!res.ok) {
-      console.log(requestBody);
-      throw new Error("Failed to fetch data");
-    }
-
-    const data = await res.json();
-    console.log(
-      `读取 ${requestBody.category} 数据,获取到${data.length}条数据.`
-    );
-    return data;
-  }
-
-  const articles = await getData();
   return (
     <>
-      <div className="flow-root sm:m-1 md:m-0 lg:m-0 bg-white rounded-xl z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
-        <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
-          <img src="/logo.png" className="h-4 mr-1"></img>
-          <h3 className="font-semibold leading-6 text-gray-900 text-center">
-            {props.category ? props.category : "NULL"}
-          </h3>
-          <ModalButton />
-        </div>
+      <div className="flex sm:m-1 md:m-0 lg:m-0 bg-white rounded-xl z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
+        <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center"></div>
 
-        <div className="feed-container p-5 flex flex-col justify-evenly">
-          <ul
-            role="list"
-            className="grid grid-rows-10 grid-auto-rows min-auto flex-grow"
-          >
+        <div className="feed-container p-5  bg-blue-200 h-full flex-grow">
+          <ul role="list" className="h-full grid grid-rows-10 bg-lime-200">
             {articles.map((articleItem, articleItemIdx) => (
-              <li key={articleItemIdx} className="row-span-1 scroll-list-item">
+              <li key={articleItemIdx} className=" row-span-1">
                 <div className="relative py-2">
                   {articleItemIdx !== articles.length - 1 ? (
                     <span
@@ -56,7 +17,6 @@ export default async function Example(props) {
                     />
                   ) : null}
                   <div className="relative flex items-start space-x-3">
-                    {/* {articleItem.type === "article" ?  */}
                     <>
                       <div className="relative h-10 w-10">
                         <ImageWithFallback
@@ -97,15 +57,8 @@ export default async function Example(props) {
                             </p>
                           </a>
                         </div>
-
-                        {/* <div className="mt-2 text-xs text-gray-700 hover:underline line-clamp-2">
-                        <a href={articleItem.source_url}>
-                          <p>{articleItem.summary}</p>
-                        </a>
-                      </div> */}
                       </div>
                     </>
-                    {/* : null} */}
                   </div>
                 </div>
               </li>
