@@ -6,8 +6,8 @@ export default async function Example(props) {
     const requestBody = {
       category: props.category ? props.category : "NULL",
     };
-    const res = await fetch("https://api.ranker.cc/news", {
-      // const res = await fetch("http://0.0.0.0:8000/news", {
+    // const res = await fetch("https://api.ranker.cc/news", {
+    const res = await fetch("http://0.0.0.0:8000/news", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,12 +25,6 @@ export default async function Example(props) {
     console.log(
       `读取 ${requestBody.category} 数据,获取到${data.length}条数据.`
     );
-    // for (let i = 0; i < data.length; i++) {
-    //   console.log(data[i]["title"]);
-    // }
-    // data.forEach((i) => {
-    //   console.log(i["title"]);
-    // });
     return data;
   }
 
@@ -66,15 +60,15 @@ export default async function Example(props) {
                           src={
                             articleItem.image_url.startsWith("http")
                               ? articleItem.image_url
-                              : "/p8.png"
+                              : "/placeholder3.png"
                           }
                           layout="fill"
                           objectFit="cover" // 从中心裁剪以保持图像比例
                           placeholder="blur" // 使用模糊效果作为加载占位符
-                          blurDataURL={"/p8.png"} // 模糊效果的图像源
+                          blurDataURL={"/placeholder3.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
                           // fallbackSrc="/placeholder.jpeg"
-                          fallbackSrc="/p8.png"
+                          fallbackSrc="/placeholder3.png"
                           objectPosition="left"
                         />
                       </div>
@@ -83,7 +77,7 @@ export default async function Example(props) {
                           <div className="text-sm hover:underline ">
                             <a
                               href={articleItem.source_url}
-                              className="font-medium text-sm hover:text-blue-800 text-blue-600  line-clamp-1 hover:line-clamp-none"
+                              className="font-medium text-sm hover:text-blue-800 text-blue-600  line-clamp-none hover:line-clamp-none"
                             >
                               {articleItem.title}
                             </a>
@@ -94,7 +88,7 @@ export default async function Example(props) {
                         </div>
                         <div className="mt-2 text-xs text-gray-700 overflow-hidden transition-all hover:max-h-96 duration-300">
                           <a href={articleItem.source_url}>
-                            <p className="line-clamp-2 hover:line-clamp-none hover:underline">
+                            <p className="line-clamp-none hover:line-clamp-none hover:underline">
                               {articleItem.summary}
                             </p>
                           </a>

@@ -16,7 +16,6 @@ export default function Example() {
                   <img
                     className="h-10 w-auto px-5 pt-2"
                     src="/logo.png"
-                    // src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Ranker logo"
                   />
                 </div>
