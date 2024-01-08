@@ -32,7 +32,8 @@ export default async function Example(props) {
   const articles = await getData();
   return (
     <>
-      <div className="flow-root bg-white z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-lg">
+      {/* hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 */}
+      <div className="flow-root bg-white z-30 mb-4  hover:shadow-md hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-lg">
         {/* Feed卡片标题栏 */}
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
           <img src="/logo.png" className="h-4 mr-1"></img>
@@ -61,19 +62,18 @@ export default async function Example(props) {
                     <>
                       <div className="relative h-10 w-10">
                         <ImageWithFallback
-                          className="flex  items-center justify-center rounded-lg ring-8 ring-white bg-white"
+                          className="flex  items-center justify-center rounded-lg ring-8 ring-white bg-white object-fill object-left"
                           src={
                             articleItem.image_url.startsWith("http")
                               ? articleItem.image_url
                               : "/placeholder3.png"
                           }
-                          layout="fill"
-                          objectFit="cover" // 从中心裁剪以保持图像比例
+                          fill={true}
                           placeholder="blur" // 使用模糊效果作为加载占位符
                           blurDataURL={"/placeholder3.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
                           fallbackSrc="/placeholder3.png"
-                          objectPosition="left"
+                          sizes="2.5rem"
                         />
                       </div>
                       <div className="min-w-0 flex-1">

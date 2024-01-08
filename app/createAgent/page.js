@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import SubmitModal from "./submitModal";
 export default function Example() {
   const [agentName, setAgentName] = useState("");
   const [agentPrompt, setAgentPrompt] = useState("");
   const [submissionMessage, setSubmissionMessage] = useState(""); // 新增状态
-
+  const [open, setOpen] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -28,6 +29,7 @@ export default function Example() {
       }
 
       setSubmissionMessage("Agent 提交成功！"); // 设置提示消息
+      setOpen(true);
       console.log("Agent created successfully");
 
       // 处理响应
@@ -41,6 +43,7 @@ export default function Example() {
   return (
     <div className="">
       <form onSubmit={handleSubmit} className="">
+        <SubmitModal open={open} setOpen={setOpen} />
         <div className="p-4 flex flex-col justify-evenly items-center ">
           <div className="space-y-10">
             <div className="space-y-10 ">
