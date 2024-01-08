@@ -30,8 +30,8 @@ export default async function Home() {
           <header>
             <div className="max-w-full py-10 pb-15 relative">
               <h1 className="text-3xl font-mono leading-tight tracking-tight text-gray-900 text-center">
-                {formattedDate} · 新闻热榜
-                {/* <p className="text-base my-4 font-thin">{formattedDate}</p> */}
+                今日 · 新闻热榜
+                <p className="text-base my-4 font-thin">{formattedDate}</p>
               </h1>
             </div>
           </header>

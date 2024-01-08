@@ -6,7 +6,6 @@ export default async function Example(props) {
   const formattedDate = "2024-01-08";
   const supabaseURL = process.env.SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_KEY;
-  console.log(supabaseURL, supabaseKey);
   const supabase = createClient(supabaseURL, supabaseKey);
   console.log(props.category, formattedDate);
   const { data, error } = await supabase
@@ -14,7 +13,7 @@ export default async function Example(props) {
     .select()
     .eq("category", props.category);
   // .eq("publish_date", formattedDate);
-  console.log("读取supabase数据，获取到： ", data, error);
+  // console.log("读取supabase数据，获取到： ", data, error);
   const articles = data.slice(-10);
 
   return (
