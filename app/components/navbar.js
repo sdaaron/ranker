@@ -33,7 +33,7 @@ export default function Example() {
                 </div>
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-10 w-auto px-5 pt-2"
+                    className="h-10 w-auto md:px-5 pt-2 sm:px-2"
                     src="/logo.png"
                     alt="Ranker logo"
                   />

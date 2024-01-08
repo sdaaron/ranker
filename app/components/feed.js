@@ -14,7 +14,7 @@ export default async function Example(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(requestBody),
-      next: { revalidate: 60 },
+      next: { revalidate: 6 },
     });
 
     if (!res.ok) {
