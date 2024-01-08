@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Ranker",
-  description: "你的大语言模型信息流筛选Agent。",
+  description: "你的信息流规划助手",
 };
 
 export default function RootLayout({ children }) {
