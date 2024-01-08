@@ -70,11 +70,11 @@ export default async function Example(props) {
                               : blurImage
                           }
                           fill={true}
-                          quality={25}
+                          quality={10}
                           placeholder="blur" // 使用模糊效果作为加载占位符
                           blurDataURL={"/transparent_placeholder.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
-                          fallbackSrc="/transparent_placeholder"
+                          fallbackSrc="/transparent_placeholder.png"
                           sizes="2.5rem"
                         />
                       </div>
