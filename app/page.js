@@ -25,17 +25,17 @@ export default async function Home() {
       <Navbar />
       {/* <Nav /> */}
       <Banner />
-      <div className="body-section xl:px-12 lg:py-6 md:px-8 md:py-4 sm:px-3 sm:py-3">
+      <div className="body-section lg:py-6 md:px-8 md:py-4 sm:px-3 sm:py-3">
         <div className="content-block">
           <header>
             <div className="max-w-full py-10 pb-15 relative">
               <h1 className="text-3xl font-mono leading-tight tracking-tight text-gray-900 text-center">
-                今日 · 新闻热榜
+                精选新闻热榜
                 <p className="text-base my-4 font-thin">{formattedDate}</p>
               </h1>
             </div>
           </header>
-          <main className="main-section grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <main className="main-section grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
             <Feed category="politics" display="政治" />
             <Feed category="economy" display="经济" />
             <Feed category="technology" display="科技" />
