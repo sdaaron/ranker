@@ -1,38 +1,27 @@
-// import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+import blurImage from "../../public/transparent_placeholder.png";
 import ImageWithFallback from "./imageFallback";
 import ModalButton from "./modal";
-// import "./scrollAnimation.css";
-import blurImage from "../../public/transparent_placeholder.png";
 export default async function Example(props) {
-  async function getData() {
-    const requestBody = {
-      category: props.category ? props.category : "NULL",
-    };
-    const apiEndpoint = process.env.NEWS_API_ENDPOINT;
-    const res = await fetch(apiEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestBody),
-      next: { revalidate: 1 },
-    });
+  const formattedDate = "2024-01-08";
 
-    if (!res.ok) {
-      console.log(requestBody);
-      throw new Error("Failed to fetch data");
-    }
+  const supabase = createClient(
+    "https://lwgmvausawqeydrcvvff.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Z212YXVzYXdxZXlkcmN2dmZmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNDYxNTQ2MywiZXhwIjoyMDIwMTkxNDYzfQ.rlfd0ugJQ7PHkRzqahG4Gjh5H74d28rD40fDPWIdOeA"
+  );
+  console.log(props.category);
+  console.log(formattedDate);
+  const { data, error } = await supabase
+    .from("news")
+    .select()
+    .eq("category", props.category);
+  // .eq("publish_date", formattedDate);
+  console.log("读取supabase数据，获取到： ", data, error);
+  const articles = data.slice(-10);
 
-    const data = await res.json();
-    console.log(
-      `读取 ${requestBody.category} 数据,获取到${data.length}条数据.`
-    );
-    return data;
-  }
-
-  const articles = await getData();
   return (
     <>
+      {}
       {/* hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 */}
       <div className="flow-root bg-white z-30 mb-4  hover:shadow-md hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-lg">
         {/* Feed卡片标题栏 */}
@@ -89,7 +78,8 @@ export default async function Example(props) {
                             </a>
                           </div>
                           <p className="mt-0.5 text-sm text-gray-500">
-                            {articleItem.source_name} 发布于 {articleItem.date}
+                            {articleItem.source_name} 发布于{" "}
+                            {articleItem.publish_date}
                           </p>
                         </div>
                         <div className="mt-2 text-xs text-gray-700 overflow-hidden transition-all hover:max-h-96 duration-300">
