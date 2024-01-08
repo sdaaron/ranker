@@ -25,7 +25,7 @@ export default async function Home() {
       <Navbar />
       {/* <Nav /> */}
       <Banner />
-      <div className="body-section lg:px-10 lg:py-6 md:px-4 md:py-5 sm:px-3 sm:py-3 ug:px-20">
+      <div className="body-section xl:px-20 lg:py-6 md:px-8 md:py-4 sm:px-3 sm:py-3">
         <div className="content-block">
           <header>
             <div className="max-w-full py-10 pb-15 relative">
@@ -35,7 +35,7 @@ export default async function Home() {
               </h1>
             </div>
           </header>
-          <main className="main-section grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <main className="main-section grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             <Feed category="政治" />
             <Feed category="经济" />
             <Feed category="科技" />
