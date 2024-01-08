@@ -1,12 +1,8 @@
 "use client";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 export default function Example() {
   const [agentName, setAgentName] = useState("");
   const [agentPrompt, setAgentPrompt] = useState("");
-
-  // const api = process.env.AGENT_REQUEST_ENDPOINT;
-  // console.log("apiendpoint is :" + api);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,9 +33,9 @@ export default function Example() {
   };
 
   return (
-    <div className="h-screen">
+    <div className="">
       <form onSubmit={handleSubmit} className="">
-        <div className="h-screen flex flex-col justify-evenly items-center">
+        <div className="p-20 flex flex-col justify-evenly items-center ">
           <div className="space-y-10">
             <div className="space-y-10 ">
               <h2 className="text-2xl font-semibold  text-gray-900">
@@ -86,7 +82,7 @@ export default function Example() {
                   id="about"
                   name="about"
                   rows={3}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full  h-96 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   // defaultValue={""}
                   value={agentPrompt}
                   onChange={(e) => setAgentPrompt(e.target.value)}
@@ -97,65 +93,9 @@ export default function Example() {
                 Prompt，可以写多段Prompt，每段Prompt以空行分隔。
               </p>
             </div>
-
-            <div className="col-span-full">
-              <label
-                htmlFor="photo"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Agent 头像
-              </label>
-              <div className="mt-2 flex items-center gap-x-3">
-                <UserCircleIcon
-                  className="h-12 w-12 text-gray-300"
-                  aria-hidden="true"
-                />
-                <button
-                  type="button"
-                  className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                >
-                  上传
-                </button>
-              </div>
-            </div>
-
-            <div className="col-span-full">
-              <label
-                htmlFor="cover-photo"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Agent 封面图片
-              </label>
-              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                <div className="text-center">
-                  <PhotoIcon
-                    className="mx-auto h-12 w-12 text-gray-300"
-                    aria-hidden="true"
-                  />
-                  <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                    <label
-                      htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                    >
-                      <span>上传图片</span>
-                      <input
-                        id="file-upload"
-                        name="file-upload"
-                        type="file"
-                        className="sr-only"
-                      />
-                    </label>
-                    <p className="pl-1">或者将图片拖拽至此</p>
-                  </div>
-                  <p className="text-xs leading-5 text-gray-600">
-                    PNG, JPG, GIF 最高10MB，非必须
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div className="flex items-center justify-evenly  gap-x-10">
+          <div className="flex items-center justify-evenly gap-x-20 mt-20">
             <button
               type="button"
               className="text-sm font-semibold leading-6 text-gray-900"
