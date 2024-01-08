@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inter.className}>
           {children}
-          <SpeedInsights />
           <Analytics />
+          <SpeedInsights />
         </body>
       </html>
     </ClerkProvider>
