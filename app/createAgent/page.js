@@ -41,14 +41,6 @@ export default function Example() {
   return (
     <div className="">
       <form onSubmit={handleSubmit} className="">
-        {submissionMessage && (
-          <div className="rounded-md bg-green-50 p-4">
-            <div className="m-4 text-lg text-center text-green-700">
-              <p>{submissionMessage}</p>
-            </div>
-          </div>
-        )}
-
         <div className="p-4 flex flex-col justify-evenly items-center ">
           <div className="space-y-10">
             <div className="space-y-10 ">
@@ -56,9 +48,7 @@ export default function Example() {
                 Agent 申请
               </h2>
               <p className="text-sm  text-gray-600">
-                由于每个用户单独创建Agent开销过大，我们目前接受提交Agent申请。
-                <br></br>
-                当同类请求达到一定数量时，我们会为您创建Agent。
+                由于每个用户单独创建Agent开销过大，我们目前接受提交Agent申请。当同类请求达到一定数量时，我们会为您创建Agent。
               </p>
             </div>
 
@@ -127,6 +117,13 @@ export default function Example() {
           </div>
         </div>
       </form>
+      {submissionMessage && (
+        <div className="rounded-md bg-green-50 p-4">
+          <div className="m-4 text-lg text-center text-green-700">
+            <p>{submissionMessage}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
