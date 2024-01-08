@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+
 export default function Example() {
   const [agentName, setAgentName] = useState("");
   const [agentPrompt, setAgentPrompt] = useState("");
+  const [submissionMessage, setSubmissionMessage] = useState(""); // 新增状态
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,9 +27,13 @@ export default function Example() {
         throw new Error("Network response was not ok");
       }
 
+      setSubmissionMessage("Agent 提交成功！"); // 设置提示消息
+      console.log("Agent created successfully");
+
       // 处理响应
       console.log("Agent created successfully");
     } catch (error) {
+      setSubmissionMessage("提交Agent失败: " + error); // 设置错误提示
       console.error("Failed to create agent:", error);
     }
   };
@@ -35,6 +41,14 @@ export default function Example() {
   return (
     <div className="">
       <form onSubmit={handleSubmit} className="">
+        {submissionMessage && (
+          <div className="rounded-md bg-green-50 p-4">
+            <div className="m-4 text-lg text-center text-green-700">
+              <p>{submissionMessage}</p>
+            </div>
+          </div>
+        )}
+
         <div className="p-20 flex flex-col justify-evenly items-center ">
           <div className="space-y-10">
             <div className="space-y-10 ">
