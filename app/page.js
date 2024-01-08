@@ -36,21 +36,21 @@ export default async function Home() {
             </div>
           </header>
           <main className="main-section grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            <Feed category="politics" />
-            <Feed category="economy" />
-            <Feed category="technology" />
-            <Feed category="military" />
-            <Feed category="culture" />
-            <Feed category="society" />
-            <Feed category="ai" />
-            <Feed category="computer" />
-            <Feed category="automobile" />
-            <Feed category="entertainment" />
-            <Feed category="finance" />
-            <Feed category="industry" />
-            <Feed category="sports" />
-            <Feed category="education" />
-            <Feed category="health" />
+            <Feed category="politics" display="政治" />
+            <Feed category="economy" display="经济" />
+            <Feed category="technology" display="科技" />
+            <Feed category="military" display="军事" />
+            <Feed category="culture" display="文化" />
+            <Feed category="society" display="社会" />
+            <Feed category="ai" display="人工智能" />
+            <Feed category="computer" display="计算机" />
+            <Feed category="automobile" display="汽车" />
+            <Feed category="entertainment" display="娱乐" />
+            <Feed category="finance" display="金融" />
+            <Feed category="industry" display="工业" />
+            <Feed category="sports" display="体育" />
+            <Feed category="education" display="教育" />
+            <Feed category="health" display="健康" />
           </main>
         </div>
       </div>
