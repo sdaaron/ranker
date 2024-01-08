@@ -4,13 +4,11 @@ import ImageWithFallback from "./imageFallback";
 import ModalButton from "./modal";
 export default async function Example(props) {
   const formattedDate = "2024-01-08";
-
-  const supabase = createClient(
-    "https://lwgmvausawqeydrcvvff.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx3Z212YXVzYXdxZXlkcmN2dmZmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNDYxNTQ2MywiZXhwIjoyMDIwMTkxNDYzfQ.rlfd0ugJQ7PHkRzqahG4Gjh5H74d28rD40fDPWIdOeA"
-  );
-  console.log(props.category);
-  console.log(formattedDate);
+  const supabaseURL = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_KEY;
+  console.log(supabaseURL, supabaseKey);
+  const supabase = createClient(supabaseURL, supabaseKey);
+  console.log(props.category, formattedDate);
   const { data, error } = await supabase
     .from("news")
     .select()
