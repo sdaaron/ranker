@@ -32,7 +32,7 @@ export default async function Example(props) {
   const articles = await getData();
   return (
     <>
-      <div className="flow-root bg-white z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200 sm:rounded-sm md:rounded-lg">
+      <div className="flow-root bg-white z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-lg">
         {/* Feed卡片标题栏 */}
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
           <img src="/logo.png" className="h-4 mr-1"></img>
