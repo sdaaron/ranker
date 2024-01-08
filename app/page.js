@@ -45,27 +45,14 @@ export default async function Home() {
             <Feed category="人工智能" />
             <Feed category="计算机" />
             <Feed category="汽车" />
-            <Feed category="工业" />
-            <Feed category="金融" />
             <Feed category="娱乐" />
+            <Feed category="金融" />
+            <Feed category="工业" />
             <Feed category="体育" />
             <Feed category="教育" />
             <Feed category="健康" />
           </main>
         </div>
-
-        {/* <div className="content-block">
-          <header>
-            <div className="max-w-full py-10 pb-15">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 text-center">
-                今日 · 主题热榜
-              </h1>
-            </div>
-          </header>
-
-          <main className="main-section  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          </main>
-        </div> */}
       </div>
       <Footer />
     </main>

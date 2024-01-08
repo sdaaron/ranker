@@ -32,7 +32,8 @@ export default async function Example(props) {
   const articles = await getData();
   return (
     <>
-      <div className="flow-root sm:m-1 md:m-0 lg:m-0 bg-white rounded-xl z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200">
+      <div className="flow-root bg-white z-30 mb-4 hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 hover:shadow-sm hover:ring-1 hover:ring-gray-200 sm:rounded-sm md:rounded-lg">
+        {/* Feed卡片标题栏 */}
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
           <img src="/logo.png" className="h-4 mr-1"></img>
           <h3 className="font-semibold leading-6 text-gray-900 text-center">
@@ -41,6 +42,7 @@ export default async function Example(props) {
           <ModalButton />
         </div>
 
+        {/* Feed卡片内容栏 */}
         <div className="feed-container p-5 flex flex-col justify-evenly">
           <ul
             role="list"
@@ -79,7 +81,7 @@ export default async function Example(props) {
                           <div className="text-sm hover:underline ">
                             <a
                               href={articleItem.source_url}
-                              className="font-medium text-sm hover:text-blue-800 text-blue-600  line-clamp-none hover:line-clamp-none"
+                              className="text-sm hover:text-blue-800 text-blue-600  line-clamp-none hover:line-clamp-none "
                             >
                               {articleItem.title}
                             </a>
@@ -90,7 +92,7 @@ export default async function Example(props) {
                         </div>
                         <div className="mt-2 text-xs text-gray-700 overflow-hidden transition-all hover:max-h-96 duration-300">
                           <a href={articleItem.source_url}>
-                            <p className="line-clamp-none hover:line-clamp-none hover:underline">
+                            <p className="line-clamp-none hover:line-clamp-none hover:underline ">
                               {articleItem.summary}
                             </p>
                           </a>
