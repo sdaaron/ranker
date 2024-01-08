@@ -2,6 +2,7 @@
 import ImageWithFallback from "./imageFallback";
 import ModalButton from "./modal";
 // import "./scrollAnimation.css";
+import blurImage from "../../public/transparent_placeholder.png";
 export default async function Example(props) {
   async function getData() {
     const requestBody = {
@@ -14,7 +15,7 @@ export default async function Example(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(requestBody),
-      next: { revalidate: 6 },
+      next: { revalidate: 1 },
     });
 
     if (!res.ok) {
@@ -62,17 +63,18 @@ export default async function Example(props) {
                     <>
                       <div className="relative h-10 w-10">
                         <ImageWithFallback
-                          className="flex  items-center justify-center rounded-lg ring-8 ring-white bg-white object-fill object-left"
+                          className="flex  items-center justify-center rounded-lg ring-8 ring-white bg-white object-cover object-center"
                           src={
                             articleItem.image_url.startsWith("http")
                               ? articleItem.image_url
-                              : "/placeholder3.png"
+                              : blurImage
                           }
                           fill={true}
+                          quality={25}
                           placeholder="blur" // 使用模糊效果作为加载占位符
-                          blurDataURL={"/placeholder3.png"} // 模糊效果的图像源
+                          blurDataURL={"/transparent_placeholder.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
-                          fallbackSrc="/placeholder3.png"
+                          fallbackSrc="/transparent_placeholder"
                           sizes="2.5rem"
                         />
                       </div>

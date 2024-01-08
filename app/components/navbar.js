@@ -1,10 +1,8 @@
 "use client";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { Disclosure } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-// import MySignInButton from "./mySignInButton";
-import { SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
