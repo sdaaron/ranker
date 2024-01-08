@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# V1 版本 roadmap:
 
-## Getting Started
+1. 完成了整体功能开发、样式设计、导航栏、Feed 板块设置、prompt 展示、初版新闻后端（基于文件系统）
 
-First, run the development server:
+# V2 版本：
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. 实现图片的加载中状态和 FallbackImage
+2. 实现不同板块不同 Prompt
+3. 实现板块时间线功能
+4. 实现往日新闻展示功能，用户下拽自动加载前一天的新闻
+5. 实现数据库管理
+6. 实现用户自定义 Prompt 提交功能
+7. 实现登录、注册功能
+8. 实现响应式导航栏
+9. 实现更加美观的移动端 Grid List
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# V3 版本：
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. 搜索功能
+2. 增加更多板块
+3. 做一个用户自定义删除或增加板块的功能
+4. 实现国内上线，资源托管、网站备案
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# V4 版本：
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. 去重功能
+2. 基于事件的订阅功能

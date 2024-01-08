@@ -25,7 +25,7 @@ export default async function Home() {
       <Navbar />
       {/* <Nav /> */}
       <Banner />
-      <div className="body-section xl:px-20 lg:py-6 md:px-8 md:py-4 sm:px-3 sm:py-3">
+      <div className="body-section xl:px-12 lg:py-6 md:px-8 md:py-4 sm:px-3 sm:py-3">
         <div className="content-block">
           <header>
             <div className="max-w-full py-10 pb-15 relative">
