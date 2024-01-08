@@ -38,24 +38,24 @@ export default function Example() {
                     alt="Ranker logo"
                   />
                 </div>
-                <div className="hidden md:ml-6 md:flex md:space-x-8">
+                <div className="hidden md:ml-6 md:flex md:space-x-8 font-mono">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="/"
-                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-base font-medium text-gray-900"
+                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-base  text-gray-900 "
                   >
                     新闻热榜
                   </a>
 
                   <a
                     href="notfound"
-                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-mono text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     网址导航
                   </a>
                   <a
                     href="notfound"
-                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base  font-mono text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     实用工具
                   </a>
@@ -116,7 +116,7 @@ export default function Example() {
           </div>
 
           <Disclosure.Panel className="md:hidden">
-            <div className="space-y-1 pb-3 pt-2">
+            <div className="space-y-1 pb-3 pt-2 font-mono">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"

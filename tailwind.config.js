@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        120: "30rem",
+        150: "40rem",
+        200: "50rem", // 添加 h-200 类，等于 200px
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -18,6 +23,15 @@ module.exports = {
         lg: "1000px",
         ug: "1500px",
         xl: "1800px",
+      },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+      },
+      animation: {
+        scroll: "scroll 20s linear infinite",
       },
     },
   },

@@ -7,8 +7,8 @@ export default async function Example(props) {
     const requestBody = {
       category: props.category ? props.category : "NULL",
     };
-    const res = await fetch("https://api.ranker.cc/news", {
-      // const res = await fetch("http://0.0.0.0:8000/news", {
+    const apiEndpoint = process.env.NEWS_API_ENDPOINT;
+    const res = await fetch(apiEndpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default async function Example(props) {
             className="grid grid-rows-10 grid-auto-rows min-auto flex-grow"
           >
             {articles.map((articleItem, articleItemIdx) => (
-              <li key={articleItemIdx} className="row-span-1 scroll-list-item">
+              <li key={articleItemIdx} className="row-span-1">
                 <div className="relative py-2">
                   {articleItemIdx !== articles.length - 1 ? (
                     <span
@@ -56,7 +56,6 @@ export default async function Example(props) {
                     />
                   ) : null}
                   <div className="relative flex items-start space-x-3">
-                    {/* {articleItem.type === "article" ?  */}
                     <>
                       <div className="relative h-10 w-10">
                         <ImageWithFallback
@@ -71,7 +70,6 @@ export default async function Example(props) {
                           placeholder="blur" // 使用模糊效果作为加载占位符
                           blurDataURL={"/placeholder3.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
-                          // fallbackSrc="/placeholder.jpeg"
                           fallbackSrc="/placeholder3.png"
                           objectPosition="left"
                         />
@@ -97,15 +95,8 @@ export default async function Example(props) {
                             </p>
                           </a>
                         </div>
-
-                        {/* <div className="mt-2 text-xs text-gray-700 hover:underline line-clamp-2">
-                        <a href={articleItem.source_url}>
-                          <p>{articleItem.summary}</p>
-                        </a>
-                      </div> */}
                       </div>
                     </>
-                    {/* : null} */}
                   </div>
                 </div>
               </li>
