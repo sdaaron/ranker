@@ -40,9 +40,9 @@ export default async function Home() {
             <Feed category="economy" display="经济" />
             <Feed category="technology" display="科技" />
             <Feed category="military" display="军事" />
+            <Feed category="ai" display="人工智能" />
             <Feed category="culture" display="文化" />
             <Feed category="society" display="社会" />
-            <Feed category="ai" display="人工智能" />
             <Feed category="computer" display="计算机" />
             <Feed category="automobile" display="汽车" />
             <Feed category="entertainment" display="娱乐" />
