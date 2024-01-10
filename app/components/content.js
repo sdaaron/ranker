@@ -23,22 +23,22 @@ export default async function Content(props) {
   return (
     <div className="content-block mb-20">
       <header>
-        <div className="mx-auto max-w-3xl py-10 pb-15 relative text-center">
+        <div className="pb-15 relative mx-auto max-w-3xl py-10 text-center">
           {/* <h1 className="bg-gradient-to-r from-black via-blue-800 to-emerale-900 bg-clip-text text-3xl font-extrabold text-transparent">
             精选新闻热榜
             <p className="text-lg my-4 font-bold">{date}</p>
           </h1> */}
-          <h1 class="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+          <h1 class="mb-4 font-extrabold text-gray-900 dark:text-white sm:text-3xl md:text-5xl lg:text-6xl ">
+            <span class="bg-gradient-to-r from-sky-400 to-emerald-600 bg-clip-text text-transparent">
               精选
             </span>
             {" · "}
             新闻热榜
-            <p className="text-2xl my-4 font-bold">{date}</p>
+            <p className="my-4 font-bold sm:text-xl md:text-2xl">{date}</p>
           </h1>
         </div>
       </header>
-      <main className="main-section grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+      <main className="main-section grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {categoryList.map(([category, display]) => (
           <Feed
             key={category}

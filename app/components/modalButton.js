@@ -10,7 +10,7 @@ export default function Example() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 rounded-lg  px-2 py-1  mx-4 text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100"
+        className="absolute right-0 top-1/2 mx-4 -translate-y-1/2 transform  rounded-lg bg-indigo-50  px-2 py-1 text-xs font-semibold text-indigo-600 hover:bg-indigo-100"
       >
         Prompt
       </button>
@@ -40,7 +40,7 @@ export default function Example() {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full max-w-7xl sm:p-6">
+                <Dialog.Panel className="relative max-w-7xl transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:p-6">
                   <div>
                     <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full">
                       {/* <CheckIcon
@@ -52,12 +52,12 @@ export default function Example() {
                     <div className="mt-3 text-center sm:mt-5">
                       <Dialog.Title
                         as="h3"
-                        className="text-2xl font-semibold leading-6 text-gray-900 mb-5"
+                        className="mb-5 text-2xl font-semibold leading-6 text-gray-900"
                       >
                         Agent Prompt
                       </Dialog.Title>
-                      <div className="mt-2 lg:p-10 ug:px-20 lg:px-16 md:p-10 md:px-20  sm:px-4 sm:py-8">
-                        <p className="text-xs font-semibold text-left text-gray-500">
+                      <div className="ug:px-20 mt-2 sm:px-4 sm:py-8 md:p-10 md:px-20  lg:p-10 lg:px-16">
+                        <p className="text-left text-xs font-semibold text-gray-500">
                           你是一个AI新闻编辑员，你的职责是为中国读者编辑今日的重要新闻。
                           <br />
                           你需要从以上3条今日新闻中，按照优先级筛选选出5条今日优先级最高的新闻。

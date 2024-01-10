@@ -21,21 +21,21 @@ export default async function Example(props) {
 
   return (
     <>
-      <div className="flow-root bg-white z-30 mb-4   hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-3xl  hover:shadow-gray-200 hover:shadow-2xl">
+      <div className="z-30 mb-4 flow-root bg-white hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200  sm:rounded-none md:rounded-3xl">
         {/* Feed卡片标题栏 */}
-        <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
-          <img src="/logo.png" className="h-4 mr-1"></img>
-          <h3 className="font-semibold leading-6 text-gray-900 text-center">
+        <div className=" relative flex flex-row items-center justify-center rounded-t-3xl border-b border-gray-100 py-3 sm:px-6">
+          <img src="/logo.png" className="mr-1 h-4"></img>
+          <h3 className="text-center font-semibold leading-6 text-gray-900">
             {props.display}
           </h3>
           <ModalButton />
         </div>
 
         {/* Feed卡片内容栏 */}
-        <div className="feed-container p-8 flex flex-col justify-evenly">
+        <div className="feed-container flex flex-col justify-evenly p-8">
           <ul
             role="list"
-            className="grid grid-rows-10 grid-auto-rows min-auto flex-grow"
+            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow"
           >
             {articles.map((articleItem, articleItemIdx) => (
               <li key={articleItemIdx} className="row-span-1">
@@ -50,7 +50,7 @@ export default async function Example(props) {
                     <>
                       <div className="relative h-10 w-10">
                         <ImageWithFallback
-                          className="flex  items-center justify-center rounded-lg ring-8 ring-white bg-white object-cover object-center"
+                          className="flex  items-center justify-center rounded-lg bg-white object-cover object-center ring-8 ring-white"
                           src={
                             articleItem.image_url.startsWith("http")
                               ? articleItem.image_url
@@ -70,7 +70,7 @@ export default async function Example(props) {
                           <div className="text-sm hover:underline ">
                             <a
                               href={articleItem.source_url}
-                              className="text-sm hover:text-blue-800 text-blue-600  line-clamp-none hover:line-clamp-none "
+                              className="line-clamp-none text-sm text-blue-600  hover:line-clamp-none hover:text-blue-800 "
                             >
                               {articleItem.title}
                             </a>
@@ -80,7 +80,7 @@ export default async function Example(props) {
                             {articleItem.publish_date}
                           </p>
                         </div>
-                        <div className="mt-2 text-xs text-gray-700 overflow-hidden transition-all hover:max-h-96 duration-300">
+                        <div className="mt-2 overflow-hidden text-xs text-gray-700 transition-all duration-300 hover:max-h-96">
                           <a href={articleItem.source_url}>
                             <p className="line-clamp-none hover:line-clamp-none hover:underline ">
                               {articleItem.summary}

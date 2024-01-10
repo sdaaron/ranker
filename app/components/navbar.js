@@ -31,12 +31,12 @@ export default function Example() {
                 </div>
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-10 w-auto md:px-3 sm:px-2"
+                    className="h-10 w-auto sm:px-2 md:px-3"
                     src="/logo.png"
                     alt="Ranker logo"
                   />
                 </div>
-                <div className="hidden md:ml-6 md:flex md:space-x-8 font-mono">
+                <div className="hidden font-mono md:ml-6 md:flex md:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="/"
@@ -47,25 +47,25 @@ export default function Example() {
 
                   <a
                     href="notfound"
-                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base font-mono text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
                   >
                     网址导航
                   </a>
                   <a
                     href="notfound"
-                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base  font-mono text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base  text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
                   >
                     实用工具
                   </a>
                   <a
                     href="notfound"
-                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base  font-mono text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base  text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
                   >
                     学习资源
                   </a>
                   <a
                     href="notfound"
-                    className="pointer-events-none opacity-50 inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-base  font-mono text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base  text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
                   >
                     我的订阅
                   </a>
@@ -83,7 +83,7 @@ export default function Example() {
                   <Link href="/createAgent">
                     <button
                       type="button"
-                      className="relative flex gap-x-1.5 px-4 py-2 rounded-full max-w-sm w-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none text-white text-base font-bold shadow-sm"
+                      className="relative flex w-full max-w-sm gap-x-1.5 rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 px-4 py-2 text-base font-bold text-white shadow-sm hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none"
                     >
                       <PlusIcon
                         className="-ml-0.5 h-5 w-5"
@@ -93,7 +93,7 @@ export default function Example() {
                     </button>
                   </Link>
                 </div>
-                <div className="flex flex-shrink-0 items-center gap-4 ml-4">
+                <div className="ml-4 flex flex-shrink-0 items-center gap-4">
                   {/* <button
                     type="button"
                     className="hidden md:flex relative rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 "
@@ -112,7 +112,7 @@ export default function Example() {
                         <SignInButton>
                           <button
                             type="button"
-                            className="flex max-w-sm w-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none text-white text-base font-bold shadow-sm rounded-full mx-auto my-auto py-2 px-4"
+                            className="mx-auto my-auto flex w-full max-w-sm rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 px-4 py-2 text-base font-bold text-white shadow-sm hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none"
                           >
                             <div className="col-span-2">登录</div>
                           </button>
