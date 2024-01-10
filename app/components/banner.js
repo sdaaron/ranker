@@ -53,13 +53,12 @@ export default function Example() {
           </svg>
           100 个 AI 智能体，每天帮你阅读 1万+ 信息源！
         </p>
-        <a
-          href="landing"
+        {/* <a
+          href="bannerPage"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           了解更多
-          {/* <span aria-hidden="true">&rarr;</span> */}
-        </a>
+        </a> */}
       </div>
       <div className="flex flex-1 justify-end">
         <button

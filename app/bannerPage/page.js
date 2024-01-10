@@ -69,8 +69,8 @@ export default function Example() {
                     alt="App screenshot"
                     width={2432}
                     height={1442}
-                    placeholder="blur"
-                    blurDataURL={screenshot}
+                    // placeholder="blur"
+                    // blurDataURL={screenshot}
                     className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
                   />
                 </div>

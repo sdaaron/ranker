@@ -23,10 +23,18 @@ export default async function Content(props) {
   return (
     <div className="content-block mb-20">
       <header>
-        <div className="mx-auto max-w-3xl py-10 pb-15 relative font-mono text-center">
-          <h1 className="bg-gradient-to-r from-black via-blue-800 to-emerale-900 bg-clip-text text-3xl font-extrabold text-transparent">
+        <div className="mx-auto max-w-3xl py-10 pb-15 relative text-center">
+          {/* <h1 className="bg-gradient-to-r from-black via-blue-800 to-emerale-900 bg-clip-text text-3xl font-extrabold text-transparent">
             精选新闻热榜
             <p className="text-lg my-4 font-bold">{date}</p>
+          </h1> */}
+          <h1 class="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+              精选
+            </span>
+            {" · "}
+            新闻热榜
+            <p className="text-2xl my-4 font-bold">{date}</p>
           </h1>
         </div>
       </header>
