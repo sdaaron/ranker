@@ -11,6 +11,7 @@ export default async function Home() {
         <Content created_date="2024-01-10" />
         <Content created_date="2024-01-09" />
         <Content created_date="2024-01-08" />
+        {/* comment */}
       </div>
       <Footer />
     </main>
