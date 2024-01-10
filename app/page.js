@@ -35,10 +35,12 @@ export default async function Home() {
       <Navbar />
       <Banner />
       <div className="body-section sm:px-3 sm:py-3 md:px-8 md:py-4">
-        <Content created_date={getFormattedDate(today)} />
+        {/* <Content created_date={getFormattedDate(today)} />
         <Content created_date={getFormattedDate(yesterday)} />
-        <Content created_date={getFormattedDate(dayBeforeYesterday)} />
-
+        <Content created_date={getFormattedDate(dayBeforeYesterday)} /> */}
+        <Content created_date="2024-01-10" />
+        <Content created_date="2024-01-09" />
+        <Content created_date="2024-01-08" />
         <Loadmore />
       </div>
       <Footer />
