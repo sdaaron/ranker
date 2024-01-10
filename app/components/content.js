@@ -19,7 +19,7 @@ export default async function Content(props) {
   ];
 
   const date = props.created_date;
-  console.log("content_date: ", date);
+  //   console.log("content_date: ", date);
   return (
     <div className="content-block mb-20">
       <header>
@@ -28,13 +28,15 @@ export default async function Content(props) {
             精选新闻热榜
             <p className="text-lg my-4 font-bold">{date}</p>
           </h1> */}
-          <h1 class="mb-4 font-extrabold text-gray-900 dark:text-white sm:text-3xl md:text-5xl lg:text-6xl ">
-            <span class="bg-gradient-to-r from-sky-400 to-emerald-600 bg-clip-text text-transparent">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl ">
+            <span className="bg-gradient-to-r from-sky-400 to-emerald-600 bg-clip-text text-transparent">
               精选
             </span>
             {" · "}
             新闻热榜
-            <p className="my-4 font-bold sm:text-xl md:text-2xl">{date}</p>
+            <p className="my-4 text-lg font-bold sm:text-xl md:text-2xl">
+              {date}
+            </p>
           </h1>
         </div>
       </header>

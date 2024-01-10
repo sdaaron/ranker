@@ -4,17 +4,17 @@ import ImageWithFallback from "./imageFallback";
 import ModalButton from "./modalButton";
 export default async function Example(props) {
   const created_date = props.created_date;
-  console.log("created_date: ", created_date);
-  const supabaseURL = process.env.SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_KEY;
-  const supabase = createClient(supabaseURL, supabaseKey);
-  console.log(props.category, created_date);
+  // console.log("created_date: ", created_date);
+  const supabaseURL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabasePublickKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+  const supabase = createClient(supabaseURL, supabasePublickKey);
+  // console.log(props.category, created_date);
   const { data, error } = await supabase
     .from("news")
     .select()
     .eq("category", props.category)
     .eq("created_date", created_date);
-  console.log("读取supabase数据，获取到： ", data, error);
+  // console.log("读取supabase数据，获取到： ", data, error);
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);
