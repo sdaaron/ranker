@@ -3,23 +3,24 @@ import blurImage from "../../public/transparent_placeholder.png";
 import ImageWithFallback from "./imageFallback";
 import ModalButton from "./modal";
 export default async function Example(props) {
-  const formattedDate = "2024-01-08";
+  const created_date = props.created_date;
+  console.log("created_date: ", created_date);
   const supabaseURL = process.env.SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_KEY;
   const supabase = createClient(supabaseURL, supabaseKey);
-  console.log(props.category, formattedDate);
+  console.log(props.category, created_date);
   const { data, error } = await supabase
     .from("news")
     .select()
-    .eq("category", props.category);
-  // .eq("publish_date", formattedDate);
-  // console.log("读取supabase数据，获取到： ", data, error);
+    .eq("category", props.category)
+    .eq("created_date", created_date);
+  console.log("读取supabase数据，获取到： ", data, error);
+  const news = data;
+  if (!news || news.length === 0) return null;
   const articles = data.slice(-10);
 
   return (
     <>
-      {}
-      {/* hover:bg-gradient-to-br hover:from-white hover:to-zinc-50 */}
       <div className="flow-root bg-white z-30 mb-4  hover:shadow-md hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-lg">
         {/* Feed卡片标题栏 */}
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">

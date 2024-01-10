@@ -37,3 +37,19 @@ export default data;
 // }
 
 // const articles = await getData();
+
+// var currentDate = new Date();
+
+// // 格式化年份为两位数
+// var year = currentDate.getFullYear().toString().substr(-2);
+
+// // 格式化月份，确保是两位数
+// var month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+
+// // 格式化日期，确保是两位数
+// var day = currentDate.getDate().toString().padStart(2, "0");
+
+// // 拼接字符串
+// var formattedDate = year + "/" + month + "/" + day;
+
+// console.log(formattedDate);
