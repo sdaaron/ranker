@@ -5,10 +5,10 @@ export default async function Content(props) {
     ["economy", "经济"],
     ["technology", "科技"],
     ["military", "军事"],
-    ["ai", "人工智能"],
-    ["culture", "文化"],
-    ["computer", "计算机"],
     ["finance", "金融"],
+    ["culture", "文化"],
+    ["ai", "人工智能"],
+    ["computer", "计算机"],
     ["new_energy", "新能源"],
     // ["society", "社会"],
     // ["entertainment", "娱乐"],
@@ -23,10 +23,10 @@ export default async function Content(props) {
   return (
     <div className="content-block mb-20">
       <header>
-        <div className="max-w-full py-10 pb-15 relative">
-          <h1 className="text-3xl font-mono leading-tight tracking-tight text-gray-900 text-center">
+        <div className="mx-auto max-w-3xl py-10 pb-15 relative font-mono text-center">
+          <h1 className="bg-gradient-to-r from-black via-blue-800 to-emerale-900 bg-clip-text text-3xl font-extrabold text-transparent">
             精选新闻热榜
-            <p className="text-base my-4 font-thin">{date}</p>
+            <p className="text-lg my-4 font-bold">{date}</p>
           </h1>
         </div>
       </header>

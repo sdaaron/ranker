@@ -10,7 +10,7 @@ export default function Example() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 rounded  px-2 py-1  mx-4 text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 rounded-lg  px-2 py-1  mx-4 text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100"
       >
         Prompt
       </button>

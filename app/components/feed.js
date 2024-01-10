@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import blurImage from "../../public/transparent_placeholder.png";
 import ImageWithFallback from "./imageFallback";
-import ModalButton from "./modal";
+import ModalButton from "./modalButton";
 export default async function Example(props) {
   const created_date = props.created_date;
   console.log("created_date: ", created_date);
@@ -21,7 +21,7 @@ export default async function Example(props) {
 
   return (
     <>
-      <div className="flow-root bg-white z-30 mb-4  hover:shadow-md hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-lg">
+      <div className="flow-root bg-white z-30 mb-4   hover:ring-1 hover:ring-gray-200 sm:rounded-none md:rounded-3xl  hover:shadow-gray-200 hover:shadow-2xl">
         {/* Feed卡片标题栏 */}
         <div className=" relative py-3 sm:px-6 rounded-t-3xl border-b border-gray-100 flex flex-row items-center justify-center">
           <img src="/logo.png" className="h-4 mr-1"></img>
@@ -32,7 +32,7 @@ export default async function Example(props) {
         </div>
 
         {/* Feed卡片内容栏 */}
-        <div className="feed-container p-5 flex flex-col justify-evenly">
+        <div className="feed-container p-8 flex flex-col justify-evenly">
           <ul
             role="list"
             className="grid grid-rows-10 grid-auto-rows min-auto flex-grow"
