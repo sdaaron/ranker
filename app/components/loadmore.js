@@ -1,42 +1,61 @@
-// "use client";
-// import { useState } from "react";
-// import { useInView } from "react-intersection-observer";
-// import Feed from "./feed";
-// // import fetchSupabase from "./fetchSupabase";
-// import Spinner from "./spinner";
-// export default function loadClient() {
-//   const [content, setContent] = useState([]);
-//   const [pagesLoaded, setPagesLoaded] = useState(false);
-//   const { ref, inView } = useInView({
-//     threshold: 0,
-//   });
-
-//   // useEffect(() => {
-//   //   if (inView) {
-//   //     console.log("LoadMore inView!");
-//   //     fetchSupabase("2024-01-09", "politic");
-//   //   }
-//   // }, [inView]);
-
-//   return (
-//     <div ref={ref}>
-//       <div className="flex flex-col items-center justify-evenly">
-//         <Feed category="politic" created_date="2024-01-10" />
-//         <Feed category="politic" created_date="2024-01-10" />
-//         <Feed category="politic" created_date="2024-01-10" />
-//       </div>
-//       <Spinner />
-//     </div>
-//   );
-// }
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import MoreContent from "./moreContent";
 import Spinner from "./spinner";
 
-const loadmore = () => {
-  return (
-    <div>
-      <Spinner />
-    </div>
-  );
-};
+function getFormattedDate(date) {
+  console.log("date: ", date);
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1; // 月份是从 0 开始的
+  let day = date.getDate();
 
-export default loadmore;
+  let formattedDate =
+    year +
+    "-" +
+    String(month).padStart(2, "0") +
+    "-" +
+    String(day).padStart(2, "0");
+
+  return formattedDate;
+}
+
+function getPreviousDay(somedate) {
+  somedate.setDate(somedate.getDate() - 1);
+  return somedate;
+}
+
+export default function LoadMore() {
+  const { ref, inView } = useInView({});
+  const [data, setData] = useState([]);
+  let date = new Date();
+  console.log("intial_date: ", date);
+  date = getPreviousDay(date);
+  console.log("previousDate: ", date);
+  const stopDate = new Date("2024-01-08"); // 停止加载的日期
+  const currentDate = useRef(date); // 使用 useRef 来跟踪当前日期
+
+  useEffect(() => {
+    if (inView && currentDate.current > stopDate) {
+      MoreContent(getFormattedDate(currentDate.current)).then((res) => {
+        setData([...data, res]);
+        currentDate.current = getPreviousDay(currentDate.current);
+      });
+    }
+  }, [inView, data]);
+
+  return (
+    <>
+      {data}
+      {currentDate.current <= stopDate ? (
+        <div className="font-monot flex items-center justify-center text-5xl sm:text-3xl md:text-5xl">
+          <p>Oops...没有更早的新闻了</p>
+        </div>
+      ) : (
+        <div className="flex items-center justify-center" ref={ref}>
+          <Spinner />
+        </div>
+      )}
+    </>
+  );
+}

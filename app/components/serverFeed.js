@@ -1,3 +1,4 @@
+"use server";
 import blurImage from "../../public/transparent_placeholder.png";
 import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./modalButton";
@@ -9,7 +10,6 @@ export default async function Example(props) {
     .select()
     .eq("category", props.category)
     .eq("created_date", created_date);
-  // console.log("读取supabase数据，获取到： ", data, error);
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);

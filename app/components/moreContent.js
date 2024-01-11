@@ -1,6 +1,6 @@
 "use server";
 import Feed from "./Feed";
-export default async function Content(props) {
+export default async function MoreContent(date) {
   const categoryList = [
     ["politics", "政治"],
     ["economy", "经济"],
@@ -13,9 +13,8 @@ export default async function Content(props) {
     ["new_energy", "新能源"],
   ];
 
-  const date = props.created_date;
   return (
-    <div className="content-block mb-20">
+    <div className="content-block mb-20" key={1}>
       <header>
         <div className="pb-15 relative mx-auto max-w-3xl py-10 text-center">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl ">
