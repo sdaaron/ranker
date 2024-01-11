@@ -1,8 +1,8 @@
-import Banner from "./components/banner";
+import Banner from "./components/Banner";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Loadmore from "./components/LoadMore";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 export default async function Home() {
   let today = new Date();
   console.log("today: ", today);

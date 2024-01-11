@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import MoreContent from "./moreContent";
-import Spinner from "./spinner";
+import MoreContent from "./MoreContent";
+import Spinner from "./Spinner";
 
 function getFormattedDate(date) {
   console.log("date: ", date);
@@ -48,7 +48,7 @@ export default function LoadMore() {
     <>
       {data}
       {currentDate.current <= stopDate ? (
-        <div className="font-monot flex items-center justify-center text-5xl sm:text-3xl md:text-5xl">
+        <div className="font-monot flex items-center justify-center py-10 text-5xl sm:text-3xl md:text-5xl">
           <p>Oops...没有更早的新闻了</p>
         </div>
       ) : (
