@@ -3,6 +3,7 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Loadmore from "./components/LoadMore";
 import Navbar from "./components/Navbar";
+// test
 export default async function Home() {
   let today = new Date();
   console.log("today: ", today);
