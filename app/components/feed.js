@@ -1,7 +1,7 @@
 import blurImage from "../../public/transparent_placeholder.png";
 import ImageWithFallback from "./ImageWithFallback";
-import ModalButton from "./ModalButton";
-import supabase from "./SupabaseClient";
+import ModalButton from "./modalButton";
+import supabase from "./supabaseClient";
 export default async function Example(props) {
   const created_date = props.created_date;
   const { data, error } = await supabase
