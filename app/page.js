@@ -38,7 +38,7 @@ export default async function Home() {
         {/* <Content created_date={getFormattedDate(today)} />
         <Content created_date={getFormattedDate(yesterday)} />
         <Content created_date={getFormattedDate(dayBeforeYesterday)} /> */}
-        {/* <Content created_date="2024-01-11" /> */}
+        <Content created_date="2024-01-11" />
         <Content created_date="2024-01-10" />
         <Content created_date="2024-01-09" />
         <Content created_date="2024-01-08" />
