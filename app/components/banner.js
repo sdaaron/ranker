@@ -1,7 +1,6 @@
 "use client";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
-
 export default function Example() {
   // 使用 useState 钩子创建一个状态变量和一个设置该变量的函数
   const [showBanner, setShowBanner] = useState(true);

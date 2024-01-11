@@ -1,7 +1,7 @@
 import Banner from "./components/banner";
 import Content from "./components/content";
 import Footer from "./components/footer";
-import Loadmore from "./components/loadMore";
+import Loadmore from "./components/loadmore";
 import Navbar from "./components/navbar";
 // test
 export default async function Home() {
