@@ -26,9 +26,7 @@ function getPreviousDay(somedate) {
 }
 
 let date = new Date();
-console.log("intial_date: ", date);
 date = getPreviousDay(date);
-console.log("previousDate: ", date);
 
 export default function LoadMore() {
   const { ref, inView } = useInView({});
