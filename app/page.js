@@ -5,8 +5,8 @@ import Loadmore from "./components/loadmore";
 import Navbar from "./components/navbar";
 export default async function Home() {
   let today = new Date();
-  let options = { timeZone: "Asia/Shanghai" };
-  today = today.toLocaleString("zh-CN", options);
+  // let options = { timeZone: "Asia/Shanghai" };
+  // today = today.toLocaleString("zh-CN", options);
 
   console.log("today: ", today);
   function getFormattedDate(date) {
