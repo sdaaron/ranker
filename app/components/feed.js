@@ -1,27 +1,44 @@
 import blurImage from "../../public/transparent_placeholder.png";
 import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./modalButton";
+import MotionDiv from "./motionDiv";
 import supabase from "./supabaseClient";
-export default async function Example(props) {
-  const created_date = props.created_date;
+
+export default async function Example({
+  key,
+  category,
+  display,
+  created_date,
+  index,
+}) {
   const { data, error } = await supabase
     .from("news")
     .select()
-    .eq("category", props.category)
+    .eq("category", category)
     .eq("created_date", created_date);
   // console.log("读取supabase数据，获取到： ", data, error);
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   return (
     <>
-      <div className="z-30 mb-4 flow-root bg-white hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200  sm:rounded-none md:rounded-3xl">
+      <MotionDiv
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1, delay: index * 0.25, ease: "easeInOut" }}
+        className="relative z-30 mb-4 flow-root bg-white hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200  sm:rounded-none md:rounded-3xl"
+      >
         {/* Feed卡片标题栏 */}
         <div className=" relative flex flex-row items-center justify-center rounded-t-3xl border-b border-gray-100 py-3 sm:px-6">
           <img src="/logo.png" className="mr-1 h-4"></img>
           <h3 className="text-center font-semibold leading-6 text-gray-900">
-            {props.display}
+            {display}
           </h3>
           <ModalButton />
         </div>
@@ -90,7 +107,7 @@ export default async function Example(props) {
             ))}
           </ul>
         </div>
-      </div>
+      </MotionDiv>
     </>
   );
 }

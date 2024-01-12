@@ -1,7 +1,8 @@
 import Banner from "./components/banner";
-import Content from "./components/content";
+// import Content from "./components/content";
 import Footer from "./components/footer";
 import Loadmore from "./components/loadmore";
+import MoreContent from "./components/moreContent";
 import Navbar from "./components/navbar";
 export default async function Home() {
   let today = new Date();
@@ -23,12 +24,18 @@ export default async function Home() {
 
     return formattedDate;
   }
+  const data = await MoreContent(getFormattedDate(today));
+
+  console.log("morecontent: ", data);
   return (
     <main className="flex min-h-screen flex-col bg-neutral-50">
       <Navbar />
       <Banner />
       <div className="body-section sm:px-3 sm:py-3 md:px-8 md:py-4">
-        <Content created_date={getFormattedDate(today)} />
+        {/* <MoreContent */}
+
+        <div>{data}</div>
+        {/* <Content created_date={getFormattedDate(today)} /> */}
         <Loadmore />
       </div>
       <Footer />

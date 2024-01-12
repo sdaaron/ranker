@@ -1,9 +1,8 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import MoreContent from "./moreContent";
-import Spinner from "./spinner";
-
 function getFormattedDate(date) {
   console.log("date: ", date);
   let year = date.getFullYear();
@@ -31,8 +30,7 @@ date = getPreviousDay(date);
 export default function LoadMore() {
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
-  const stopDate = new Date("2024-01-08"); // 停止加载的日期
-  // const currentDate = useRef(date); // 使用 useRef 来跟踪当前日期
+  const stopDate = new Date("2024-01-08");
 
   useEffect(() => {
     if (inView && date > stopDate) {
@@ -41,15 +39,23 @@ export default function LoadMore() {
         date = getPreviousDay(date);
       });
     }
-  }, [inView, data]);
+  }, [inView]);
 
   return (
     <>
       {data}
       {date > stopDate ? (
-        <div className="flex items-center justify-center" ref={ref}>
-          <Spinner />
-        </div>
+        <section className="flex w-full items-center justify-center">
+          <div ref={ref}>
+            <Image
+              src="./spinner.svg"
+              alt="spinner"
+              width={56}
+              height={56}
+              className="object-contain"
+            />
+          </div>
+        </section>
       ) : (
         <div className="font-monot flex items-center justify-center py-10 text-5xl sm:text-xl md:text-5xl">
           <p>Oops...没有更早的新闻了</p>

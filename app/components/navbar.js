@@ -1,5 +1,5 @@
 "use client";
-import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
+// import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { Disclosure } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -9,7 +9,7 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-  const { isSignedIn } = useUser();
+  // const { isSignedIn } = useUser();
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -104,7 +104,7 @@ export default function Example() {
                   </button> */}
 
                   {/* Profile dropdown */}
-                  <div className="">
+                  {/* <div className="">
                     <div className="header">
                       {isSignedIn ? (
                         <UserButton afterSignOutUrl="/" />
@@ -119,7 +119,7 @@ export default function Example() {
                         </SignInButton>
                       )}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

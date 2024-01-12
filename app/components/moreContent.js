@@ -14,7 +14,7 @@ export default async function MoreContent(date) {
   ];
 
   return (
-    <div className="content-block mb-20" key={1}>
+    <div className="content-block mb-20" key={date}>
       <header>
         <div className="pb-15 relative mx-auto max-w-3xl py-10 text-center">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl ">
@@ -30,12 +30,13 @@ export default async function MoreContent(date) {
         </div>
       </header>
       <main className="main-section grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        {categoryList.map(([category, display]) => (
+        {categoryList.map(([category, display], index) => (
           <Feed
             key={category}
             category={category}
             display={display}
             created_date={date}
+            index={index}
           />
         ))}
       </main>
