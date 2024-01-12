@@ -3,7 +3,7 @@ import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./modalButton";
 import MotionDiv from "./motionDiv";
 import supabase from "./supabaseClient";
-
+import TimelineButton from "./timelineButton";
 export default async function Example({
   key,
   category,
@@ -15,8 +15,8 @@ export default async function Example({
     .from("news")
     .select()
     .eq("category", category)
-    .eq("created_date", created_date);
-  // console.log("读取supabase数据，获取到： ", data, error);
+    .eq("created_date", created_date)
+    .order("publish_date", { ascending: false });
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);
@@ -40,7 +40,8 @@ export default async function Example({
           <h3 className="text-center font-semibold leading-6 text-gray-900">
             {display}
           </h3>
-          <ModalButton />
+          <ModalButton category={category} />
+          <TimelineButton category={category} />
         </div>
 
         {/* Feed卡片内容栏 */}

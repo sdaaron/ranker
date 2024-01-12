@@ -1,9 +1,7 @@
 import Banner from "./components/banner";
 // import Content from "./components/content";
-import Footer from "./components/footer";
 import Loadmore from "./components/loadmore";
 import MoreContent from "./components/moreContent";
-import Navbar from "./components/navbar";
 export default async function Home() {
   let today = new Date();
   // let options = { timeZone: "Asia/Shanghai" };
@@ -26,10 +24,8 @@ export default async function Home() {
   }
   const data = await MoreContent(getFormattedDate(today));
 
-  console.log("morecontent: ", data);
   return (
     <main className="flex min-h-screen flex-col bg-neutral-50">
-      <Navbar />
       <Banner />
       <div className="body-section sm:px-3 sm:py-3 md:px-8 md:py-4">
         {/* <MoreContent */}
@@ -38,7 +34,6 @@ export default async function Home() {
         {/* <Content created_date={getFormattedDate(today)} /> */}
         <Loadmore />
       </div>
-      <Footer />
     </main>
   );
 }

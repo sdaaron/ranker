@@ -57,7 +57,7 @@ export default function LoadMore() {
           </div>
         </section>
       ) : (
-        <div className="font-monot flex items-center justify-center py-10 text-5xl sm:text-xl md:text-5xl">
+        <div className="font-monot mb-20 flex items-center justify-center py-10 text-xl sm:text-2xl md:text-3xl lg:text-5xl">
           <p>Oops...没有更早的新闻了</p>
         </div>
       )}

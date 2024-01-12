@@ -1,6 +1,6 @@
 export default function Example() {
   return (
-    <footer className="mt-20 bg-zinc-950">
+    <footer className=" bg-zinc-950">
       <div className="mx-auto flex max-w-7xl flex-row items-center justify-center p-10">
         <div className="">
           <p className="text-center text-xs leading-5 text-white">
