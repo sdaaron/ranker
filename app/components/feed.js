@@ -15,8 +15,8 @@ export default async function Example({
     .from("news")
     .select()
     .eq("category", category)
-    .eq("created_date", created_date)
-    .order("publish_date", { ascending: false });
+    .eq("created_date", created_date);
+  // .order("publish_date", { ascending: false });
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);
