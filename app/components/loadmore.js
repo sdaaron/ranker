@@ -31,7 +31,7 @@ date = getPreviousDay(date);
 export default function LoadMore() {
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
-  const stopDate = new Date("2024-01-07"); // 停止加载的日期
+  const stopDate = new Date("2024-01-08"); // 停止加载的日期
   // const currentDate = useRef(date); // 使用 useRef 来跟踪当前日期
 
   useEffect(() => {
@@ -46,13 +46,13 @@ export default function LoadMore() {
   return (
     <>
       {data}
-      {date <= stopDate ? (
-        <div className="font-monot flex items-center justify-center py-10 text-5xl sm:text-xl md:text-5xl">
-          <p>Oops...没有更早的新闻了</p>
-        </div>
-      ) : (
+      {date > stopDate ? (
         <div className="flex items-center justify-center" ref={ref}>
           <Spinner />
+        </div>
+      ) : (
+        <div className="font-monot flex items-center justify-center py-10 text-5xl sm:text-xl md:text-5xl">
+          <p>Oops...没有更早的新闻了</p>
         </div>
       )}
     </>
