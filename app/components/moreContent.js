@@ -23,7 +23,7 @@ export default async function MoreContent(date) {
             </span>
             {" · "}
             新闻热榜
-            <p className="my-4 text-lg font-bold sm:text-xl md:text-2xl">
+            <p className="my-2 font-mono text-xl font-bold sm:my-3 sm:text-xl md:my-4 md:text-3xl lg:my-6 xl:my-8">
               {date}
             </p>
           </h1>
