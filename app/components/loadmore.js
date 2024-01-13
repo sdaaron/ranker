@@ -24,7 +24,7 @@ function getPreviousDay(somedate) {
   return somedate;
 }
 
-let date = new Date();
+let date = new Date("2024-01-13");
 date = getPreviousDay(date);
 
 export default function LoadMore() {
