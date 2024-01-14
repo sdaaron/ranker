@@ -1,5 +1,5 @@
 "use client";
-// import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Disclosure } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
