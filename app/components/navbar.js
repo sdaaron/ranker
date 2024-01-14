@@ -104,7 +104,7 @@ export default function Example() {
                   </button> */}
 
                   {/* Profile dropdown */}
-                  {/* <div className="">
+                  <div className="">
                     <div className="header">
                       {isSignedIn ? (
                         <UserButton afterSignOutUrl="/" />
@@ -119,7 +119,7 @@ export default function Example() {
                         </SignInButton>
                       )}
                     </div>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>
