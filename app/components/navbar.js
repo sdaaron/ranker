@@ -9,7 +9,7 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-  // const { isSignedIn } = useUser();
+  const { isSignedIn } = useUser();
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
