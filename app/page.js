@@ -22,8 +22,8 @@ export default async function Home() {
 
     return formattedDate;
   }
-  // const data = await MoreContent(getFormattedDate(today));
-  const data = await MoreContent("2024-01-13");
+  const data = await MoreContent(getFormattedDate(today));
+  // const data = await MoreContent("2024-01-13");
   return (
     <main className="flex min-h-screen flex-col bg-neutral-50">
       <Banner />
