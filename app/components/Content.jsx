@@ -1,5 +1,5 @@
 "use server";
-import Feed from "./feed";
+import Feed from "./Feed";
 export default async function Content(props) {
   const categoryList = [
     ["politics", "政治"],

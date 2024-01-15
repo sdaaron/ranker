@@ -92,7 +92,7 @@ export default function Example() {
         </div>
 
         {/* Feature section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8 mb-96">
+        <div className="mx-auto mb-96 mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               一分钟读遍全网精华文章
