@@ -10,9 +10,10 @@ export default async function Example({
   display,
   created_date,
   index,
+  table_name,
 }) {
   const { data, error } = await supabase
-    .from("news")
+    .from(table_name)
     .select()
     .eq("category", category)
     .eq("created_date", created_date);

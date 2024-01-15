@@ -1,17 +1,42 @@
 "use server";
 import Feed from "./Feed";
 export default async function MoreContent(date) {
-  const categoryList = [
-    ["politics", "政治"],
-    ["economy", "经济"],
-    ["technology", "科技"],
-    ["military", "军事"],
-    ["finance", "金融"],
-    ["culture", "文化"],
-    ["ai", "人工智能"],
-    ["computer", "计算机"],
-    ["new_energy", "新能源"],
-  ];
+  const today = new Date().toISOString().slice(0, 10);
+  let categoryList;
+  if (date <= "2024-01-14") {
+    categoryList = [
+      ["politics", "政治"],
+      ["economy", "经济"],
+      ["technology", "科技"],
+      ["military", "军事"],
+      ["finance", "金融"],
+      ["culture", "文化"],
+      ["ai", "人工智能"],
+      ["computer", "计算机"],
+      ["new_energy", "新能源"],
+    ];
+  } else {
+    categoryList = [
+      ["ai", "人工智能"],
+      ["world", "世界"],
+      ["business", "财经"],
+      ["technology", "科技"],
+      ["new_energy", "新能源"],
+      ["science", "科学"],
+      ["health", "健康"],
+      ["entertainment", "娱乐"],
+      ["sport", "运动"],
+    ];
+  }
+
+  let table_name;
+  console.log("date: ", date);
+  console.log(typeof date);
+  if (date <= "2024-01-14") {
+    table_name = "news";
+  } else {
+    table_name = "feeds";
+  }
 
   return (
     <div className="content-block mb-20" key={date}>
@@ -37,6 +62,7 @@ export default async function MoreContent(date) {
             display={display}
             created_date={date}
             index={index}
+            table_name={table_name}
           />
         ))}
       </main>
