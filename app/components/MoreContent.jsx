@@ -18,11 +18,11 @@ export default async function MoreContent(date) {
   } else {
     categoryList = [
       ["ai", "人工智能"],
-      ["world", "世界"],
+      ["world", "世界新闻"],
       ["business", "财经"],
       ["technology", "科技"],
-      ["new_energy", "新能源"],
       ["science", "科学"],
+      ["new_energy", "新能源"],
       ["health", "健康"],
       ["entertainment", "娱乐"],
       ["sport", "运动"],
