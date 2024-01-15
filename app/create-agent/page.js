@@ -41,10 +41,10 @@ export default function Example() {
   };
 
   return (
-    <div className="">
+    <div className="mt-20 min-h-screen p-20">
       <form onSubmit={handleSubmit} className="">
         <SubmitModal open={open} setOpen={setOpen} />
-        <div className="p-4 flex flex-col justify-evenly items-center ">
+        <div className="flex flex-col items-center justify-evenly p-4 ">
           <div className="space-y-10">
             <div className="space-y-10 ">
               <h2 className="text-2xl font-semibold  text-gray-900">
@@ -89,7 +89,7 @@ export default function Example() {
                   id="about"
                   name="about"
                   rows={3}
-                  className="block w-full  h-96 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block h-96  w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   // defaultValue={""}
                   value={agentPrompt}
                   onChange={(e) => setAgentPrompt(e.target.value)}
@@ -102,7 +102,7 @@ export default function Example() {
             </div>
           </div>
 
-          <div className="flex items-center justify-evenly gap-x-20 mt-20">
+          <div className="mt-20 flex items-center justify-evenly gap-x-20">
             <Link href="/">
               <button
                 type="button"
@@ -122,7 +122,7 @@ export default function Example() {
       </form>
       {submissionMessage && (
         <div className="rounded-md bg-green-50 p-4">
-          <div className="m-4 text-lg text-center text-green-700">
+          <div className="m-4 text-center text-lg text-green-700">
             <p>{submissionMessage}</p>
           </div>
         </div>

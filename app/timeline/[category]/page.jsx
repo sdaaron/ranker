@@ -1,5 +1,5 @@
 import ImageWithFallback from "../../components/ImageWithFallback";
-import supabase from "../../components/supabaseClient";
+import supabase from "../../lib/SupabaseClient";
 export default async function Component({ params }) {
   console.log("params: ", params);
   const category = params.category;
@@ -66,14 +66,14 @@ export default async function Component({ params }) {
                             src={
                               articleItem.image_url.startsWith("http")
                                 ? articleItem.image_url
-                                : "/transparent_placeholder.png"
+                                : "/placeholder.png"
                             }
                             fill={true}
                             quality={10}
                             placeholder="blur" // 使用模糊效果作为加载占位符
-                            blurDataURL={"/transparent_placeholder.png"} // 模糊效果的图像源
+                            blurDataURL={"/placeholder.png"} // 模糊效果的图像源
                             alt="news-thumbnail"
-                            fallbackSrc="/transparent_placeholder.png"
+                            fallbackSrc="/placeholder.png"
                             sizes="2.5rem"
                           />
                         </div>

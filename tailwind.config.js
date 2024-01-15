@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minHeight: {
+        28: "7rem", // 这会创建 min-h-28
+      },
+      minWidth: {
+        28: "7rem", // 这会创建 min-w-28
+      },
       height: {
         120: "30rem",
         150: "40rem",

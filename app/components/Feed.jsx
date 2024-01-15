@@ -1,11 +1,11 @@
-import blurImage from "../../public/transparent_placeholder.png";
+import blurImage from "../../public/placeholder.png";
+import supabase from "../lib/SupabaseClient";
 import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./modalButton";
 import MotionDiv from "./motionDiv";
-import supabase from "./supabaseClient";
 import TimelineButton from "./timelineButton";
 export default async function Example({
-  key,
+  // key,
   category,
   display,
   created_date,
@@ -72,9 +72,9 @@ export default async function Example({
                           fill={true}
                           quality={10}
                           placeholder="blur" // 使用模糊效果作为加载占位符
-                          blurDataURL={"/transparent_placeholder.png"} // 模糊效果的图像源
+                          blurDataURL={"/placeholder.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
-                          fallbackSrc="/transparent_placeholder.png"
+                          fallbackSrc="/placeholder.png"
                           sizes="2.5rem"
                         />
                       </div>
@@ -83,7 +83,7 @@ export default async function Example({
                           <div className="text-sm hover:underline ">
                             <a
                               href={articleItem.source_url}
-                              className="line-clamp-none text-sm text-blue-600  hover:line-clamp-none hover:text-blue-800 "
+                              className="line-clamp-none text-sm text-blue-600  hover:line-clamp-none hover:text-blue-700 "
                             >
                               {articleItem.title}
                             </a>
@@ -95,7 +95,7 @@ export default async function Example({
                         </div>
                         <div className="mt-2 overflow-hidden text-xs text-gray-700 transition-all duration-300 hover:max-h-96">
                           <a href={articleItem.source_url}>
-                            <p className="line-clamp-none hover:line-clamp-none hover:underline ">
+                            <p className="line-clamp-none hover:line-clamp-none hover:text-black ">
                               {articleItem.summary}
                             </p>
                           </a>

@@ -1,15 +1,29 @@
 "use client";
-import { SignInButton, UserButton } from "@clerk/nextjs";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { Disclosure } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useState } from "react";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
   const { isSignedIn } = useUser();
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
+  const linkClass = (link) =>
+    `inline-flex items-center px-1 pt-1 text-base border-b-2 ${
+      activeLink === link
+        ? "border-indigo-500 text-gray-900"
+        : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+    }`;
+
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -37,12 +51,19 @@ export default function Example() {
                   />
                 </div>
                 <div className="hidden font-mono md:ml-6 md:flex md:space-x-8">
-                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="/"
-                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-base  text-gray-900 "
+                    className={linkClass("/")}
+                    onClick={() => handleLinkClick("/")}
                   >
-                    新闻热榜
+                    热榜
+                  </a>
+                  <a
+                    href="/feeds"
+                    className={linkClass("/feeds")}
+                    onClick={() => handleLinkClick("/feeds")}
+                  >
+                    推荐
                   </a>
 
                   <a
@@ -80,7 +101,7 @@ export default function Example() {
                     <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
                     创建Agent
                   </button> */}
-                  <Link href="/createAgent">
+                  <Link href="/create-agent">
                     <button
                       type="button"
                       className="relative flex w-full max-w-sm gap-x-1.5 rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 px-4 py-2 text-base font-bold text-white shadow-sm hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none"
