@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xxs: "0.6rem", // 你的自定义字体大小
+      },
+      lineHeight: {
+        xxs: "0.75", // 为xxs字体大小定义的自定义line-height
+      },
+
       minHeight: {
         28: "7rem", // 这会创建 min-h-28
       },
@@ -24,10 +31,10 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
-        // sm: "500px",
-        // md: "700px",
-        // lg: "1300px",
-        // xl: "1800px",
+        sm: "500px",
+        md: "800px",
+        lg: "1500px",
+        xl: "2200px",
       },
       keyframes: {
         scroll: {

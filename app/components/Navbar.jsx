@@ -65,31 +65,6 @@ export default function Example() {
                   >
                     推荐
                   </a>
-
-                  <a
-                    href="notfound"
-                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    网址导航
-                  </a>
-                  <a
-                    href="notfound"
-                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base  text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    实用工具
-                  </a>
-                  <a
-                    href="notfound"
-                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base  text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    学习资源
-                  </a>
-                  <a
-                    href="notfound"
-                    className="pointer-events-none inline-flex items-center border-b-2 border-transparent px-1 pt-1 font-mono text-base  text-gray-500 opacity-50 hover:border-gray-300 hover:text-gray-700"
-                  >
-                    我的订阅
-                  </a>
                 </div>
               </div>
               <div className="flex items-center">

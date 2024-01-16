@@ -1,7 +1,7 @@
-import Banner from "./components/Banner";
+import Banner from "../components/Banner";
 // import Content from "./components/content";
-import SimpleContent from "./components/SimpleContent";
-import Loadmore from "./components/SimpleLoadmore";
+import Loadmore from "../components/Loadmore";
+import MoreContent from "../components/MoreContent";
 export default async function Home() {
   let today = new Date();
   // let options = { timeZone: "Asia/Shanghai" };
@@ -22,12 +22,12 @@ export default async function Home() {
 
     return formattedDate;
   }
-  const data = await SimpleContent(getFormattedDate(today));
+  const data = await MoreContent(getFormattedDate(today));
   // const data = await MoreContent("2024-01-13");
   return (
-    <main className="bg-white-50 flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col bg-neutral-50">
       <Banner />
-      <div className="body-section sm:px-3 sm:py-3 md:px-20 md:py-4">
+      <div className="body-section sm:px-3 sm:py-3 md:px-8 md:py-4">
         {/* <MoreContent */}
 
         <div>{data}</div>
