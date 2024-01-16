@@ -16,8 +16,9 @@ export default async function Example({
     .from(table_name)
     .select()
     .eq("category", category)
-    .eq("created_date", created_date);
-  // .order("publish_date", { ascending: false });
+    .eq("created_date", created_date)
+    .order("importance", { ascending: false })
+    .limit(10);
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);

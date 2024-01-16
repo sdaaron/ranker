@@ -69,13 +69,6 @@ export default function Example() {
               </div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  {/* <button
-                    type="button"
-                    className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
-                    创建Agent
-                  </button> */}
                   <Link href="/create-agent">
                     <button
                       type="button"
@@ -90,15 +83,6 @@ export default function Example() {
                   </Link>
                 </div>
                 <div className="ml-4 flex flex-shrink-0 items-center gap-4">
-                  {/* <button
-                    type="button"
-                    className="hidden md:flex relative rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 "
-                  >
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">查看通知</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                  </button> */}
-
                   {/* Profile dropdown */}
                   <div className="">
                     <div className="header">

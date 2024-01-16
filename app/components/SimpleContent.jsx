@@ -18,7 +18,7 @@ export default async function MoreContent(date) {
   } else if (date === "2024-01-15") {
     categoryList = [
       ["ai", "人工智能"],
-      ["world", "世界"],
+      ["world", "时事"],
       ["business", "财经"],
       ["technology", "科技"],
       ["science", "科学"],
@@ -30,20 +30,19 @@ export default async function MoreContent(date) {
   } else {
     categoryList = [
       ["ai", "大模型"],
-      ["world", "世界"],
+      ["world", "时事"],
       ["business", "财经"],
       ["technology", "科技"],
 
+      ["hacker_news_top", "HackerNews"],
       ["politics", "时政"],
-      ["economy", "经济"],
       ["science", "科学"],
-      ["hacker_news", "HackerNews 最佳"],
+      ["economy", "经济"],
 
       ["new_energy", "能源"],
       ["health", "健康"],
       ["entertainment", "娱乐"],
       ["sport", "运动"],
-      //   ["newest", "HackerNews 热门"],
     ];
   }
 
