@@ -29,18 +29,21 @@ export default async function MoreContent(date) {
     ];
   } else {
     categoryList = [
-      ["ai", "人工智能"],
-      ["politics", "时政"],
+      ["ai", "大模型"],
+      ["world", "世界"],
       ["business", "财经"],
       ["technology", "科技"],
-      ["world", "世界"],
-      ["science", "科学"],
+
+      ["politics", "时政"],
       ["economy", "经济"],
-      ["finance", "金融"],
+      ["science", "科学"],
+      ["hacker_news", "HackerNews 最佳"],
+
       ["new_energy", "能源"],
       ["health", "健康"],
       ["entertainment", "娱乐"],
       ["sport", "运动"],
+      //   ["newest", "HackerNews 热门"],
     ];
   }
 

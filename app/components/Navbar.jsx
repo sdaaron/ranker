@@ -25,7 +25,7 @@ export default function Example() {
     }`;
 
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className="z-50 bg-white shadow">
       {({ open }) => (
         <>
           <div className="mx-auto  px-4 sm:px-6 lg:px-8">
