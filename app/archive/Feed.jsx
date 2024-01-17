@@ -1,9 +1,9 @@
 import blurImage from "../../public/placeholder.png";
+import ImageWithFallback from "../components/ImageWithFallback";
+import ModalButton from "../components/ModalButton";
+import MotionDiv from "../components/MotionDiv";
+import TimelineButton from "../components/TimelineButton";
 import supabase from "../lib/SupabaseClient";
-import ImageWithFallback from "./ImageWithFallback";
-// import ModalButton from "./ModalButton";
-import MotionDiv from "./MotionDiv";
-// import TimelineButton from "./TimelineButton";
 export default async function Example({
   // key,
   category,
@@ -16,9 +16,8 @@ export default async function Example({
     .from(table_name)
     .select()
     .eq("category", category)
-    .eq("created_date", created_date)
-    .order("importance", { ascending: false })
-    .limit(10);
+    .eq("created_date", created_date);
+  // .order("publish_date", { ascending: false });
   const news = data;
   if (!news || news.length === 0) return null;
   const articles = data.slice(-10);
@@ -34,37 +33,38 @@ export default async function Example({
         initial="hidden"
         animate="visible"
         transition={{ duration: 1, delay: index * 0.25, ease: "easeInOut" }}
-        className="relative z-30 mb-4 flow-root bg-white"
+        className="relative z-30 mb-4 flow-root bg-white hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200  sm:rounded-none md:rounded-3xl"
       >
         {/* Feed卡片标题栏 */}
-        <div className="relative mb-3 ml-2 flex flex-row items-center justify-start rounded-t-3xl py-3">
-          <img src="/logo.png" className="mr-4 h-6"></img>
-          <h3 className="text-left font-mono text-3xl font-semibold leading-6 text-gray-900">
+        <div className=" relative flex flex-row items-center justify-center rounded-t-3xl border-b border-gray-100 py-3 sm:px-6">
+          <img src="/logo.png" className="mr-1 h-4"></img>
+          <h3 className="text-center font-semibold leading-6 text-gray-900">
             {display}
           </h3>
+          <ModalButton category={category} />
+          <TimelineButton category={category} />
         </div>
 
         {/* Feed卡片内容栏 */}
-        <div className="feed-container">
+        <div className="feed-container flex flex-col justify-evenly p-8">
           <ul
             role="list"
-            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-2"
+            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow"
           >
             {articles.map((articleItem, articleItemIdx) => (
               <li key={articleItemIdx} className="row-span-1">
-                <div className="group   relative z-30 flow-root">
+                <div className="relative py-2">
                   {articleItemIdx !== articles.length - 1 ? (
                     <span
-                      className="absolute left-6 top-5 -ml-px h-full w-0.5 bg-gray-200"
+                      className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
                     />
                   ) : null}
-
-                  <div className="relative flex transform items-start space-x-2 rounded-lg p-1 transition duration-300 ease-in-out hover:scale-105   ">
+                  <div className="relative flex items-start space-x-3">
                     <>
-                      <div className="relative h-10 w-10 transform transition duration-300 ease-in-out">
+                      <div className="relative h-10 w-10">
                         <ImageWithFallback
-                          className="flex items-center justify-center  rounded-lg object-cover object-center ring-8 ring-white "
+                          className="flex  items-center justify-center rounded-full bg-white object-cover object-center ring-8 ring-white"
                           src={
                             articleItem.image_url.startsWith("http")
                               ? articleItem.image_url
@@ -72,8 +72,8 @@ export default async function Example({
                           }
                           fill={true}
                           quality={10}
-                          placeholder="blur"
-                          blurDataURL={"/placeholder.png"}
+                          placeholder="blur" // 使用模糊效果作为加载占位符
+                          blurDataURL={"/placeholder.png"} // 模糊效果的图像源
                           alt="news-thumbnail"
                           fallbackSrc="/placeholder.png"
                           sizes="2.5rem"
@@ -81,20 +81,20 @@ export default async function Example({
                       </div>
                       <div className="min-w-0 flex-1">
                         <div>
-                          <div className="text-sm">
+                          <div className="text-sm hover:underline ">
                             <a
                               href={articleItem.source_url}
-                              className="line-clamp-none text-base text-blue-600  hover:line-clamp-none hover:text-blue-700"
+                              className="line-clamp-none text-sm text-blue-600  hover:line-clamp-none hover:text-blue-700 "
                             >
                               {articleItem.title}
                             </a>
                           </div>
-                          <p className="text-xxs text-gray-500">
+                          <p className="mt-0.5 text-sm text-gray-500">
                             {articleItem.source_name} 发布于{" "}
                             {articleItem.publish_date}
                           </p>
                         </div>
-                        <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
+                        <div className="mt-2 overflow-hidden text-xs text-gray-700 transition-all duration-300 hover:max-h-96">
                           <a href={articleItem.source_url}>
                             <p className="line-clamp-none hover:line-clamp-none hover:text-black ">
                               {articleItem.summary}

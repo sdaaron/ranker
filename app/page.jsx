@@ -1,11 +1,8 @@
 import Banner from "./components/Banner";
-// import Content from "./components/content";
-import SimpleContent from "./components/SimpleContent";
-import Loadmore from "./components/SimpleLoadmore";
+import Content from "./components/Content";
+import Loadmore from "./components/Loadmore";
 export default async function Home() {
   let today = new Date();
-  // let options = { timeZone: "Asia/Shanghai" };
-  // today = today.toLocaleString("zh-CN", options);
 
   console.log("today: ", today);
   function getFormattedDate(date) {
@@ -22,14 +19,11 @@ export default async function Home() {
 
     return formattedDate;
   }
-  const data = await SimpleContent(getFormattedDate(today));
-  // const data = await MoreContent("2024-01-13");
+  const data = await Content(getFormattedDate(today));
   return (
     <main className="bg-white-50 flex min-h-screen flex-col">
       <Banner />
-      <div className="body-section sm:px-3 sm:py-3 md:px-20 md:py-4">
-        {/* <MoreContent */}
-
+      <div className="body-section sm:px-3 sm:py-3 md:px-10 md:py-4 xl:px-12 xl:py-6">
         <div>{data}</div>
         {/* <Content created_date={getFormattedDate(today)} /> */}
         <Loadmore />

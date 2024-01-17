@@ -1,7 +1,7 @@
 import Banner from "../components/Banner";
 // import Content from "./components/content";
-import Loadmore from "../components/Loadmore";
-import MoreContent from "../components/MoreContent";
+import Loadmore from "../archive/Loadmore";
+import MoreContent from "../archive/MoreContent";
 export default async function Home() {
   let today = new Date();
   // let options = { timeZone: "Asia/Shanghai" };

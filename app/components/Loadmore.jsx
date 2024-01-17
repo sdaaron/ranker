@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import MoreContent from "./MoreContent";
+import MoreContent from "./Content";
 function getFormattedDate(date) {
   console.log("date: ", date);
   let year = date.getFullYear();
