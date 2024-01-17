@@ -1,5 +1,5 @@
 "use server";
-import SimpleFeed from "./Feed";
+import Feed from "./Feed";
 export default async function MoreContent(date) {
   const today = new Date().toISOString().slice(0, 10);
   let categoryList;
@@ -29,9 +29,9 @@ export default async function MoreContent(date) {
     ];
   } else {
     categoryList = [
+      ["ai", "大模型"],
       ["world", "时事"],
       ["business", "财经"],
-      ["ai", "大模型"],
       ["hacker_news_top", "HackerNews热门"],
 
       ["hacker_news_best", "HackerNews最佳"],
@@ -73,7 +73,7 @@ export default async function MoreContent(date) {
       </header>
       <main className="main-section grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {categoryList.map(([category, display], index) => (
-          <SimpleFeed
+          <Feed
             key={category}
             category={category}
             display={display}
