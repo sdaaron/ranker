@@ -32,9 +32,9 @@ export default async function MoreContent(date) {
       ["ai", "大模型"],
       ["world", "时事"],
       ["business", "财经"],
-      ["technology", "科技"],
-
       ["hacker_news_top", "HackerNews"],
+
+      ["technology", "科技"],
       ["politics", "时政"],
       ["science", "科学"],
       ["economy", "经济"],
