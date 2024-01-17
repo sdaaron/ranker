@@ -1,7 +1,7 @@
 import blurImage from "../../public/placeholder.png";
 import supabase from "../lib/SupabaseClient";
 import ImageWithFallback from "./ImageWithFallback";
-// import ModalButton from "./ModalButton";
+import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
 // import TimelineButton from "./TimelineButton";
 export default async function Example({
@@ -41,6 +41,7 @@ export default async function Example({
           <h3 className="text-left font-mono text-3xl font-semibold leading-6 text-gray-900">
             {display}
           </h3>
+          <ModalButton category={category} />
         </div>
 
         {/* Feed卡片内容栏 */}
