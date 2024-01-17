@@ -60,7 +60,7 @@ export default async function Example({
                     />
                   ) : null}
 
-                  <div className="relative flex transform items-start space-x-2 rounded-lg p-2 transition duration-300 ease-in-out hover:scale-105   ">
+                  <div className="relative flex transform items-start space-x-2 rounded-lg p-1 transition duration-300 ease-in-out hover:scale-105   ">
                     <>
                       <div className="relative h-10 w-10 transform transition duration-300 ease-in-out">
                         <ImageWithFallback
