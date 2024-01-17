@@ -1,26 +1,11 @@
 import blurImage from "../../public/placeholder.png";
-import supabase from "../lib/SupabaseClient";
 import ImageWithFallback from "./ImageWithFallback";
 // import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
 // import TimelineButton from "./TimelineButton";
-export default async function Example({
-  // key,
-  category,
-  display,
-  created_date,
-  index,
-}) {
-  const { data, error } = await supabase
-    .from("feeds")
-    .select()
-    .eq("category", category)
-    .eq("created_date", created_date)
-    .order("importance", { ascending: false })
-    .limit(10);
-  const news = data;
-  if (!news || news.length === 0) return null;
+export default async function Example(data, index) {
   const articles = data.slice(-10);
+  const display = data[0].category;
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },

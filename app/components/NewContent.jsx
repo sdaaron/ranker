@@ -1,24 +1,6 @@
 "use server";
 import Feed from "./Feed";
-export default async function MoreContent(created_date) {
-  // const today = new Date().toISOString().slice(0, 10);
-  let categoryList;
-  categoryList = [
-    ["ai", "大模型"],
-    ["world", "时事"],
-    ["business", "财经"],
-    ["hacker_news_top", "HackerNews热门"],
-
-    ["hacker_news_best", "HackerNews最佳"],
-    ["technology", "科技"],
-    ["science", "科学"],
-    ["politics", "时政"],
-
-    ["new_energy", "能源"],
-    ["health", "健康"],
-    ["entertainment", "娱乐"],
-    ["sport", "运动"],
-  ];
+export default async function MoreContent(data) {
   return (
     <div className="content-block mb-5" key={created_date}>
       <header>
@@ -36,12 +18,12 @@ export default async function MoreContent(created_date) {
         </div>
       </header>
       <main className="main-section grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {categoryList.map(([category, display], index) => (
+        {data.map((item, index) => (
           <Feed
-            key={category}
-            category={category}
-            display={display}
-            created_date={created_date}
+            key={item.category}
+            category={item.category}
+            display={item.category}
+            created_date={item.created_date}
             index={index}
           />
         ))}

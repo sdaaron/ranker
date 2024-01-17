@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import MoreContent from "./Content";
+import Content from "./Content";
+
 function getFormattedDate(date) {
-  console.log("date: ", date);
   let year = date.getFullYear();
   let month = date.getMonth() + 1; // 月份是从 0 开始的
   let day = date.getDate();
@@ -19,32 +19,40 @@ function getFormattedDate(date) {
   return formattedDate;
 }
 
-function getPreviousDay(somedate) {
-  somedate.setDate(somedate.getDate() - 1);
-  return somedate;
+function getPreviousDay(dateString) {
+  let previousDay = new Date(dateString);
+
+  previousDay.setDate(previousDay.getDate() - 1);
+  return getFormattedDate(previousDay);
 }
 
-let date = new Date();
-date = getPreviousDay(date);
-
-export default function LoadMore() {
+export default function LoadMore({ today }) {
+  let previousDay = getPreviousDay(today);
+  console.log("loadmore previousDay: ", previousDay);
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
-  const stopDate = new Date("2024-01-08");
+  const stopDate = "2024-01-15";
+  const [date, setDate] = useState(previousDay);
 
   useEffect(() => {
-    if (inView && date > stopDate) {
-      MoreContent(getFormattedDate(date)).then((res) => {
+    if (inView && date >= stopDate) {
+      console.log("inView: ", inView);
+      Content(date).then((res) => {
+        console.log("res: ", res);
         setData([...data, res]);
-        date = getPreviousDay(date);
+        setDate((date) => getPreviousDay(date));
       });
     }
   }, [inView]);
 
+  console.log("previousDay: ", previousDay);
+  console.log("stopDate: ", stopDate);
+  console.log(date >= stopDate);
+
   return (
     <>
       {data}
-      {date > stopDate ? (
+      {date >= stopDate ? (
         <section className="flex w-full items-center justify-center">
           <div ref={ref}>
             <Image
