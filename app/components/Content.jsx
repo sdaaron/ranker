@@ -32,14 +32,14 @@ export default async function MoreContent(date) {
       ["world", "时事"],
       ["business", "财经"],
       ["ai", "大模型"],
-      ["hacker_news_top", "HackerNews"],
+      ["hacker_news_top", "HackerNews热门"],
 
+      ["hacker_news_best", "HackerNews最佳"],
       ["technology", "科技"],
-      ["politics", "时政"],
       ["science", "科学"],
-      ["new_energy", "能源"],
+      ["politics", "时政"],
 
-      ["economy", "经济"],
+      ["new_energy", "能源"],
       ["health", "健康"],
       ["entertainment", "娱乐"],
       ["sport", "运动"],
@@ -61,10 +61,10 @@ export default async function MoreContent(date) {
         <div className="relative mx-auto max-w-3xl py-5 text-center">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl ">
             <span className="bg-gradient-to-r from-sky-400 to-emerald-600 bg-clip-text text-transparent">
-              精选
+              Ranker
             </span>
             {" · "}
-            新闻热榜
+            大模型日报
             <p className="my-2 font-mono text-xl font-bold sm:my-3 sm:text-xl md:my-4 md:text-3xl lg:my-6 xl:my-8">
               {date}
             </p>
