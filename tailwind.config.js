@@ -32,9 +32,9 @@ module.exports = {
       },
       screens: {
         sm: "500px",
-        md: "800px",
+        md: "1000px",
         lg: "1500px",
-        xl: "2200px",
+        xl: "2000px",
       },
       keyframes: {
         scroll: {

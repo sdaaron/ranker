@@ -13,12 +13,12 @@ export default function ArticleCard({
   return (
     <article
       key={id}
-      className="flex w-full transform flex-col items-start justify-between rounded-3xl  px-10 py-5 transition duration-300  ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200"
+      className="flex w-full transform flex-col items-start justify-between rounded-3xl  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-2xl  hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200 sm:px-4 sm:py-2 md:px-10 md:py-5"
     >
       <div className="flex items-center justify-start gap-10">
-        <div className="min-h-28 min-w-28 relative">
+        <div className="md:min-h-28 md:min-w-28 sm:min-h-10 sm:min-w-10 relative">
           <ImageWithFallback
-            className="min-h-28 min-w-28 rounded-xl bg-white"
+            className="min-h-28 min-w-28 rounded-xl bg-white sm:hidden md:block"
             src={image_url.startsWith("http") ? image_url : "/placeholder.png"}
             // fill={true}
             style={{ objectFit: "cover", objectPosition: "center" }}

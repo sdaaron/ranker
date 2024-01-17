@@ -1,6 +1,18 @@
 "use server";
-import Feed from "./Feed";
-export default async function MoreContent(data) {
+import Feed from "./NewFeed";
+export default async function MoreContent({ data }) {
+  const groupedData = data.reduce((groups, item) => {
+    const group = groups[item.category] || [];
+    group.push(item);
+    groups[item.category] = group;
+    return groups;
+  }, {});
+  const finalData = Object.values(groupedData).map((group) => {
+    return group.slice(0, 10);
+  });
+
+  const twelfData = finalData.slice(0, 12);
+  const created_date = data[0].created_date;
   return (
     <div className="content-block mb-5" key={created_date}>
       <header>
@@ -18,14 +30,8 @@ export default async function MoreContent(data) {
         </div>
       </header>
       <main className="main-section grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {data.map((item, index) => (
-          <Feed
-            key={item.category}
-            category={item.category}
-            display={item.category}
-            created_date={item.created_date}
-            index={index}
-          />
+        {twelfData.map((data, index) => (
+          <Feed key={data.category} data={data} index={index} />
         ))}
       </main>
     </div>

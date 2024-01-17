@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import SubmitModal from "./submitModal";
+import supabase from "../lib/supabaseClient";
+import SubmitModal from "./SubmitModal";
 export default function Example() {
   const [agentName, setAgentName] = useState("");
   const [agentPrompt, setAgentPrompt] = useState("");
@@ -16,16 +17,10 @@ export default function Example() {
       // 添加其他必要的字段
     };
     try {
-      const response = await fetch("https://api.ranker.cc/agent_request", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const { data, error } = await supabase.from("request").insert([formData]);
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+      if (error) {
+        throw new Error(error.message);
       }
 
       setSubmissionMessage("Agent 提交成功！"); // 设置提示消息

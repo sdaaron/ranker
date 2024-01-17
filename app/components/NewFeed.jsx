@@ -3,7 +3,8 @@ import ImageWithFallback from "./ImageWithFallback";
 // import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
 // import TimelineButton from "./TimelineButton";
-export default async function Example(data, index) {
+export default async function Example({ data, index }) {
+  console.log("data: ", data);
   const articles = data.slice(-10);
   const display = data[0].category;
   const variants = {
