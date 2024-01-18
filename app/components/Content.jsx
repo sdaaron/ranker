@@ -23,7 +23,7 @@ export default async function MoreContent(created_date) {
     <div className="content-block mb-5" key={created_date}>
       <header>
         <div className="relative mx-auto max-w-3xl py-5 text-center">
-          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl ">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900  sm:text-4xl md:text-5xl lg:text-6xl ">
             <span className="bg-gradient-to-r from-sky-400 to-emerald-600 bg-clip-text text-transparent">
               Ranker
             </span>
