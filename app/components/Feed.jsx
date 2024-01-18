@@ -1,5 +1,6 @@
+import Link from "next/link";
 import blurImage from "../../public/placeholder.png";
-import supabase from "../lib/SupabaseClient";
+import supabase from "../utils/SupabaseClient";
 import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
@@ -20,7 +21,7 @@ export default async function Example({
     .limit(10);
   const news = data;
   if (!news || news.length === 0) return null;
-  const articles = data.slice(-10);
+  const newsData = data.slice(-10);
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -32,7 +33,7 @@ export default async function Example({
         variants={variants}
         initial="hidden"
         animate="visible"
-        transition={{ duration: 1, delay: index * 0.4, ease: "easeInOut" }}
+        transition={{ duration: 1, delay: index * 0.25, ease: "easeInOut" }}
         className="relative z-30 mb-4 flow-root bg-white"
       >
         {/* Feed卡片标题栏 */}
@@ -50,10 +51,10 @@ export default async function Example({
             role="list"
             className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-2  px-2 py-3 sm:px-4 md:px-0"
           >
-            {articles.map((articleItem, articleItemIdx) => (
-              <li key={articleItemIdx} className="row-span-1">
+            {newsData.map((item, itemIdx) => (
+              <li key={itemIdx} className="row-span-1">
                 <div className="group   relative z-30 flow-root">
-                  {articleItemIdx !== articles.length - 1 ? (
+                  {itemIdx !== newsData.length - 1 ? (
                     <span
                       className="absolute left-6 top-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
@@ -66,8 +67,8 @@ export default async function Example({
                         <ImageWithFallback
                           className="flex items-center justify-center  rounded-lg object-cover object-center ring-8 ring-white "
                           src={
-                            articleItem.image_url.startsWith("http")
-                              ? articleItem.image_url
+                            item.image_url.startsWith("http")
+                              ? item.image_url
                               : blurImage
                           }
                           fill={true}
@@ -82,22 +83,22 @@ export default async function Example({
                       <div className="min-w-0 flex-1">
                         <div>
                           <div className="text-sm">
-                            <a
-                              href={articleItem.source_url}
-                              className="line-clamp-none text-base text-blue-600  hover:line-clamp-none hover:text-blue-700"
+                            <Link
+                              href={item.source_url}
+                              className="line-clamp-none text-base text-blue-600
+                              hover:line-clamp-none hover:text-blue-700"
                             >
-                              {articleItem.title}
-                            </a>
+                              {item.title}
+                            </Link>
                           </div>
                           <p className="text-xxs text-gray-500">
-                            {articleItem.source_name} 发布于{" "}
-                            {articleItem.publish_date}
+                            {item.source_name} 发布于 {item.publish_date}
                           </p>
                         </div>
                         <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
-                          <a href={articleItem.source_url}>
+                          <a href={item.source_url}>
                             <p className="line-clamp-none hover:line-clamp-none hover:text-black ">
-                              {articleItem.summary}
+                              {item.summary}
                             </p>
                           </a>
                         </div>

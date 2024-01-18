@@ -2,25 +2,37 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-export default function LoadmoreArticle() {
+import { getPreviousDay } from "../utils/DateTool";
+import FetchFeeds from "../utils/FetchFeeds";
+export default function LoadmoreArticle({ today, category }) {
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(2);
-  const stopDate = 5;
+  const yesterday = getPreviousDay(today);
+  console.log("today in loadmore: ", today);
+  console.log("yesterday in loadmore: ", yesterday);
+  const [date, setDate] = useState(yesterday);
+  const stopDate = "2024-01-15";
+  console.log("date: ", date);
 
   useEffect(() => {
     if (inView && date >= stopDate) {
       console.log("inView: ", inView);
+      FetchFeeds(date, category).then((res) => {
+        console.log("res: ", res);
+        setData([...data, res]);
+        setDate((date) => getPreviousDay(date));
+      });
     }
   }, [inView]);
+
   return (
     <>
       {data}
-      {page >= 5 ? (
+      {date >= stopDate ? (
         <section className="flex w-full items-center justify-center">
-          <div ref={ref}>
+          <div ref={ref} className="p-10">
             <Image
-              src="./spinner.svg"
+              src="/spinner.svg"
               alt="spinner"
               width={56}
               height={56}

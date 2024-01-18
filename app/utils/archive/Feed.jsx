@@ -1,9 +1,9 @@
+import ImageWithFallback from "../../components/ImageWithFallback";
+import ModalButton from "../../components/ModalButton";
+import MotionDiv from "../../components/MotionDiv";
+import TimelineButton from "../../components/TimelineButton";
 import blurImage from "../../public/placeholder.png";
-import ImageWithFallback from "../components/ImageWithFallback";
-import ModalButton from "../components/ModalButton";
-import MotionDiv from "../components/MotionDiv";
-import TimelineButton from "../components/TimelineButton";
-import supabase from "../lib/SupabaseClient";
+import supabase from "../SupabaseClient";
 export default async function Example({
   // key,
   category,

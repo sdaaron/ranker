@@ -1,5 +1,5 @@
-import ImageWithFallback from "../../components/ImageWithFallback";
-import supabase from "../../lib/SupabaseClient";
+import ImageWithFallback from "../../../../components/ImageWithFallback";
+import supabase from "../../../SupabaseClient";
 export default async function Component({ params }) {
   console.log("params: ", params);
   const category = params.category;

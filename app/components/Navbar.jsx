@@ -17,6 +17,20 @@ export default function Example() {
         ? "border-indigo-500 text-gray-900"
         : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
     }`;
+  // const linkClass = (link) => {
+  //   // 提取 pathname 的一级路径
+  //   const firstLevelPath = pathname.split("/")[1];
+  //   console.log("firstLevelPath: ", firstLevelPath);
+  //   // 检查一级路径是否等于 link
+  //   const isActive = firstLevelPath === link;
+
+  //   // 根据是否激活来设置样式
+  //   return `inline-flex items-center px-1 pt-1 text-base border-b-2 ${
+  //     isActive
+  //       ? "border-indigo-500 text-gray-900"
+  //       : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+  //   }`;
+  // };
 
   return (
     <Disclosure as="nav" className="z-50 bg-white shadow">
@@ -38,19 +52,88 @@ export default function Example() {
                   </Disclosure.Button>
                 </div>
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-10 w-auto sm:px-2 md:px-3"
-                    src="/logo.png"
-                    alt="Ranker logo"
-                  />
+                  <Link href="/">
+                    <img
+                      className="h-8 w-auto sm:px-2 md:px-3"
+                      src="/logo.png"
+                      alt="Ranker logo"
+                    />
+                  </Link>
                 </div>
                 <div className="hidden font-mono md:ml-6 md:flex md:space-x-8">
-                  <a href="/" className={linkClass("/")}>
+                  <Link href="/" className={linkClass("/")}>
                     热榜
-                  </a>
-                  <a href="/feeds" className={linkClass("/feeds")}>
-                    推荐
-                  </a>
+                  </Link>
+                  <Link href="/feeds/ai" className={linkClass("/feeds/ai")}>
+                    大模型
+                  </Link>
+                  <Link
+                    href="/feeds/world"
+                    className={linkClass("/feeds/world")}
+                  >
+                    时事
+                  </Link>
+                  <Link
+                    href="/feeds/business"
+                    className={linkClass("/feeds/business")}
+                  >
+                    财经
+                  </Link>
+                  <Link
+                    href="/feeds/technology"
+                    className={linkClass("/feeds/technology")}
+                  >
+                    科技
+                  </Link>
+                  <Link
+                    href="/feeds/science"
+                    className={linkClass("/feeds/science")}
+                  >
+                    科学
+                  </Link>
+                  <Link
+                    href="/feeds/politics"
+                    className={linkClass("/feeds/politics")}
+                  >
+                    时政
+                  </Link>
+
+                  <Link
+                    href="/feeds/new_energy"
+                    className={linkClass("/feeds/new_energy")}
+                  >
+                    能源
+                  </Link>
+                  <Link
+                    href="/feeds/health"
+                    className={linkClass("/feeds/health")}
+                  >
+                    健康
+                  </Link>
+                  <Link
+                    href="/feeds/entertainment"
+                    className={linkClass("/feeds/entertainment")}
+                  >
+                    娱乐
+                  </Link>
+                  <Link
+                    href="/feeds/sport"
+                    className={linkClass("/feeds/sport")}
+                  >
+                    运动
+                  </Link>
+                  <Link
+                    href="/feeds/hacker_news_top"
+                    className={linkClass("/feeds/hacker_news_top")}
+                  >
+                    HackerNews热门
+                  </Link>
+                  <Link
+                    href="/feeds/hacker_news_best"
+                    className={linkClass("/feeds/hacker_news_best")}
+                  >
+                    HackerNews最佳
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center">
@@ -103,10 +186,31 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds"
+                href="/feeds/business"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
               >
-                推荐
+                大模型
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+              >
+                财经
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+              >
+                HackerNews
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+              >
+                科技
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
