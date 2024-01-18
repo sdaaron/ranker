@@ -42,9 +42,7 @@ export default function Example() {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <p className="text-sm leading-6 text-gray-900">
-          <strong className="font-semibold">
-            Ranker 你的大模型信息筛选助理
-          </strong>
+          <strong className="font-semibold">Ranker 严选品质信息流</strong>
           <svg
             viewBox="0 0 2 2"
             className="mx-2 inline h-0.5 w-0.5 fill-current"
@@ -52,7 +50,7 @@ export default function Example() {
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          100 个 AI 智能体，每天帮你阅读 1万+ 信息源！
+          100 个 AI 新闻编辑智能体，每天帮你阅读 10万+ 信息源！
         </p>
         {/* <a
           href="bannerPage"
