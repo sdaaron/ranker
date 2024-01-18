@@ -41,13 +41,13 @@ export default function Example() {
         <SubmitModal open={open} setOpen={setOpen} />
         <div className="flex flex-col items-center justify-evenly p-4 ">
           <div className="space-y-10">
-            <div className="space-y-10 ">
+            <div className="max-w-4xl space-y-10">
               <h2 className="text-2xl font-semibold  text-gray-900">
-                Agent 申请
+                Agent Prompt 提交
               </h2>
-              <p className="text-sm  text-gray-600">
+              {/* <p className="text-sm  text-gray-600">
                 由于每个用户单独创建Agent开销过大，我们目前接受提交Agent申请。当同类请求达到一定数量时，我们会为您创建Agent。
-              </p>
+              </p> */}
             </div>
 
             <div className="">

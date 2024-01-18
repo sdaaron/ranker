@@ -1,5 +1,6 @@
 "use client";
 import { Dialog, Transition } from "@headlessui/react";
+import Link from "next/link";
 import { Fragment, useState } from "react";
 import PromptMap from "./PromptMap";
 export default function Example({ category }) {
@@ -61,10 +62,23 @@ export default function Example({ category }) {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-5 sm:mt-6">
+                  <Link
+                    className="mt-5 flex justify-center sm:mt-6"
+                    href="/create-agent"
+                  >
                     <button
                       type="button"
-                      className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="inline-flex  w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      提交新的Prompt
+                    </button>
+                  </Link>
+
+                  <div className="mt-5  flex justify-center sm:mt-6">
+                    <button
+                      type="button"
+                      className=" inline-flex w-full  justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       onClick={() => setOpen(false)}
                     >
                       返回首页
