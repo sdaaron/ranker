@@ -50,7 +50,7 @@ export default function Example() {
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          100 个 AI 智能体，每天帮你阅读 10万+ 网页！
+          100 个 AI 智能体，每天帮你阅读 10万+ 信息源！
         </p>
         {/* <a
           href="bannerPage"
