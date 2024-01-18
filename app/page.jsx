@@ -18,7 +18,7 @@ export default async function Home() {
     let hour = now.getHours();
 
     // 如果当前时间早于早上8点，调整日期为昨天
-    if (hour < 8) {
+    if (hour < 2) {
       now.setDate(now.getDate() - 1);
     }
 
