@@ -6,15 +6,23 @@ export default async function Home({ params }) {
   const category = params.category;
 
   let today = getFormattedDate();
-  let query = supabase.from("feeds").select().eq("created_date", today);
-
-  if (category !== "all") {
-    query = query.eq("category", category);
+  let data, error;
+  if (category == "all") {
+    ({ data, error } = await supabase
+      .from("feeds")
+      .select()
+      .eq("created_date", today));
+  } else {
+    ({ data, error } = await supabase
+      .from("feeds")
+      .select()
+      .eq("category", category)
+      .eq("created_date", today));
   }
 
-  const { data, error } = await query;
-
   const news = data.slice(0, 10);
+  console.log("category: ", category);
+  console.log("news: ", news);
   return (
     <div className="grid min-h-screen grid-cols-12 p-2">
       {/* <div className="min-h-screen"> */}
@@ -32,6 +40,10 @@ export default async function Home({ params }) {
           </div>
         </header>
         <div className="my-10">
+          <div className="flex items-center justify-center p-10 font-mono text-3xl">
+            {today}
+          </div>
+
           {news.map((item, index) => (
             <ArticleCard
               key={item.id}
