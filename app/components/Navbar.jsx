@@ -17,20 +17,12 @@ export default function Example() {
         ? "border-indigo-500 text-gray-900"
         : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
     }`;
-  // const linkClass = (link) => {
-  //   // 提取 pathname 的一级路径
-  //   const firstLevelPath = pathname.split("/")[1];
-  //   console.log("firstLevelPath: ", firstLevelPath);
-  //   // 检查一级路径是否等于 link
-  //   const isActive = firstLevelPath === link;
 
-  //   // 根据是否激活来设置样式
-  //   return `inline-flex items-center px-1 pt-1 text-base border-b-2 ${
-  //     isActive
-  //       ? "border-indigo-500 text-gray-900"
-  //       : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-  //   }`;
-  // };
+  const linkClassSmall = (link) => {
+    return pathname === link
+      ? "block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700 sm:pl-5 sm:pr-6"
+      : "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6";
+  };
 
   return (
     <Disclosure as="nav" className="z-50 bg-white shadow">
@@ -180,37 +172,88 @@ export default function Example() {
               <Disclosure.Button
                 as="a"
                 href="/"
-                className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700 sm:pl-5 sm:pr-6"
+                className={linkClassSmall("/")}
               >
                 热榜
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/feeds/business"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={linkClassSmall("/feeds/ai")}
               >
                 大模型
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/feeds/business"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={linkClassSmall("/feeds/business")}
               >
                 财经
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/feeds/business"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={linkClassSmall("/feeds/technology")}
               >
-                HackerNews
+                科技
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/feeds/business"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
+                className={linkClassSmall("/feeds/science")}
               >
-                科技
+                科学
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/politics")}
+              >
+                时政
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/new_energy")}
+              >
+                能源
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/health")}
+              >
+                健康
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/entertainment")}
+              >
+                娱乐
+              </Disclosure.Button>
+
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/sport")}
+              >
+                运动
+              </Disclosure.Button>
+
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/hacker_news_top")}
+              >
+                HackerNews热门
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/hacker_news_best")}
+              >
+                HackerNews最佳
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
