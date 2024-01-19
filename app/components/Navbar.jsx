@@ -52,7 +52,7 @@ export default function Example() {
                     />
                   </Link>
                 </div>
-                <div className="hidden font-mono sm:space-x-5  md:flex  md:space-x-3 lg:space-x-8">
+                <div className="ld:text-base hidden font-mono  sm:space-x-5  sm:text-sm md:flex md:space-x-2 lg:space-x-8">
                   <Link href="/" className={linkClass("/")}>
                     热榜
                   </Link>

@@ -23,7 +23,7 @@ export default async function Home(date, category) {
         {date}
       </div>
       {data ? (
-        data.map((item) => (
+        data.map((item, index) => (
           <ArticleCard
             key={item.id}
             id={item.id}
@@ -36,6 +36,7 @@ export default async function Home(date, category) {
             publish_date={item.publish_date}
             created_at={item.created_at}
             display={item.display}
+            index={index}
           />
         ))
       ) : (

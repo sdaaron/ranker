@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ImageWithFallback from "./ImageWithFallback";
 export default function ArticleCard({
   id,
@@ -9,28 +10,39 @@ export default function ArticleCard({
   publish_date,
   created_at,
   display,
+  index,
 }) {
+  console.log("index: ", index);
   return (
     <article
       key={id}
-      className="flex w-full transform flex-col items-start justify-between rounded-3xl  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-2xl  hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200 sm:px-4 sm:py-2 md:px-10 md:py-5"
+      className="xs:px-4 xs:py-2 xs:my-3 flex  w-full transform flex-col items-start justify-center rounded-3xl  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200 sm:my-6 md:my-6 md:px-10 md:py-5"
     >
       <div className="flex items-center justify-start gap-10">
-        <div className="sm:min-h-10 sm:min-w-10 relative md:min-h-28 md:min-w-28">
+        <div className="xs:min-w-16 xs:min-h-16 sm:min-h-20 sm:min-w-20 md:min-h-24 md:min-w-24 relative  rounded-lg  lg:min-h-28 lg:min-w-28">
           <ImageWithFallback
-            className="min-h-28 min-w-28 rounded-xl bg-white sm:hidden md:block"
+            className="xs:min-w-16 xs:min-h-16 sm:min-h-20 sm:min-w-20 md:min-h-24 md:min-w-24 lg:min-w-2 rounded-lg bg-white lg:min-h-28"
             src={image_url.startsWith("http") ? image_url : "/placeholder.png"}
-            // fill={true}
+            fill={true}
             style={{ objectFit: "cover", objectPosition: "center" }}
-            width={96}
-            height={96}
+            // width={96}
+            // height={96}
             quality={25}
             placeholder="blur"
             blurDataURL={"/placeholder.png"}
             alt="news-thumbnail"
             fallbackSrc="/placeholder.png"
           />
+          <div className="absolute -bottom-1 -right-1 z-50 rounded-full bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <Image
+              src={`/int-${index + 1}.png`}
+              width={24}
+              height={24}
+              className="rounded"
+            />
+          </div>
         </div>
+
         <div className="flex flex-col items-start justify-start">
           <div className="flex items-center gap-x-4 text-xs">
             <time dateTime={created_at} className="text-gray-500">

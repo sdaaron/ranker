@@ -13,12 +13,21 @@ module.exports = {
       lineHeight: {
         xxs: "0.75", // 为xxs字体大小定义的自定义line-height
       },
-
       minHeight: {
-        28: "7rem", // 这会创建 min-h-28
+        6: "1.5rem",
+        10: "2.5rem",
+        16: "4rem",
+        20: "5rem",
+        20: "6rem",
+        28: "7rem",
       },
       minWidth: {
-        28: "7rem", // 这会创建 min-w-28
+        6: "1.5rem",
+        10: "2.5rem",
+        16: "4rem",
+        20: "5rem",
+        24: "6rem",
+        28: "7rem",
       },
       height: {
         120: "30rem",
@@ -31,6 +40,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
+        xs: "10px",
         sm: "500px",
         md: "1000px",
         lg: "1500px",

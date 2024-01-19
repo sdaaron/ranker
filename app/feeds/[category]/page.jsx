@@ -17,7 +17,9 @@ export default async function Home({ params }) {
   const news = data.slice(0, 10);
   return (
     <div className="grid min-h-screen grid-cols-12 p-2">
-      <div className="mx-auto flex flex-col items-center bg-white  sm:col-span-12 sm:col-start-1 sm:p-2 md:col-span-8 md:col-start-3  md:p-10 md:px-10">
+      {/* <div className="min-h-screen"> */}
+      <div className="xs:col-span-12 xs:col-start-1 mx-auto flex flex-col  items-center bg-white sm:p-2 md:col-span-8 md:col-start-3  md:p-10 md:px-10">
+        {/* <div className="mx-auto flex flex-col items-center  justify-center bg-white sm:p-2   md:p-10 md:px-20"> */}
         <header>
           <div className="relative mx-auto max-w-3xl py-5 text-center">
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900  sm:text-4xl md:text-5xl lg:text-6xl ">
@@ -29,11 +31,12 @@ export default async function Home({ params }) {
             </h1>
           </div>
         </header>
-        <div className="mt-10 space-y-6  sm:mt-16">
-          {news.map((item) => (
+        <div className="my-10">
+          {news.map((item, index) => (
             <ArticleCard
               key={item.id}
               id={item.id}
+              index={index}
               category={item.category}
               title={item.title}
               summary={item.summary}
