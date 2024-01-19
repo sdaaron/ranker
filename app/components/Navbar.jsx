@@ -60,7 +60,7 @@ export default function Example() {
                     />
                   </Link>
                 </div>
-                <div className="hidden font-mono md:ml-6 md:flex md:space-x-8">
+                <div className="hidden font-mono sm:space-x-5  md:flex  md:space-x-3 lg:space-x-8">
                   <Link href="/" className={linkClass("/")}>
                     热榜
                   </Link>
@@ -126,13 +126,13 @@ export default function Example() {
                     href="/feeds/hacker_news_top"
                     className={linkClass("/feeds/hacker_news_top")}
                   >
-                    HackerNews热门
+                    HN热门
                   </Link>
                   <Link
                     href="/feeds/hacker_news_best"
                     className={linkClass("/feeds/hacker_news_best")}
                   >
-                    HackerNews最佳
+                    HN最佳
                   </Link>
                 </div>
               </div>

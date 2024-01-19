@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import blurImage from "../../public/placeholder.png";
 import supabase from "../utils/SupabaseClient";
@@ -79,6 +80,14 @@ export default async function Example({
                           fallbackSrc="/placeholder.png"
                           sizes="2.5rem"
                         />
+                        <div className="absolute -bottom-1 -right-1 z-50 rounded-full bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                          <Image
+                            src={`/int-${itemIdx + 1}.png`}
+                            width={24}
+                            height={24}
+                            className="rounded"
+                          />
+                        </div>
                       </div>
                       <div className="min-w-0 flex-1">
                         <div>
