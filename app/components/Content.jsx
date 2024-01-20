@@ -7,10 +7,10 @@ export default async function MoreContent(created_date) {
     ["ai", "大模型"],
     ["world", "时事"],
     ["business", "财经"],
-    ["hacker_news_top", "HackerNews热门"],
-
-    ["hacker_news_best", "HackerNews最佳"],
     ["technology", "科技"],
+
+    ["hacker_news_top", "HackerNews热门"],
+    ["hacker_news_best", "HackerNews最佳"],
     ["science", "科学"],
     ["politics", "时政"],
 
