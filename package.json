@@ -22,6 +22,7 @@
     "@vercel/speed-insights": "^1.0.2",
     "framer-motion": "^10.18.0",
     "gray-matter": "^4.0.3",
+    "moment-timezone": "^0.5.44",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",

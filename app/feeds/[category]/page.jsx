@@ -6,6 +6,7 @@ export default async function Home({ params }) {
   const category = params.category;
 
   let today = getFormattedDate();
+  console.log("today in feeds: ", today); // 输出格式为YYYY-MM-DD的日期字符串
   let data, error;
   if (category == "all") {
     ({ data, error } = await supabase
@@ -21,12 +22,12 @@ export default async function Home({ params }) {
   }
 
   const news = data.slice(0, 10);
-  console.log("category: ", category);
-  console.log("news: ", news);
+  // console.log("category: ", category);
+  // console.log("news: ", news);
   return (
     <div className="grid min-h-screen grid-cols-12 p-2">
       {/* <div className="min-h-screen"> */}
-      <div className="xs:col-span-12 xs:col-start-1 mx-auto flex flex-col  items-center bg-white sm:p-2 md:col-span-8 md:col-start-3  md:p-10 md:px-10">
+      <div className="mx-auto flex flex-col items-center bg-white  xs:col-span-12 xs:col-start-1 sm:p-2 md:col-span-8 md:col-start-3  md:p-10 md:px-10">
         {/* <div className="mx-auto flex flex-col items-center  justify-center bg-white sm:p-2   md:p-10 md:px-20"> */}
         <header>
           <div className="relative mx-auto max-w-3xl py-5 text-center">

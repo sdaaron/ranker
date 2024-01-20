@@ -20,7 +20,7 @@ export default async function MoreContent(created_date) {
     ["sport", "运动"],
   ];
   return (
-    <div className="content-block mb-5" key={created_date}>
+    <div className="content-block mb-5">
       <header>
         <div className="relative mx-auto max-w-3xl py-5 text-center">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900  sm:text-4xl md:text-5xl lg:text-6xl ">
