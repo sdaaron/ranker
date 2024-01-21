@@ -18,8 +18,8 @@ export default async function Example({
     .select()
     .eq("category", category)
     .eq("created_date", created_date)
-    .order("importance", { ascending: false })
-    .limit(10);
+    .order("importance", { ascending: false });
+  // .limit(10);
   console.log(`fetching category ${category} in ${created_date}`);
   if (!data || data.length === 0) {
     console.log("news: there is no news");
