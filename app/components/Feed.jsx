@@ -18,14 +18,14 @@ export default async function Example({
     .select()
     .eq("category", category)
     .eq("created_date", created_date)
-    .order("importance", { ascending: false });
-  // .limit(10);
-  console.log(`fetching category ${category} with ${created_date}`);
-  const news = data;
-  if (!news || news.length === 0) {
+    .order("importance", { ascending: false })
+    .limit(10);
+  console.log(`fetching category ${category} in ${created_date}`);
+  if (!data || data.length === 0) {
     console.log("news: there is no news");
     return <p>没有数据</p>;
   }
+  console.log(`got ${data.length} news`);
   const newsData = data.slice(-10);
   const variants = {
     hidden: { opacity: 0 },
