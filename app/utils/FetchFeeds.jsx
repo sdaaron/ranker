@@ -2,7 +2,7 @@
 import ArticleCard from "../components/ArticleCard";
 import supabase from "./SupabaseClient";
 export default async function Home(date, category) {
-  console.log("date in FetchFeeds: ", date);
+  console.log("date in FetchFeeds!!: ", date);
   let data, error;
   if (category == "all") {
     ({ data, error } = await supabase
