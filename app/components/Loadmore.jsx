@@ -18,15 +18,12 @@ export default function LoadMore({ today }) {
       console.log("inView: ", inView);
       Content(date).then((res) => {
         console.log("res: ", res);
+        console.log("fetched date: ", date);
         setData([...data, res]);
         setDate((date) => getPreviousDay(date));
       });
     }
   }, [inView]);
-
-  console.log("previousDay: ", previousDay);
-  console.log("stopDate: ", stopDate);
-  console.log(date >= stopDate);
 
   return (
     <>

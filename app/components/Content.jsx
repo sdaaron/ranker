@@ -1,6 +1,6 @@
 "use server";
 import Feed from "./Feed";
-export default async function MoreContent(created_date) {
+export default async function Content(created_date) {
   console.log("Content////created_date: ", created_date);
   // const today = new Date().toISOString().slice(0, 10);
   let categoryList;
