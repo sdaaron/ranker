@@ -23,7 +23,7 @@ export default async function Example({
   console.log(`fetching category ${category} in ${created_date}`);
   if (!data || data.length === 0) {
     console.log("news: there is no news");
-    return <p>没有数据</p>;
+    return null;
   }
   console.log(`got ${data.length} news`);
   const newsData = data.slice(-10);
