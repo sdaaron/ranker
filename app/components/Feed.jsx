@@ -21,7 +21,10 @@ export default async function Example({
     .order("importance", { ascending: false })
     .limit(10);
   const news = data;
-  if (!news || news.length === 0) return null;
+  if (!news || news.length === 0) {
+    console.log("news: there is no news");
+    return <p>没有数据</p>;
+  }
   const newsData = data.slice(-10);
   const variants = {
     hidden: { opacity: 0 },
