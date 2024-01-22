@@ -2,23 +2,12 @@ import Banner from "./components/Banner";
 import Content from "./components/Content";
 import Loadmore from "./components/Loadmore";
 export default async function Home() {
-  // const { data, error } = await supabase
-  //   .from("feeds")
-  //   .select("created_date")
-  //   .order("created_date", { ascending: false })
-  //   .limit(1);
-
-  // console.log("page date: ", data);
-  // let today = data[0].created_date;
-
-  // console.log("today: ", today);
-  // console.log("today: ", typeof today);
   function getFormattedDate() {
     let now = new Date();
     let hour = now.getHours();
 
     // 如果当前时间早于早上8点，调整日期为昨天
-    if (hour < 1) {
+    if (hour < 2) {
       now.setDate(now.getDate() - 1);
     }
 
