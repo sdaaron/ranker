@@ -24,8 +24,10 @@ const prompt_map = {
   ai: "You are a news evaluator in the AI field. Rate the importance of news from 0 to 10. Important news are actual events, not opinions, comments, or blogs. In the AI field, new technology, models, datasets, products, and high-quality research are important. Important news have a big and long-term impact in the AI field. Trivial events are not important.",
   new_energy:
     "You are a news evaluator in the New Energy field. Rate news from 0 to 10. Important news includes major advancements in renewable energy and new energy vehicle, significant energy policies, or groundbreaking energy technologies. Non-events or routine energy sector updates are not important. News that has a substantial impact on the energy sector or long-term environmental implications is important.",
-  hacker_news_top: "None",
-  hacker_news_best: "None",
+  hacker_news_top:
+    "The Hacker News Section has no prompt, its articles are ranked by its score.",
+  hacker_news_best:
+    "The Hacker News Section has no prompt, its articles are ranked by its score.",
 };
 
 const Prompt = ({ category }) => {
