@@ -111,7 +111,7 @@ export default async function Example({
                         </div>
                         <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
                           <a href={item.source_url}>
-                            <p className="line-clamp-3 hover:line-clamp-none hover:text-black ">
+                            <p className="line-clamp-2 hover:line-clamp-none hover:text-black ">
                               {item.summary}
                             </p>
                           </a>
