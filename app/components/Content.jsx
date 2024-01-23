@@ -1,14 +1,10 @@
 "use server";
 import Feed from "./Feed";
 export default async function Content(created_date) {
-  console.log("Content////created_date: ", created_date);
-  // const today = new Date().toISOString().slice(0, 10);
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
-    // ["world", "时事"],
     ["business", "财经"],
-
     ["technology", "科技"],
     ["science", "科学"],
 

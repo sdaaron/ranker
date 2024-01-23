@@ -28,6 +28,9 @@ const prompt_map = {
     "The Hacker News Section has no prompt, its articles are ranked by its score.",
   hacker_news_best:
     "The Hacker News Section has no prompt, its articles are ranked by its score.",
+  github_trending:
+    "The prompt for the the github trending section will be revealed later.",
+  arxiv: "The prompt for the the arxiv section will be revealed later.",
 };
 
 const Prompt = ({ category }) => {
