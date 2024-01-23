@@ -6,14 +6,16 @@ export default async function Content(created_date) {
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
-    ["world", "时事"],
+    // ["world", "时事"],
     ["business", "财经"],
+
     ["technology", "科技"],
+    ["science", "科学"],
 
     ["hacker_news_top", "HackerNews热门"],
     ["hacker_news_best", "HackerNews最佳"],
-    ["science", "科学"],
-    ["politics", "时政"],
+    ["github_trending", "Github热门"],
+    ["arxiv", "Arxiv论文"],
 
     ["new_energy", "能源"],
     ["health", "健康"],

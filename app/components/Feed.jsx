@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import blurImage from "../../public/placeholder.png";
 import supabase from "../utils/SupabaseClient";
 import ImageWithFallback from "./ImageWithFallback";
@@ -96,21 +95,23 @@ export default async function Example({
                       <div className="min-w-0 flex-1">
                         <div>
                           <div className="text-sm">
-                            <Link
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
                               href={item.source_url}
                               className="line-clamp-none text-base text-blue-600
                               hover:line-clamp-none hover:text-blue-700"
                             >
                               {item.title}
-                            </Link>
+                            </a>
                           </div>
-                          <p className="text-xxs text-gray-500">
+                          <p className="line-clamp-1 text-xxs text-gray-500">
                             {item.source_name} 发布于 {item.publish_date}
                           </p>
                         </div>
                         <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
                           <a href={item.source_url}>
-                            <p className="line-clamp-none hover:line-clamp-none hover:text-black ">
+                            <p className="line-clamp-3 hover:line-clamp-none hover:text-black ">
                               {item.summary}
                             </p>
                           </a>
