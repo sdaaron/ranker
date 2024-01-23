@@ -60,12 +60,6 @@ export default function Example() {
                     大模型
                   </Link>
                   <Link
-                    href="/feeds/world"
-                    className={linkClass("/feeds/world")}
-                  >
-                    时事
-                  </Link>
-                  <Link
                     href="/feeds/business"
                     className={linkClass("/feeds/business")}
                   >
@@ -82,12 +76,6 @@ export default function Example() {
                     className={linkClass("/feeds/science")}
                   >
                     科学
-                  </Link>
-                  <Link
-                    href="/feeds/politics"
-                    className={linkClass("/feeds/politics")}
-                  >
-                    时政
                   </Link>
 
                   <Link
@@ -114,6 +102,20 @@ export default function Example() {
                   >
                     运动
                   </Link>
+                  <Link
+                    href="/feeds/github_trending"
+                    className={linkClass("/feeds/github_trending")}
+                  >
+                    Github
+                  </Link>
+
+                  <Link
+                    href="/feeds/arxiv"
+                    className={linkClass("/feeds/arxiv")}
+                  >
+                    Arxiv
+                  </Link>
+
                   <Link
                     href="/feeds/hacker_news_top"
                     className={linkClass("/feeds/hacker_news_top")}
@@ -178,56 +180,56 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/ai")}
               >
                 大模型
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
-                className={linkClassSmall("/feeds/business")}
+                href="/feeds/github_trending"
+                className={linkClassSmall("/feeds/github_trending")}
               >
-                财经
+                Github
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/technology")}
               >
                 科技
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/science")}
               >
                 科学
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
-                className={linkClassSmall("/feeds/politics")}
+                href="/feeds/github_trending"
+                className={linkClassSmall("/feeds/arxiv")}
               >
-                时政
+                Arxiv
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/new_energy")}
               >
                 能源
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/health")}
               >
                 健康
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/entertainment")}
               >
                 娱乐
@@ -235,7 +237,7 @@ export default function Example() {
 
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/sport")}
               >
                 运动
@@ -243,14 +245,14 @@ export default function Example() {
 
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/hacker_news_top")}
               >
                 HackerNews热门
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/business"
+                href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/hacker_news_best")}
               >
                 HackerNews最佳
