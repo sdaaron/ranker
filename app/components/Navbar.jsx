@@ -187,49 +187,42 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
-                className={linkClassSmall("/feeds/github_trending")}
+                href="/feeds/business"
+                className={linkClassSmall("/feeds/business")}
               >
-                Github
+                财经
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
+                href="/feeds/technology"
                 className={linkClassSmall("/feeds/technology")}
               >
                 科技
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
+                href="/feeds/science"
                 className={linkClassSmall("/feeds/science")}
               >
                 科学
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
-                className={linkClassSmall("/feeds/arxiv")}
-              >
-                Arxiv
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/feeds/github_trending"
+                href="/feeds/new_energy"
                 className={linkClassSmall("/feeds/new_energy")}
               >
                 能源
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
+                href="/feeds/health"
                 className={linkClassSmall("/feeds/health")}
               >
                 健康
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
+                href="/feeds/entertainment"
                 className={linkClassSmall("/feeds/entertainment")}
               >
                 娱乐
@@ -237,22 +230,35 @@ export default function Example() {
 
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
+                href="/feeds/sport"
                 className={linkClassSmall("/feeds/sport")}
               >
                 运动
               </Disclosure.Button>
-
               <Disclosure.Button
                 as="a"
                 href="/feeds/github_trending"
+                className={linkClassSmall("/feeds/github_trending")}
+              >
+                Github
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/arxiv"
+                className={linkClassSmall("/feeds/arxiv")}
+              >
+                Arxiv
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/feeds/hacker_news_top"
                 className={linkClassSmall("/feeds/hacker_news_top")}
               >
                 HackerNews热门
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/feeds/github_trending"
+                href="/feeds/hacker_news_best"
                 className={linkClassSmall("/feeds/hacker_news_best")}
               >
                 HackerNews最佳
