@@ -11,7 +11,6 @@ export default async function Content(created_date) {
     ["science", "科学"],
     ["product_hunt", "ProductHunt"],
     ["hacker_news_top", "HackerNews"],
-    // ["hacker_news_best", "HackerNews最佳"],
     ["github_trending", "Github"],
     ["arxiv", "Arxiv论文"],
 
