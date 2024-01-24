@@ -103,6 +103,13 @@ export default function Example() {
                     运动
                   </Link>
                   <Link
+                    href="/feeds/product_hunt"
+                    className={linkClass("/feeds/product_hunt")}
+                  >
+                    ProductHunt
+                  </Link>
+
+                  <Link
                     href="/feeds/github_trending"
                     className={linkClass("/feeds/github_trending")}
                   >
@@ -121,12 +128,6 @@ export default function Example() {
                     className={linkClass("/feeds/hacker_news_top")}
                   >
                     HN热门
-                  </Link>
-                  <Link
-                    href="/feeds/hacker_news_best"
-                    className={linkClass("/feeds/hacker_news_best")}
-                  >
-                    HN最佳
                   </Link>
                 </div>
               </div>
@@ -237,6 +238,13 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
+                href="/feeds/product_hunt"
+                className={linkClassSmall("/feeds/product_hunt")}
+              >
+                ProductHunt
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
                 href="/feeds/github_trending"
                 className={linkClassSmall("/feeds/github_trending")}
               >
@@ -255,13 +263,6 @@ export default function Example() {
                 className={linkClassSmall("/feeds/hacker_news_top")}
               >
                 HackerNews热门
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/feeds/hacker_news_best"
-                className={linkClassSmall("/feeds/hacker_news_best")}
-              >
-                HackerNews最佳
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
