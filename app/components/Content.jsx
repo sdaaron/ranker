@@ -9,10 +9,10 @@ export default async function Content(created_date) {
     // ["world", "时事"],
 
     ["science", "科学"],
-    ["product_hunt", "ProductHunt"],
+    ["product_hunt", "产品"],
     ["hacker_news_top", "HackerNews"],
-    ["github_trending", "Github"],
-    ["arxiv", "Arxiv论文"],
+    ["github_trending", "技术"],
+    ["arxiv", "论文"],
 
     ["new_energy", "能源"],
     ["health", "健康"],
