@@ -38,7 +38,7 @@ export default async function Example({
         initial="hidden"
         animate="visible"
         transition={{ duration: 1, delay: index * 0.25, ease: "easeInOut" }}
-        className="relative z-30 mb-4 flow-root bg-white"
+        className="relative z-30 my-5 flow-root bg-white"
       >
         {/* Feed卡片标题栏 */}
         <div className="relative mb-3 ml-2 flex flex-row items-center justify-start rounded-t-3xl">
@@ -111,7 +111,7 @@ export default async function Example({
                         </div>
                         <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
                           <a href={item.source_url}>
-                            <p className="line-clamp-2 hover:line-clamp-none hover:text-black ">
+                            <p className="line-clamp-3 hover:line-clamp-none hover:text-black ">
                               {item.summary}
                             </p>
                           </a>

@@ -7,12 +7,12 @@ export default async function Content(created_date) {
     ["business", "财经"],
     ["technology", "科技"],
     ["world", "时事"],
-    ["science", "科学"],
 
     ["hacker_news_top", "HackerNews热门"],
     // ["hacker_news_best", "HackerNews最佳"],
     ["github_trending", "Github热门"],
     ["arxiv", "Arxiv论文"],
+    ["science", "科学"],
 
     ["new_energy", "能源"],
     ["health", "健康"],
