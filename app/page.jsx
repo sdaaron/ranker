@@ -5,18 +5,9 @@ export default async function Home() {
   function getFormattedDate() {
     let now = new Date();
     let hour = now.getHours();
-    // test;
-    // 如果当前时间早于早上8点，调整日期为昨天
-    // if (hour < 1) {
-    //   now.setDate(now.getDate() - 1);
-    // }
-
-    // 将日期格式化为YYYY-MM-DD格式
-    let year = now.getFullYear();
-    let month = (now.getMonth() + 1).toString().padStart(2, "0"); // 月份从0开始，所以加1
-    let day = now.getDate().toString().padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
+    const moment = require("moment-timezone");
+    let today = moment().tz("Asia/Shanghai").format("YYYY-MM-DD");
+    return today;
   }
 
   // 使用函数
