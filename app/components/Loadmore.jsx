@@ -17,6 +17,7 @@ export default function LoadMore() {
   useEffect(() => {
     if (inView && date.format("YYYY-MM-DD") >= stopDate) {
       Content(date.format("YYYY-MM-DD")).then((res) => {
+        console.log("res: ", res);
         setData([...data, res]);
         setDate((date) => getPreviousDate(date));
       });
