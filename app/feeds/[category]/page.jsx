@@ -1,11 +1,11 @@
-import { getFormattedDate } from "@/app/utils/DateTool";
+import { getNowInBeijing } from "@/app/utils/DateTool";
 import ArticleCard from "../../components/ArticleCard";
 import LoadmoreFeeds from "../../components/LoadmoreFeeds";
 import supabase from "../../utils/SupabaseClient";
 export default async function Home({ params }) {
   const category = params.category;
 
-  let today = getFormattedDate();
+  let today = getNowInBeijing().format("YYYY-MM-DD");
   console.log("today in feeds: ", today); // 输出格式为YYYY-MM-DD的日期字符串
   let data, error;
   if (category == "all") {

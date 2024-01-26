@@ -2,12 +2,13 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { getPreviousDay } from "../utils/DateTool";
+import { getNowInBeijing, getPreviousDate } from "../utils/DateTool";
 import FetchFeeds from "../utils/FetchFeeds";
 export default function LoadmoreArticle({ today, category }) {
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
-  const yesterday = getPreviousDay(today);
+  let nowInBeijing = getNowInBeijing();
+  const yesterday = getPreviousDate(nowInBeijing);
   console.log("today in loadmore: ", today);
   console.log("yesterday in loadmore: ", yesterday);
   const [date, setDate] = useState(yesterday);
@@ -15,12 +16,12 @@ export default function LoadmoreArticle({ today, category }) {
   console.log("date: ", date);
 
   useEffect(() => {
-    if (inView && date >= stopDate) {
+    if (inView && date.format("YYYY-MM-DD") >= stopDate) {
       console.log("inView: ", inView);
-      FetchFeeds(date, category).then((res) => {
+      FetchFeeds(date.format("YYYY-MM-DD"), category).then((res) => {
         console.log("res: ", res);
         setData([...data, res]);
-        setDate((date) => getPreviousDay(date));
+        setDate((date) => getPreviousDate(date));
       });
     }
   }, [inView]);
@@ -28,7 +29,7 @@ export default function LoadmoreArticle({ today, category }) {
   return (
     <>
       {data}
-      {date >= stopDate ? (
+      {date.format("YYYY-MM-DD") >= stopDate ? (
         <section className="flex w-full items-center justify-center">
           <div ref={ref} className="p-10">
             <Image
