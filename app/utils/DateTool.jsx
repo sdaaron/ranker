@@ -1,17 +1,13 @@
-export function getBeijingCurrentDate() {
-  const moment = require("moment-timezone");
-  let today = moment().tz("Asia/Shanghai").format("YYYY-MM-DD");
-  return today;
+import moment from "moment-timezone";
+moment.tz.setDefault("Asia/Shanghai");
+
+export function getNowInBeijing() {
+  let nowInBeijing = moment();
+  return nowInBeijing;
 }
 
-export function getFormattedDate(inputDate) {
-  let date = new Date(inputDate);
-  let formattedDate = date.toISOString().split("T")[0];
-  return formattedDate;
-}
-
-export function getPreviousDay(dateString) {
-  let previousDay = new Date(dateString);
-  previousDay.setDate(previousDay.getDate() - 1);
-  return getFormattedDate(previousDay);
+export function getPreviousDate(date) {
+  let previousDate = date.clone().subtract(1, "days");
+  console.log(previousDate.format());
+  return previousDate;
 }

@@ -2,24 +2,23 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { getPreviousDay } from "../utils/DateTool";
+import { getNowInBeijing, getPreviousDate } from "../utils/DateTool";
 import Content from "./Content";
 
-export default function LoadMore({ today }) {
-  let previousDay = getPreviousDay(today);
+export default function LoadMore() {
+  let nowInBeijing = getNowInBeijing();
+  // console.log("nowInBeijing: ", nowInBeijing);
+  let previousDay = getPreviousDate(nowInBeijing);
+  // console.log("previousDay: ", previousDay);
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
   const stopDate = "2024-01-15";
   const [date, setDate] = useState(previousDay);
-
   useEffect(() => {
-    if (inView && date >= stopDate) {
-      console.log("inView: ", inView);
-      Content(date).then((res) => {
-        console.log("res: ", res);
+    if (inView && date.format("YYYY-MM-DD") >= stopDate) {
+      Content(date.format("YYYY-MM-DD")).then((res) => {
         setData([...data, res]);
-        console.log("=======got loadmore date: ", date);
-        setDate((date) => getPreviousDay(date));
+        setDate((date) => getPreviousDate(date));
       });
     }
   }, [inView]);
@@ -27,7 +26,7 @@ export default function LoadMore({ today }) {
   return (
     <>
       {data}
-      {date >= stopDate ? (
+      {date.format("YYYY-MM-DD") >= stopDate ? (
         <section className="flex w-full items-center justify-center">
           <div ref={ref}>
             <Image

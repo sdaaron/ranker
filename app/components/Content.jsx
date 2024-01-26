@@ -1,6 +1,7 @@
 "use server";
 import Feed from "./Feed";
 export default async function Content(created_date) {
+  console.log("fetching created_date: ", created_date);
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
