@@ -20,6 +20,7 @@ export default function LoadMore({ today }) {
         console.log("res: ", res);
         console.log("fetched date: ", date);
         setData([...data, res]);
+        console.log("=======got previous date: ", date);
         setDate((date) => getPreviousDay(date));
       });
     }

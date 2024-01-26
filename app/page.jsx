@@ -1,11 +1,10 @@
 import Banner from "./components/Banner";
 import Content from "./components/Content";
 import Loadmore from "./components/Loadmore";
-import { getBeijingDate } from "./utils/DateTool";
+import { getBeijingCurrentDate } from "./utils/DateTool";
 export default async function Home() {
-  let today = getBeijingDate();
-  console.log(today); // 输出格式为YYYY-MM-DD的日期字符串
-
+  let today = getBeijingCurrentDate();
+  console.log("Beijing Current Date: ", today);
   const contentData = await Content(today);
   return (
     <main className="bg-white-50 flex min-h-screen flex-col">

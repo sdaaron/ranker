@@ -1,4 +1,4 @@
-export function getBeijingDate() {
+export function getBeijingCurrentDate() {
   const moment = require("moment-timezone");
   let today = moment().tz("Asia/Shanghai").format("YYYY-MM-DD");
   return today;
@@ -10,7 +10,6 @@ export function getFormattedDate(inputDate) {
   return formattedDate;
 }
 
-console.log("getFormattedDate: ", getFormattedDate("2021-08-01T16:00:00.000Z"));
 export function getPreviousDay(dateString) {
   let previousDay = new Date(dateString);
   previousDay.setDate(previousDay.getDate() - 1);
