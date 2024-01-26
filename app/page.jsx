@@ -7,6 +7,7 @@ export default async function Home() {
     let hour = now.getHours();
     const moment = require("moment-timezone");
     let today = moment().tz("Asia/Shanghai").format("YYYY-MM-DD");
+    console.log("today in page: ", today);
     return today;
   }
 
