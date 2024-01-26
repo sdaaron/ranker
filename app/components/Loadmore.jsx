@@ -7,7 +7,6 @@ import Content from "./Content";
 
 export default function LoadMore({ today }) {
   let previousDay = getPreviousDay(today);
-  console.log("loadmore previousDay: ", previousDay);
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
   const stopDate = "2024-01-15";
@@ -18,9 +17,8 @@ export default function LoadMore({ today }) {
       console.log("inView: ", inView);
       Content(date).then((res) => {
         console.log("res: ", res);
-        console.log("fetched date: ", date);
         setData([...data, res]);
-        console.log("=======got previous date: ", date);
+        console.log("=======got loadmore date: ", date);
         setDate((date) => getPreviousDay(date));
       });
     }
