@@ -127,7 +127,7 @@ export default function Example() {
                     href="/feeds/hacker_news_top"
                     className={linkClass("/feeds/hacker_news_top")}
                   >
-                    HN热门
+                    HackerNews
                   </Link>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function Example() {
                 href="/feeds/hacker_news_top"
                 className={linkClassSmall("/feeds/hacker_news_top")}
               >
-                HackerNews热门
+                HackerNews
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
