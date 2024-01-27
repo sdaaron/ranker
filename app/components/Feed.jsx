@@ -53,7 +53,7 @@ export default async function Example({
         <div className="feed-container">
           <ul
             role="list"
-            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-2  px-2 py-3 sm:px-4 md:px-0"
+            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-1 px-2 py-3 sm:px-4 md:px-0"
           >
             {newsData.map((item, itemIdx) => (
               <li key={itemIdx} className="row-span-1">
@@ -93,22 +93,20 @@ export default async function Example({
                         </div>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div>
-                          <div className="text-sm">
-                            <a
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={item.source_url}
-                              className="line-clamp-none text-base text-blue-600
+                        <div className="text-sm">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={item.source_url}
+                            className="line-clamp-none text-base text-blue-600
                               hover:line-clamp-none hover:text-blue-700"
-                            >
-                              {item.title}
-                            </a>
-                          </div>
-                          <p className="line-clamp-1 text-xxs text-gray-500">
-                            {item.source_name} 发布于 {item.publish_date}
-                          </p>
+                          >
+                            {item.title}
+                          </a>
                         </div>
+                        <p className="line-clamp-1 text-xxs text-gray-500">
+                          {item.source_name} 发布于 {item.publish_date}
+                        </p>
                         <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
                           <a href={item.source_url}>
                             <p className="line-clamp-3 hover:line-clamp-none hover:text-black ">
