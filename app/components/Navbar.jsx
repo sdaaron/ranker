@@ -106,7 +106,7 @@ export default function Example() {
                     href="/feeds/product_hunt"
                     className={linkClass("/feeds/product_hunt")}
                   >
-                    ProductHunt
+                    产品
                   </Link>
 
                   <Link
@@ -241,7 +241,7 @@ export default function Example() {
                 href="/feeds/product_hunt"
                 className={linkClassSmall("/feeds/product_hunt")}
               >
-                ProductHunt
+                产品
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
