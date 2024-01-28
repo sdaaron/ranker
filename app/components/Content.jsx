@@ -8,7 +8,6 @@ export default async function Content(created_date) {
     ["business", "财经"],
     ["technology", "科技"],
     // ["world", "时事"],
-
     ["science", "科学"],
     ["product_hunt", "产品"],
     ["hacker_news_top", "HackerNews"],
