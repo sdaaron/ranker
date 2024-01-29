@@ -7,17 +7,16 @@ export default async function Content(created_date) {
     ["ai", "大模型"],
     ["business", "财经"],
     ["technology", "科技"],
-    // ["world", "时事"],
+    ["world", "时事"],
     ["science", "科学"],
+    ["new_energy", "能源"],
+    ["health", "健康"],
+    ["entertainment", "娱乐"],
+    // ["sport", "运动"],
     ["product_hunt", "产品"],
     ["hacker_news_top", "HackerNews"],
     ["github_trending", "技术"],
     ["arxiv", "论文"],
-
-    ["new_energy", "能源"],
-    ["health", "健康"],
-    ["entertainment", "娱乐"],
-    ["sport", "运动"],
   ];
   return (
     <div className="content-block mb-5">
