@@ -7,6 +7,7 @@ import MotionDiv from "./MotionDiv";
 
 // import TimelineButton from "./TimelineButton";
 export default async function Example({ data, index }) {
+  console.log(index);
   // console.log("data: ", data);
   data = data.slice(-10);
   const display = data?.[0]?.display;
@@ -43,10 +44,10 @@ export default async function Example({ data, index }) {
             role="list"
             className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-1 px-2 py-3 sm:px-4 md:px-0"
           >
-            {data.map((item, index) => (
-              <li key={index} className="row-span-1">
+            {data.map((item, idx) => (
+              <li key={idx} className="row-span-1">
                 <div className="group   relative z-30 flow-root">
-                  {index !== data.length - 1 ? (
+                  {idx !== data.length - 1 ? (
                     <span
                       className="absolute left-6 top-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
@@ -73,7 +74,7 @@ export default async function Example({ data, index }) {
                         />
                         <div className="absolute -bottom-1 -right-1 z-50 rounded-full bg-white shadow-lg ring-1 ring-black ring-opacity-5">
                           <Image
-                            src={`/int-${index + 1}.png`}
+                            src={`/int-${idx + 1}.png`}
                             width={24}
                             height={24}
                             className="rounded"

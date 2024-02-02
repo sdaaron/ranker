@@ -3,22 +3,18 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { getNowInBeijing, getPreviousDate } from "../utils/DateTool";
-// import Content from "../archive/Content";
-import Content from "./Content";
+import FeedGroup from "./FeedGroup";
 
 export default function LoadMore() {
   let nowInBeijing = getNowInBeijing();
-  // console.log("nowInBeijing: ", nowInBeijing);
   let previousDay = getPreviousDate(nowInBeijing);
-  // console.log("previousDay: ", previousDay);
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
   const stopDate = "2024-01-15";
   const [date, setDate] = useState(previousDay);
   useEffect(() => {
     if (inView && date.format("YYYY-MM-DD") >= stopDate) {
-      // setDate((date) => getPreviousDate(date));
-      Content(date.format("YYYY-MM-DD")).then((res) => {
+      FeedGroup(date.format("YYYY-MM-DD")).then((res) => {
         console.log("res: ", res);
         setData([...data, res]);
         setDate((date) => getPreviousDate(date));
