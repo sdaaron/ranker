@@ -7,7 +7,6 @@ import MotionDiv from "./MotionDiv";
 
 // import TimelineButton from "./TimelineButton";
 export default async function Example({ data, index }) {
-  console.log(index);
   // console.log("data: ", data);
   data = data.slice(-10);
   const display = data?.[0]?.display;
