@@ -1,16 +1,7 @@
 "use server";
 import Feed from "./Feed";
-import supabase from "../utils/SupabaseClient";
-
-export default async function Content(date) {
-  let created_date = date;
-  let { data } = await supabase
-    .from("feeds")
-    .select()
-    .eq("created_date", date)
-    .order("importance", { ascending: false });
-  // console.log("data: ", data[0]);
-
+export default async function Content(created_date) {
+  console.log("fetching created_date: ", created_date);
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
@@ -27,15 +18,8 @@ export default async function Content(date) {
     ["arxiv", "论文"],
     // ["sport", "运动"],
   ];
-  let filteredData = categoryList.map(([value, display]) => {
-    let filteredData = data.filter((item) => item.category === value);
-    // console.log("result data", return_data.length);
-    filteredData.map((item) => (item.display = display));
-    return filteredData;
-  });
-
   return (
-    <div className="content-block mb-5" key={created_date}>
+    <div className="content-block mb-5">
       <header>
         <div className="relative mx-auto max-w-3xl py-5 text-center">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900  sm:text-4xl md:text-5xl lg:text-6xl ">
@@ -51,8 +35,14 @@ export default async function Content(date) {
         </div>
       </header>
       <main className="main-section grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {filteredData.map((data, index) => (
-          <Feed key={index} data={data} />
+        {categoryList.map(([category, display], index) => (
+          <Feed
+            key={category}
+            category={category}
+            display={display}
+            created_date={created_date}
+            index={index}
+          />
         ))}
       </main>
     </div>

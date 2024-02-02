@@ -1,15 +1,31 @@
-"use server";
 import Image from "next/image";
 import blurImage from "../../public/placeholder.png";
-import ImageWithFallback from "./ImageWithFallback";
-import ModalButton from "./ModalButton";
-import MotionDiv from "./MotionDiv";
-
+import supabase from "../utils/SupabaseClient";
+import ImageWithFallback from "../components/ImageWithFallback";
+import ModalButton from "../components/ModalButton";
+import MotionDiv from "../components/MotionDiv";
 // import TimelineButton from "./TimelineButton";
-export default async function Example({ data, index }) {
-  // console.log("data: ", data);
-  data = data.slice(-10);
-  const display = data[0].display;
+export default async function Example({
+  // key,
+  category,
+  display,
+  created_date,
+  index,
+}) {
+  const { data, error } = await supabase
+    .from("feeds")
+    .select()
+    .eq("category", category)
+    .eq("created_date", created_date)
+    .order("importance", { ascending: false });
+  // .limit(10);
+  // console.log(`fetching category ${category} in ${created_date}`);
+  if (!data || data.length === 0) {
+    console.log("news: there is no news");
+    return null;
+  }
+  // console.log(`got ${data.length} news`);
+  const newsData = data.slice(-10);
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -30,7 +46,7 @@ export default async function Example({ data, index }) {
           <h3 className="text-left font-mono text-3xl font-semibold leading-6 text-gray-900">
             {display}
           </h3>
-          <ModalButton category={data[0].category} />
+          <ModalButton category={category} />
         </div>
 
         {/* Feed卡片内容栏 */}
@@ -39,10 +55,10 @@ export default async function Example({ data, index }) {
             role="list"
             className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-1 px-2 py-3 sm:px-4 md:px-0"
           >
-            {data.map((item, index) => (
-              <li key={index} className="row-span-1">
+            {newsData.map((item, itemIdx) => (
+              <li key={itemIdx} className="row-span-1">
                 <div className="group   relative z-30 flow-root">
-                  {index !== data.length - 1 ? (
+                  {itemIdx !== newsData.length - 1 ? (
                     <span
                       className="absolute left-6 top-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
@@ -69,7 +85,7 @@ export default async function Example({ data, index }) {
                         />
                         <div className="absolute -bottom-1 -right-1 z-50 rounded-full bg-white shadow-lg ring-1 ring-black ring-opacity-5">
                           <Image
-                            src={`/int-${index + 1}.png`}
+                            src={`/int-${itemIdx + 1}.png`}
                             width={24}
                             height={24}
                             className="rounded"
@@ -91,9 +107,9 @@ export default async function Example({ data, index }) {
                         <p className="line-clamp-1 text-xxs text-gray-500">
                           {item.source_name} 发布于 {item.publish_date}
                         </p>
-                        <div className="mt-0.5 overflow-hidden text-sm text-gray-700 transition-all duration-300">
+                        <div className="mt-0.5 overflow-hidden text-sm  text-gray-700 transition-all duration-300">
                           <a href={item.source_url}>
-                            <p className="line-clamp-3 text-black hover:line-clamp-none">
+                            <p className="line-clamp-3  hover:line-clamp-none hover:text-black ">
                               {item.summary}
                             </p>
                           </a>
