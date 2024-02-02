@@ -26,7 +26,7 @@ export default async function Example({ data, index }) {
         variants={variants}
         initial="hidden"
         animate="visible"
-        transition={{ duration: 1, delay: index * 0.25, ease: "easeInOut" }}
+        transition={{ duration: 1, delay: index * 0.1, ease: "easeInOut" }}
         className="relative z-30 my-5 flow-root bg-white"
       >
         {/* Feed卡片标题栏 */}
