@@ -22,8 +22,6 @@ export default async function Home({ params }) {
   }
 
   const news = data.slice(0, 10);
-  // console.log("category: ", category);
-  // console.log("news: ", news);
   return (
     <div className="grid min-h-screen grid-cols-12 p-2">
       {/* <div className="min-h-screen"> */}

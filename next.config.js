@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  //   env: {
-  //     AGENT_REQUEST_ENDPOINT: process.env.AGENT_REQUEST_ENDPOINT,
-  //   },
-
   images: {
     remotePatterns: [
       {
@@ -18,11 +14,11 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+});
 
-// const withMDX = require("@next/mdx")({
-//   extension: /\.mdx?$/,
-// });
-// module.exports = withMDX({
-//   pageExtensions: ["js", "jsx", "md", "mdx"],
-// });
+module.exports = withMDX({
+  ...nextConfig,
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+});
