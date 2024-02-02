@@ -9,11 +9,15 @@ import MotionDiv from "./MotionDiv";
 export default async function Example({ data, index }) {
   // console.log("data: ", data);
   data = data.slice(-10);
-  const display = data[0].display;
+  const display = data?.[0]?.display;
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
+
+  if (data.length === 0) {
+    return;
+  }
 
   return (
     <>
@@ -30,7 +34,7 @@ export default async function Example({ data, index }) {
           <h3 className="text-left font-mono text-3xl font-semibold leading-6 text-gray-900">
             {display}
           </h3>
-          <ModalButton category={data[0].category} />
+          <ModalButton category={data[0]?.category} />
         </div>
 
         {/* Feed卡片内容栏 */}

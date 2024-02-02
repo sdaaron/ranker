@@ -28,7 +28,6 @@ export default function LoadMore() {
 
   return (
     <>
-      {/* <Content date={date} /> */}
       {data}
       {date.format("YYYY-MM-DD") >= stopDate ? (
         <section className="flex w-full items-center justify-center">
