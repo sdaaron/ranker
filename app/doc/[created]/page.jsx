@@ -14,18 +14,18 @@ export default async function MarkdownContent({ params }) {
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
-    ["product_hunt", "产品"],
-    ["github_trending", "技术"],
-    ["arxiv", "论文"],
-    ["business", "财经"],
-    ["technology", "科技"],
-    ["world", "时事"],
-    ["science", "科学"],
-    ["new_energy", "能源"],
-    ["health", "健康"],
-    ["entertainment", "娱乐"],
-    ["hacker_news_top", "HackerNews"],
-    ["sport", "运动"],
+    // ["product_hunt", "产品"],
+    // ["github_trending", "技术"],
+    // ["arxiv", "论文"],
+    // ["business", "财经"],
+    // ["technology", "科技"],
+    // ["world", "时事"],
+    // ["science", "科学"],
+    // ["new_energy", "能源"],
+    // ["health", "健康"],
+    // ["entertainment", "娱乐"],
+    // ["hacker_news_top", "HackerNews"],
+    // ["sport", "运动"],
   ];
   let filteredData = categoryList.map(([value, display]) => {
     let filteredData = data.filter((item) => item.category === value);
@@ -60,6 +60,7 @@ export default async function MarkdownContent({ params }) {
         {filteredData[0].map((data, index) => (
           <FormattedMarkdown data={data} key={index} />
         ))}
+        <div>资讯来源： https://ranker.cc</div>
       </div>
     </div>
   );
