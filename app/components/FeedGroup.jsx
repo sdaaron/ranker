@@ -8,7 +8,7 @@ export default async function Content(date) {
     .select()
     .eq("created_date", date)
     .order("importance", { ascending: false });
-  // console.log("data: ", data[0]);
+  // .neq("id", uuidv4());
 
   let categoryList;
   categoryList = [

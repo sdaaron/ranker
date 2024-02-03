@@ -14,9 +14,9 @@ export default async function MarkdownContent({ params }) {
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
-    // ["product_hunt", "产品"],
-    // ["github_trending", "技术"],
-    // ["arxiv", "论文"],
+    ["product_hunt", "产品"],
+    ["github_trending", "技术"],
+    ["arxiv", "论文"],
     // ["business", "财经"],
     // ["technology", "科技"],
     // ["world", "时事"],
@@ -56,6 +56,16 @@ export default async function MarkdownContent({ params }) {
         {filteredData[0].map((data, index) => (
           <FormattedMarkdown data={data} key={index} />
         ))}
+        {filteredData[1].map((data, index) => (
+          <FormattedMarkdown data={data} key={index} />
+        ))}
+        {filteredData[2].map((data, index) => (
+          <FormattedMarkdown data={data} key={index} />
+        ))}
+        {filteredData[3].map((data, index) => (
+          <FormattedMarkdown data={data} key={index} />
+        ))}
+
         <div className="flex flex-row items-start justify-start">
           <p>资讯来源：大模型日报 https://ranker.cc</p>
         </div>

@@ -7,6 +7,9 @@ import Navbar from "./components/Navbar";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
+export const revalidate = 600;
+// export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Ranker",
   description: "你的信息流规划助手",
