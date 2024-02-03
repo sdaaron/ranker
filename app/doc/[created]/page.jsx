@@ -46,10 +46,6 @@ export default async function MarkdownContent({ params }) {
           {"> "}
           {data.summary}
         </p>
-
-        {/* <p>
-          原文链接：[{data.source_url}]({data.source_url})
-        </p> */}
       </div>
     );
   }
@@ -60,7 +56,9 @@ export default async function MarkdownContent({ params }) {
         {filteredData[0].map((data, index) => (
           <FormattedMarkdown data={data} key={index} />
         ))}
-        <div>资讯来源： https://ranker.cc</div>
+        <div className="flex flex-row items-start justify-start">
+          <p>资讯来源：大模型日报 https://ranker.cc</p>
+        </div>
       </div>
     </div>
   );
