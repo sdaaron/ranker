@@ -4,12 +4,14 @@ import blurImage from "../../public/placeholder.png";
 import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
+import Link from "next/link";
 
 // import TimelineButton from "./TimelineButton";
 export default async function Example({ data, index }) {
   // console.log("data: ", data);
   data = data.slice(-10);
   const display = data?.[0]?.display;
+  const category = data?.[0]?.category;
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -45,7 +47,7 @@ export default async function Example({ data, index }) {
           >
             {data.map((item, idx) => (
               <li key={idx} className="row-span-1">
-                <div className="group   relative z-30 flow-root">
+                <div className="group  relative z-30 flow-root">
                   {idx !== data.length - 1 ? (
                     <span
                       className="absolute left-6 top-5 -ml-px h-full w-0.5 bg-gray-200"
@@ -109,6 +111,9 @@ export default async function Example({ data, index }) {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="mx-4 my-2 flex h-4 items-center justify-end text-sm font-light">
+          <Link href={`/feeds/${category}`}>阅读更多...</Link>
         </div>
       </MotionDiv>
     </>
