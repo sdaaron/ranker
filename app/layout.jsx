@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
-export const revalidate = 60;
+export const revalidate = 0;
 // export const dynamic = "force-dynamic";
 
 export const metadata = {

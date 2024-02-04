@@ -109,7 +109,7 @@ export default function Example() {
                     产品
                   </Link>
 
-                  <Link
+                  {/* <Link
                     href="/feeds/github_trending"
                     className={linkClass("/feeds/github_trending")}
                   >
@@ -128,7 +128,7 @@ export default function Example() {
                     className={linkClass("/feeds/hacker_news_top")}
                   >
                     HackerNews
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="flex items-center">
