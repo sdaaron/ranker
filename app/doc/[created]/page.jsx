@@ -14,8 +14,8 @@ export default async function MarkdownContent({ params }) {
   let categoryList;
   categoryList = [
     ["ai", "大模型"],
-    ["product_hunt", "产品"],
-    ["github_trending", "技术"],
+    ["product_hunt_ai", "产品"],
+    ["github_trending_ai", "技术"],
     ["arxiv", "论文"],
     // ["business", "财经"],
     // ["technology", "科技"],
@@ -33,7 +33,7 @@ export default async function MarkdownContent({ params }) {
     return filteredData;
   });
 
-  function FormattedMarkdown({ data }) {
+  function FormattedMarkdown({ data, index }) {
     return (
       <div>
         <h2>
@@ -49,26 +49,32 @@ export default async function MarkdownContent({ params }) {
       </div>
     );
   }
-
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex max-w-7xl flex-col items-center justify-center gap-10 p-40">
+      <div className="flex max-w-7xl flex-col items-start justify-start gap-10 p-40">
+        <h1 className="text-4xl font-bold">AI资讯</h1>
         {filteredData[0].map((data, index) => (
-          <FormattedMarkdown data={data} key={index} />
+          <FormattedMarkdown data={data} key={index} index={index} />
         ))}
+        <br /> <br />
+        <h1 className="text-4xl font-bold">AI产品</h1>
         {filteredData[1].map((data, index) => (
-          <FormattedMarkdown data={data} key={index} />
-        ))}
+          <FormattedMarkdown data={data} key={index} index={index} />
+        ))}{" "}
+        <br /> <br />
+        <h1 className="text-4xl font-bold">AI开源项目</h1>
         {filteredData[2].map((data, index) => (
-          <FormattedMarkdown data={data} key={index} />
-        ))}
+          <FormattedMarkdown data={data} key={index} index={index} />
+        ))}{" "}
+        <br /> <br />
+        <h1 className="text-4xl font-bold">AI论文</h1>
         {filteredData[3].map((data, index) => (
-          <FormattedMarkdown data={data} key={index} />
-        ))}
-
-        <div className="flex flex-row items-start justify-start">
-          <p>资讯来源：大模型日报 https://ranker.cc</p>
-        </div>
+          <FormattedMarkdown data={data} key={index} index={index} />
+        ))}{" "}
+        <br /> <br />
+        <h1 className="text-2xl font-bold">
+          资讯来源：大模型日报 https://ranker.cc
+        </h1>
       </div>
     </div>
   );
