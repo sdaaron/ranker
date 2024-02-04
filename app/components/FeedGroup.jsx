@@ -8,7 +8,6 @@ export default async function Content(date) {
     .select()
     .eq("created_date", date)
     .order("importance", { ascending: false });
-  // .neq("id", uuidv4());
 
   let categoryList;
   categoryList = [
@@ -55,11 +54,11 @@ export default async function Content(date) {
     ["github_trending", "GithubTrending"],
   ];
 
-  let filteredData = categoryList.map(([value, display]) => {
-    let filteredData = data.filter((item) => item.category === value);
-    filteredData.map((item) => (item.display = display));
-    return filteredData;
-  });
+  // let filteredData = categoryList.map(([value, display]) => {
+  //   let filteredData = data.filter((item) => item.category === value);
+  //   filteredData.map((item) => (item.display = display));
+  //   return filteredData;
+  // });
 
   let aiData = aiList.map(([value, display]) => {
     let filteredData = data.filter((item) => item.category === value);
