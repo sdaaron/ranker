@@ -24,10 +24,8 @@ export default async function Home({ params }) {
   const news = data.slice(0, 10);
   return (
     <div className="grid min-h-screen grid-cols-12 p-2">
-      {/* <div className="min-h-screen"> */}
       <div className="mx-auto flex flex-col items-center bg-white  xs:col-span-12 xs:col-start-1 sm:p-2 md:col-span-8 md:col-start-3  md:p-10 md:px-10">
-        {/* <div className="mx-auto flex flex-col items-center  justify-center bg-white sm:p-2   md:p-10 md:px-20"> */}
-        <header>
+        {/* <header>
           <div className="relative mx-auto max-w-3xl py-5 text-center">
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900  sm:text-4xl md:text-5xl lg:text-6xl ">
               <span className="bg-gradient-to-r from-sky-400 to-emerald-600 bg-clip-text text-transparent">
@@ -37,7 +35,7 @@ export default async function Home({ params }) {
               大模型日报
             </h1>
           </div>
-        </header>
+        </header> */}
         <div className="my-10">
           <div className="flex items-center justify-center p-10 font-mono text-3xl">
             {today}
