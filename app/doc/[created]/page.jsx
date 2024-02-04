@@ -17,15 +17,6 @@ export default async function MarkdownContent({ params }) {
     ["product_hunt_ai", "产品"],
     ["github_trending_ai", "技术"],
     ["arxiv", "论文"],
-    // ["business", "财经"],
-    // ["technology", "科技"],
-    // ["world", "时事"],
-    // ["science", "科学"],
-    // ["new_energy", "能源"],
-    // ["health", "健康"],
-    // ["entertainment", "娱乐"],
-    // ["hacker_news_top", "HackerNews"],
-    // ["sport", "运动"],
   ];
   let filteredData = categoryList.map(([value, display]) => {
     let filteredData = data.filter((item) => item.category === value);
