@@ -16,12 +16,12 @@ export default function ArticleCard({
   return (
     <article
       key={id}
-      className="xs:px-4 xs:py-2 xs:my-3 flex  w-full transform flex-col items-start justify-center rounded-3xl  transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200 sm:my-6 md:my-6 md:px-10 md:py-5"
+      className="flex w-full transform flex-col  items-start justify-center rounded-3xl transition duration-300 ease-in-out  hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-gray-200 hover:ring-1 hover:ring-gray-200 xs:my-3 xs:px-4 xs:py-2 sm:my-6 md:my-6 md:px-10 md:py-5"
     >
-      <div className="flex items-center justify-start gap-10">
-        <div className="xs:min-w-16 xs:min-h-16 sm:min-h-20 sm:min-w-20 md:min-h-24 md:min-w-24 relative  rounded-lg  lg:min-h-28 lg:min-w-28">
+      <div className="xxs:gap-2 flex items-center justify-start sm:gap-3 md:gap-10">
+        <div className="md:min-h-24 relative rounded-lg xs:min-h-16 xs:min-w-16 sm:min-h-20 sm:min-w-20  md:min-w-24  lg:min-h-28 lg:min-w-28">
           <ImageWithFallback
-            className="xs:min-w-16 xs:min-h-16 sm:min-h-20 sm:min-w-20 md:min-h-24 md:min-w-24 lg:min-w-2 rounded-lg bg-white lg:min-h-28"
+            className="md:min-h-24 lg:min-w-2 rounded-lg bg-white xs:min-h-16 xs:min-w-16 sm:min-h-20 sm:min-w-20 md:min-w-24 lg:min-h-28"
             src={image_url.startsWith("http") ? image_url : "/placeholder.png"}
             fill={true}
             style={{ objectFit: "cover", objectPosition: "center" }}
