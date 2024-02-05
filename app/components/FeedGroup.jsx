@@ -7,6 +7,7 @@ export default async function Content(date) {
     .from("feeds")
     .select()
     .eq("created_date", date)
+    .order("category", { ascending: true })
     .order("importance", { ascending: false });
 
   let aiList = [
