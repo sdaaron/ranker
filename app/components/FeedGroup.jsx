@@ -32,7 +32,7 @@ export default async function Content(date) {
   let internetList = [
     ["product_hunt", "产品"],
     ["github_trending", "技术"],
-    ["hacker_news_top", "极客"],
+    ["hacker_news_best", "极客"],
   ];
 
   let aiData = aiList.map(([value, display]) => {
