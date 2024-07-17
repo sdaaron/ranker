@@ -2,8 +2,10 @@
 
 最近的业余时间，我在做一个用大模型做资讯聚合的日报网站：https://ranker.cc
 
-这个网站前后端纯个人手搓+ChatGPT指点完成，请用大屏打开，体验更佳。
+这个网站前后端主要依赖ChatGPT指点完成，请用大屏打开，体验更佳。
 ![website_screenshot](https://github.com/sdaaron/ranker-web/blob/main/project-img/website-screenshot.png)
+
+本次开源前端代码，后端代码比较草，再整理整理开源，大概一两周后吧。
 
 ## 背景
 
