@@ -1,6 +1,7 @@
 使用GPT-4开发一个信息聚合网站（基于Next.js、Tailwind、Supabase 和 Python）
 最近的业余时间，我在做一个用大模型做资讯聚合的日报网站：https://ranker.cc
 这个网站前后端纯个人手搓+ChatGPT指点完成，请用大屏打开，体验更佳。
+![website_screenshot](https://github.com/sdaaron/ranker-web/blob/main/project-img/website-screenshot.png)
 
 ## 背景
 
@@ -43,7 +44,7 @@
 使用爬虫+LLM来做一个能够理解并筛选整个互联网的Multi-Agent System的想法非常让人激动，对这个想法感兴趣的还可以看看我去年5月份写的这篇文章：2023年58个海外金融领域AI产品调研——基于GPT3.5驱动的AI爬虫
 
 可能会有的疑虑是，用LLM来筛选互联网文章？这个成本平台能负担起了吗？实际上我通过对信息源进行一些前置限制，目前每天筛选这12个板块的优质信息的成本仅仅是1美元左右。如果有更多用户阅读品味近似，多人共享一个Prompt，未来这个网站也许能够支持用户自己写Prompt来筛选自定义的优质信息流。
-[图片]
+![cost_image](https://github.com/sdaaron/ranker-web/blob/main/project-img/cost-screenshot.png)
 
 ## 开发过程
 
