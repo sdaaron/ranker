@@ -1,4 +1,5 @@
-使用GPT-4开发一个信息聚合网站（基于Next.js、Tailwind、Supabase 和 Python）
+# 使用GPT-4开发一个信息聚合网站（基于Next.js、Tailwind、Supabase 和 Python）
+
 最近的业余时间，我在做一个用大模型做资讯聚合的日报网站：https://ranker.cc
 这个网站前后端纯个人手搓+ChatGPT指点完成，请用大屏打开，体验更佳。
 ![website_screenshot](https://github.com/sdaaron/ranker-web/blob/main/project-img/website-screenshot.png)
