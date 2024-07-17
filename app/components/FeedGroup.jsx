@@ -85,9 +85,9 @@ export default async function Content(date) {
 
   return (
     <div className="content-block xs:mb-10  sm:mb-20">
-      <GroupLayout dataList={infoData} name="资讯" />
       <GroupLayout dataList={aiData} name="大模型" />
       <GroupLayout dataList={internetData} name="互联网" />
+      <GroupLayout dataList={infoData} name="资讯" />
     </div>
   );
 }
