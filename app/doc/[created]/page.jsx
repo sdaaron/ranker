@@ -64,7 +64,7 @@ export default async function MarkdownContent({ params }) {
         ))}{" "}
         <br /> <br />
         <h1 className="text-2xl font-bold">
-          资讯来源：大模型日报 https://ranker.cc
+          资讯来源：大模型日报 https://Euery.cc
         </h1>
       </div>
     </div>

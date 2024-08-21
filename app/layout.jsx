@@ -12,7 +12,7 @@ export const revalidate = 0;
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Ranker",
+  title: "Euery",
   description: "你的信息流规划助手",
 };
 

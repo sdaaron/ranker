@@ -48,7 +48,7 @@ export default function Example() {
                     <img
                       className="h-8 w-auto sm:px-2 md:px-3"
                       src="/logo.png"
-                      alt="Ranker logo"
+                      alt="Euery logo"
                     />
                   </Link>
                 </div>
