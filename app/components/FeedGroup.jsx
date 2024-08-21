@@ -15,6 +15,9 @@ export default async function Content(date) {
     ["product_hunt_ai", "AI产品"],
     ["github_trending_ai", "AI开源"],
     ["arxiv", "AI论文"],
+    ["product_hunt", "产品"],
+    ["github_trending", "技术"],
+    ["hacker_news_best", "极客"],
   ];
 
   let infoList = [
@@ -30,9 +33,9 @@ export default async function Content(date) {
   ];
 
   let internetList = [
-    ["product_hunt", "产品"],
-    ["github_trending", "技术"],
-    ["hacker_news_best", "极客"],
+    ["product_hunt", "ProductHunt"],
+    ["github_trending", "GithubTrending"],
+    ["hacker_news_best", "HackerNews"],
   ];
 
   let aiData = aiList.map(([value, display]) => {
@@ -72,10 +75,12 @@ export default async function Content(date) {
                 </p>
               </div>
             </header>
-            <main className="main-section grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {dataList.map((data, index) => (
-                <Feed index={index} data={data} key={index} />
-              ))}
+            <main className="main-section flex flex-col items-center justify-center">
+              <div className="max-w-3xl space-y-20">
+                {dataList.map((data, index) => (
+                  <Feed index={index} data={data} key={index} />
+                ))}
+              </div>
             </main>
           </>
         )}
@@ -86,7 +91,7 @@ export default async function Content(date) {
   return (
     <div className="content-block xs:mb-10  sm:mb-20">
       <GroupLayout dataList={aiData} name="大模型" />
-      <GroupLayout dataList={internetData} name="互联网" />
+      {/* <GroupLayout dataList={internetData} name="互联网" /> */}
       {/* <GroupLayout dataList={infoData} name="资讯" /> */}
     </div>
   );

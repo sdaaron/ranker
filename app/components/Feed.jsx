@@ -43,7 +43,7 @@ export default async function Example({ data, index }) {
         <div className="feed-container">
           <ul
             role="list"
-            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-1 px-2 py-3 sm:px-4 md:px-0"
+            className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-4 px-2 py-3 sm:px-4 md:px-0"
           >
             {data.map((item, idx) => (
               <li key={idx} className="row-span-1">
