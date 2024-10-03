@@ -1,8 +1,8 @@
 "use server";
-import Feed from "./Feed";
-import supabase from "../utils/SupabaseClient";
+import ItemsCard from "./ItemsCardStack";
+import supabase from "@/utils/SupabaseClient";
 
-export default async function Content(date) {
+async function getFeeds(date) {
   let { data } = await supabase
     .from("feeds")
     .select()
@@ -10,7 +10,7 @@ export default async function Content(date) {
     .order("category", { ascending: true })
     .order("importance", { ascending: false });
 
-  let aiList = [
+  let dataList = [
     ["ai", "AI资讯"],
     ["product_hunt_ai", "AI产品"],
     ["github_trending_ai", "AI开源"],
@@ -20,46 +20,22 @@ export default async function Content(date) {
     ["hacker_news_best", "极客"],
   ];
 
-  let infoList = [
-    ["business", "财经"],
-    ["technology", "科技"],
-    ["world", "时事"],
-    // ["politics", "政治"],
-    ["science", "科学"],
-    ["new_energy", "能源"],
-    ["health", "健康"],
-    ["entertainment", "娱乐"],
-    ["sport", "运动"],
-  ];
-
-  let internetList = [
-    ["product_hunt", "ProductHunt"],
-    ["github_trending", "GithubTrending"],
-    ["hacker_news_best", "HackerNews"],
-  ];
-
-  let aiData = aiList.map(([value, display]) => {
+  let newsListData = dataList.map(([value, display]) => {
     let filteredData = data.filter((item) => item.category === value);
     filteredData.map((item) => (item.display = display));
     return filteredData;
   });
 
-  let infoData = infoList.map(([value, display]) => {
-    let filteredData = data.filter((item) => item.category === value);
-    filteredData.map((item) => (item.display = display));
-    return filteredData;
-  });
+  return newsListData;
+}
 
-  let internetData = internetList.map(([value, display]) => {
-    let filteredData = data.filter((item) => item.category === value);
-    filteredData.map((item) => (item.display = display));
-    return filteredData;
-  });
+export default async function Content(date) {
+  const newsListData = await getFeeds(date);
 
-  function GroupLayout({ dataList, name }) {
+  function GroupLayout({ newsListData }) {
     return (
       <>
-        {dataList.length > 0 && (
+        {newsListData.length > 0 && (
           <>
             <header>
               <div className="relative mx-auto max-w-3xl py-5 text-center">
@@ -68,7 +44,7 @@ export default async function Content(date) {
                     Euery
                   </span>
                   {" · "}
-                  {name}日报
+                  大模型日报
                 </h1>
                 <p className="my-2 font-mono text-xl font-bold sm:my-3 sm:text-xl md:my-4 md:text-3xl lg:my-6 xl:my-8">
                   {date}
@@ -77,8 +53,8 @@ export default async function Content(date) {
             </header>
             <main className="main-section flex flex-col items-center justify-center">
               <div className="max-w-3xl space-y-20">
-                {dataList.map((data, index) => (
-                  <Feed index={index} data={data} key={index} />
+                {newsListData.map((data, index) => (
+                  <ItemsCard index={index} data={data} key={index} />
                 ))}
               </div>
             </main>
@@ -90,9 +66,7 @@ export default async function Content(date) {
 
   return (
     <div className="content-block xs:mb-10  sm:mb-20">
-      <GroupLayout dataList={aiData} name="大模型" />
-      {/* <GroupLayout dataList={internetData} name="互联网" /> */}
-      {/* <GroupLayout dataList={infoData} name="资讯" /> */}
+      <GroupLayout newsListData={newsListData} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import { getNowInBeijing } from "@/app/utils/DateTool";
+import { getNowInBeijing } from "@/utils/DateTool";
 import ArticleCard from "../../components/ArticleCard";
 import LoadmoreFeeds from "../../components/LoadmoreFeeds";
-import supabase from "../../utils/SupabaseClient";
+import supabase from "../../../utils/SupabaseClient";
 export default async function Home({ params }) {
   const category = params.category;
 

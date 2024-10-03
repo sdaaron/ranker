@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { getNowInBeijing, getPreviousDate } from "../utils/DateTool";
+import { getNowInBeijing, getPreviousDate } from "../../utils/DateTool";
 import FeedGroup from "./ContentArea";
 
 export default function LoadMore() {
@@ -14,9 +14,9 @@ export default function LoadMore() {
   const [date, setDate] = useState(previousDay);
   useEffect(() => {
     if (inView && date.format("YYYY-MM-DD") >= stopDate) {
-      FeedGroup(date.format("YYYY-MM-DD")).then((res) => {
-        console.log("res: ", res);
-        setData([...data, res]);
+      FeedGroup(date.format("YYYY-MM-DD")).then((response) => {
+        console.log("response: ", response);
+        setData([...data, response]);
         setDate((date) => getPreviousDate(date));
       });
     }

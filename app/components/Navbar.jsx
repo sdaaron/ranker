@@ -43,7 +43,7 @@ export default function Example() {
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className="flex flex-shrink-0 items-center">
+                <div className="mr-10 flex flex-shrink-0 items-center">
                   <Link href="/">
                     <img
                       className="h-8 w-auto sm:px-2 md:px-3"
@@ -56,22 +56,22 @@ export default function Example() {
                   <Link href="/" className={linkClass("/")}>
                     热榜
                   </Link>
-                  <Link href="/feeds/ai" className={linkClass("/feeds/ai")}>
-                    大模型
+                  {/* <Link href="/feeds/ai" className={linkClass("/feeds/ai")}>
+                    AI 开源
                   </Link>
                   <Link
                     href="/feeds/business"
                     className={linkClass("/feeds/business")}
                   >
-                    财经
+                    AI 产品
                   </Link>
                   <Link
-                    href="/feeds/technology"
-                    className={linkClass("/feeds/technology")}
+                    href="/feeds/product_hunt"
+                    className={linkClass("/feeds/product_hunt")}
                   >
-                    科技
-                  </Link>
-                  <Link
+                    AI 论文
+                  </Link> */}
+                  {/* <Link
                     href="/feeds/science"
                     className={linkClass("/feeds/science")}
                   >
@@ -107,7 +107,7 @@ export default function Example() {
                     className={linkClass("/feeds/product_hunt")}
                   >
                     产品
-                  </Link>
+                  </Link> */}
 
                   {/* <Link
                     href="/feeds/github_trending"
@@ -132,7 +132,7 @@ export default function Example() {
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="flex-shrink-0">
+                {/* <div className="flex-shrink-0">
                   <Link href="/create-agent">
                     <button
                       type="button"
@@ -145,7 +145,7 @@ export default function Example() {
                       创建
                     </button>
                   </Link>
-                </div>
+                </div> */}
                 <div className="ml-4 flex flex-shrink-0 items-center gap-4">
                   {/* Profile dropdown */}
                   <div className="">

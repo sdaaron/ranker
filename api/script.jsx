@@ -1,5 +1,5 @@
-import supabase from "../app/utils/SupabaseClient";
-import { getNowInBeijing } from "../app/utils/DateTool";
+import supabase from "../utils/SupabaseClient";
+import { getNowInBeijing } from "../utils/DateTool";
 let today = getNowInBeijing().format("YYYY-MM-DD");
 
 const fs = require("fs");

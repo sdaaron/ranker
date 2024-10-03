@@ -7,7 +7,7 @@ import MotionDiv from "./MotionDiv";
 import Link from "next/link";
 
 // import TimelineButton from "./TimelineButton";
-export default async function Example({ data, index }) {
+export default async function ItemsCardStack({ data, index }) {
   // console.log("data: ", data);
   data = data.slice(-10);
   const display = data?.[0]?.display;

@@ -1,4 +1,4 @@
-import supabase from "@/app/utils/SupabaseClient";
+import supabase from "@/utils/SupabaseClient";
 
 export default async function MarkdownContent({ params }) {
   const date = params.created;

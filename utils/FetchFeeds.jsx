@@ -1,5 +1,5 @@
 "use server";
-import ArticleCard from "../components/ArticleCard";
+import ArticleCard from "../app/components/ArticleCard";
 import supabase from "./SupabaseClient";
 export default async function Home(date, category) {
   console.log("date in FetchFeeds!!: ", date);

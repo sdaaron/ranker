@@ -1,6 +1,6 @@
 import Image from "next/image";
 import blurImage from "../../public/placeholder.png";
-import supabase from "../utils/SupabaseClient";
+import supabase from "../../utils/SupabaseClient";
 import ImageWithFallback from "../components/ImageWithFallback";
 import ModalButton from "../components/ModalButton";
 import MotionDiv from "../components/MotionDiv";

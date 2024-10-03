@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import supabase from "../utils/SupabaseClient";
+import supabase from "../../utils/SupabaseClient";
 import SubmitModal from "./SubmitModal";
 export default function Example() {
   const [agentName, setAgentName] = useState("");

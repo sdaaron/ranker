@@ -1,6 +1,6 @@
 "use server";
-import ArticleCard from "../components/ArticleCard";
-import LoadmoreArticle from "../components/LoadmoreFeeds";
+import ArticleCard from "../app/components/ArticleCard";
+import LoadmoreArticle from "../app/components/LoadmoreFeeds";
 import supabase from "./SupabaseClient";
 export default async function ContentList() {
   const category = "politics";

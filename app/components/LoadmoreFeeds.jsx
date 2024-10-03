@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { getNowInBeijing, getPreviousDate } from "../utils/DateTool";
-import FetchFeeds from "../utils/FetchFeeds";
+import { getNowInBeijing, getPreviousDate } from "../../utils/DateTool";
+import FetchFeeds from "../../utils/FetchFeeds";
 export default function LoadmoreArticle({ today, category }) {
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
