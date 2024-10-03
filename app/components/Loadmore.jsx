@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { getNowInBeijing, getPreviousDate } from "../utils/DateTool";
-import FeedGroup from "./FeedGroup";
+import FeedGroup from "./ContentArea";
 
 export default function LoadMore() {
   let nowInBeijing = getNowInBeijing();
