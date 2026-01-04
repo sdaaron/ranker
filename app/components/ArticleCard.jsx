@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ImageWithFallback from "./ImageWithFallback";
 export default function ArticleCard({
   id,
