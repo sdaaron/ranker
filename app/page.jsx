@@ -12,7 +12,7 @@ export default async function Home() {
 
   // 使用函数
   // let today = getFormattedDate();
-  let today = "2024-01-26";
+  let today = "2024-01-25";
   console.log(today); // 输出格式为YYYY-MM-DD的日期字符串
 
   const contentData = await Content(today);
