@@ -1,4 +1,5 @@
 import blurImage from "../../public/placeholder.png";
+import Image from "next/image";
 import ImageWithFallback from "./ImageWithFallback";
 // import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
@@ -23,7 +24,13 @@ export default async function Example({ data, index }) {
       >
         {/* Feed卡片标题栏 */}
         <div className="relative mb-3 ml-2 flex flex-row items-center justify-start rounded-t-3xl">
-          <img src="/logo.png" className="mr-4 h-6"></img>
+          <Image
+            src="/logo.png"
+            width={24}
+            height={24}
+            className="mr-4 h-6"
+            alt="Ranker"
+          />
           <h3 className="text-left font-mono text-3xl font-semibold leading-6 text-gray-900">
             {display}
           </h3>

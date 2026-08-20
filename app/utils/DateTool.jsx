@@ -1,16 +1,27 @@
 export function getFormattedDate(dateObj) {
-  let now = dateObj ? new Date(dateObj) : new Date();
-  let year = now.getFullYear();
-  let month = (now.getMonth() + 1).toString().padStart(2, "0");
-  let day = now.getDate().toString().padStart(2, "0");
-  return `${year}-${month}-${day}`;
+  const date = dateObj ? new Date(dateObj) : new Date();
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`Invalid date: ${dateObj}`);
+  }
+
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
 }
 
 export function getPreviousDay(dateString) {
-  let previousDay = new Date(dateString);
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateString);
+  if (!match) {
+    throw new Error(`Invalid ISO date: ${dateString}`);
+  }
 
-  previousDay.setDate(previousDay.getDate() - 1);
-  return getFormattedDate(previousDay);
+  const previousDay = new Date(
+    Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]) - 1),
+  );
+  return previousDay.toISOString().slice(0, 10);
 }
 // import moment from "moment-timezone";
 

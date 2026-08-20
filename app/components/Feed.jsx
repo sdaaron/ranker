@@ -1,31 +1,18 @@
 import Image from "next/image";
 import blurImage from "../../public/placeholder.png";
-import supabase from "../utils/SupabaseClient";
 import ImageWithFallback from "./ImageWithFallback";
 import ModalButton from "./ModalButton";
 import MotionDiv from "./MotionDiv";
 // import TimelineButton from "./TimelineButton";
 export default async function Example({
-  // key,
   category,
   display,
-  created_date,
+  newsData,
   index,
 }) {
-  const { data, error } = await supabase
-    .from("feeds")
-    .select()
-    .eq("category", category)
-    .eq("created_date", created_date)
-    .order("importance", { ascending: false });
-  // .limit(10);
-  // console.log(`fetching category ${category} in ${created_date}`);
-  if (!data || data.length === 0) {
-    console.log("news: there is no news");
+  if (newsData.length === 0) {
     return null;
   }
-  // console.log(`got ${data.length} news`);
-  const newsData = data.slice(-10);
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -42,7 +29,13 @@ export default async function Example({
       >
         {/* Feed卡片标题栏 */}
         <div className="relative mb-3 ml-2 flex flex-row items-center justify-start rounded-t-3xl">
-          <img src="/logo.png" className="mr-4 h-6"></img>
+          <Image
+            src="/logo.png"
+            width={24}
+            height={24}
+            className="mr-4 h-6"
+            alt="Ranker"
+          />
           <h3 className="text-left font-mono text-3xl font-semibold leading-6 text-gray-900">
             {display}
           </h3>
@@ -56,7 +49,7 @@ export default async function Example({
             className="grid-rows-10 grid-auto-rows min-auto grid flex-grow gap-2  px-2 py-3 sm:px-4 md:px-0"
           >
             {newsData.map((item, itemIdx) => (
-              <li key={itemIdx} className="row-span-1">
+              <li key={item.id} className="row-span-1">
                 <div className="group   relative z-30 flow-root">
                   {itemIdx !== newsData.length - 1 ? (
                     <span
@@ -71,7 +64,7 @@ export default async function Example({
                         <ImageWithFallback
                           className="flex items-center justify-center  rounded-lg object-cover object-center ring-8 ring-white "
                           src={
-                            item.image_url.startsWith("http")
+                            item.image_url?.startsWith("http")
                               ? item.image_url
                               : blurImage
                           }
@@ -81,7 +74,7 @@ export default async function Example({
                           blurDataURL={"/placeholder.png"}
                           alt="news-thumbnail"
                           fallbackSrc="/placeholder.png"
-                          sizes="2.5rem"
+                            sizes="2.5rem"
                         />
                         <div className="absolute -bottom-1 -right-1 z-50 rounded-full bg-white shadow-lg ring-1 ring-black ring-opacity-5">
                           <Image
@@ -89,6 +82,7 @@ export default async function Example({
                             width={24}
                             height={24}
                             className="rounded"
+                            alt={`Rank ${itemIdx + 1}`}
                           />
                         </div>
                       </div>

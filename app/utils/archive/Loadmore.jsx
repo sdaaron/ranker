@@ -39,6 +39,8 @@ export default function LoadMore() {
         date = getPreviousDay(date);
       });
     }
+  // Archived implementation retained for reference; do not use in production.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   return (

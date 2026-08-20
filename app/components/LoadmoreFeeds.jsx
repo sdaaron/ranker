@@ -8,22 +8,24 @@ export default function LoadmoreArticle({ today, category }) {
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
   const yesterday = getPreviousDay(today);
-  console.log("today in loadmore: ", today);
-  console.log("yesterday in loadmore: ", yesterday);
   const [date, setDate] = useState(yesterday);
   const stopDate = "2024-01-15";
-  console.log("date: ", date);
 
   useEffect(() => {
     if (inView && date >= stopDate) {
-      console.log("inView: ", inView);
       FetchFeeds(date, category).then((res) => {
-        console.log("res: ", res);
-        setData([...data, res]);
-        setDate((date) => getPreviousDay(date));
+        setData((current) => [...current, res]);
+        setDate((current) => getPreviousDay(current));
+      }).catch((error) => {
+        console.error("Failed to load historical category feeds", {
+          date,
+          category,
+          error,
+        });
+        throw error;
       });
     }
-  }, [inView]);
+  }, [inView, date, category]);
 
   return (
     <>

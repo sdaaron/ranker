@@ -4,6 +4,7 @@ import { Disclosure } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 import Link from "next/link";
 
@@ -45,9 +46,11 @@ export default function Example() {
                 </div>
                 <div className="flex flex-shrink-0 items-center">
                   <Link href="/">
-                    <img
+                    <Image
                       className="h-8 w-auto sm:px-2 md:px-3"
                       src="/logo.png"
+                      width={48}
+                      height={32}
                       alt="Ranker logo"
                     />
                   </Link>

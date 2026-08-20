@@ -1,6 +1,7 @@
 "use client";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
+import Image from "next/image";
 import { Fragment, useState } from "react";
 import PromptMap from "./PromptMap";
 export default function Example({ category }) {
@@ -48,7 +49,7 @@ export default function Example({ category }) {
                       className="h-6 w-6 text-green-600"
                       aria-hidden="true"
                     /> */}
-                      <img src="/logo.png" alt="feeds-logo"></img>
+                      <Image src="/logo.png" width={48} height={48} alt="Ranker" />
                     </div>
                     <div className="mt-3 text-center sm:mt-5">
                       <Dialog.Title

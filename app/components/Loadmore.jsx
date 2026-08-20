@@ -6,8 +6,7 @@ import { getPreviousDay } from "../utils/DateTool";
 import Content from "./Content";
 
 export default function LoadMore({ today }) {
-  let previousDay = getPreviousDay(today);
-  console.log("loadmore previousDay: ", previousDay);
+  const previousDay = getPreviousDay(today);
   const { ref, inView } = useInView({});
   const [data, setData] = useState([]);
   const stopDate = "2024-01-15";
@@ -15,15 +14,15 @@ export default function LoadMore({ today }) {
 
   useEffect(() => {
     if (inView && date >= stopDate) {
-      console.log("inView: ", inView);
       Content(date).then((res) => {
-        console.log("res: ", res);
-        console.log("fetched date: ", date);
-        setData([...data, res]);
-        setDate((date) => getPreviousDay(date));
+        setData((current) => [...current, res]);
+        setDate((current) => getPreviousDay(current));
+      }).catch((error) => {
+        console.error("Failed to load historical feeds", { date, error });
+        throw error;
       });
     }
-  }, [inView]);
+  }, [inView, date]);
 
   return (
     <>

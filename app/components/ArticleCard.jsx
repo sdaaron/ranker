@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ImageWithFallback from "./ImageWithFallback";
 export default function ArticleCard({
   id,
@@ -11,7 +12,6 @@ export default function ArticleCard({
   display,
   index,
 }) {
-  console.log("index: ", index);
   return (
     <article
       key={id}
@@ -21,7 +21,7 @@ export default function ArticleCard({
         <div className="md:min-h-24 relative rounded-lg xs:min-h-16 xs:min-w-16 sm:min-h-20 sm:min-w-20  md:min-w-24  lg:min-h-28 lg:min-w-28">
           <ImageWithFallback
             className="md:min-h-24 lg:min-w-2 rounded-lg bg-white xs:min-h-16 xs:min-w-16 sm:min-h-20 sm:min-w-20 md:min-w-24 lg:min-h-28"
-            src={image_url.startsWith("http") ? image_url : "/placeholder.png"}
+            src={image_url?.startsWith("http") ? image_url : "/placeholder.png"}
             fill={true}
             style={{ objectFit: "cover", objectPosition: "center" }}
             // width={96}
@@ -38,6 +38,7 @@ export default function ArticleCard({
               width={24}
               height={24}
               className="rounded"
+              alt={`Rank ${index + 1}`}
             />
           </div>
         </div>

@@ -6,24 +6,35 @@ export default async function Home({ params }) {
   const category = params.category;
 
   let today = getFormattedDate();
-  console.log("today in feeds: ", today); // 输出格式为YYYY-MM-DD的日期字符串
   let data, error;
   if (category == "all") {
     ({ data, error } = await supabase
       .from("feeds")
-      .select()
-      .eq("created_date", today));
+      .select("id,category,title,summary,image_url,source_name,source_url,publish_date,created_at,importance")
+      .eq("created_date", today)
+      .order("importance", { ascending: false })
+      .limit(10));
   } else {
     ({ data, error } = await supabase
       .from("feeds")
-      .select()
+      .select("id,category,title,summary,image_url,source_name,source_url,publish_date,created_at,importance")
       .eq("category", category)
-      .eq("created_date", today));
+      .eq("created_date", today)
+      .order("importance", { ascending: false })
+      .limit(10));
   }
 
-  const news = data.slice(0, 10);
-  // console.log("category: ", category);
-  // console.log("news: ", news);
+  if (error) {
+    console.error("Failed to fetch category feeds", {
+      today,
+      category,
+      code: error.code,
+      message: error.message,
+    });
+    throw new Error(`Failed to fetch ${category} feeds: ${error.message}`);
+  }
+
+  const news = data ?? [];
   return (
     <div className="grid min-h-screen grid-cols-12 p-2">
       {/* <div className="min-h-screen"> */}
@@ -58,7 +69,7 @@ export default async function Home({ params }) {
               source_url={item.source_url}
               publish_date={item.publish_date}
               created_at={item.created_at}
-              display={item.display}
+              display={item.category}
             />
           ))}
         </div>
